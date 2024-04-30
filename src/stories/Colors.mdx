@@ -1,0 +1,14 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks'
+import light from '@/styles/themes/light'
+
+<Meta title="Colors" />
+
+# Color Pallet
+
+<br/>
+<br/>
+
+<ColorPalette>
+  <ColorItem title="Primary" subtitle="Main colors" colors={light.colors.primary}/>
+  <ColorItem title="Secondary" subtitle="Complementary colors" colors={light.colors.secondary}/>
+</ColorPalette>
