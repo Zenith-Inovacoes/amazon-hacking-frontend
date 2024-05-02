@@ -7,7 +7,7 @@ import { gilroy } from "../src/services/utils/fonts.utils"
 const preview: Preview = {
   decorators: [
     (Story) => (
-      <div className={gilroy.className}>
+      <div className={gilroy.variable}>
         <Story />
       </div>
     ),
