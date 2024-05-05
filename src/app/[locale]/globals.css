@@ -30,4 +30,8 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .focus-amazon-hacking {
+    @apply focus-visible:outline-none focus-visible:outline-1 focus-visible:outline-primary-100 focus-visible:outline-offset-4
+  }
 }
