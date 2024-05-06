@@ -24,10 +24,16 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .focus-amazon-hacking {
+    @apply focus-visible:outline-none focus-visible:outline-1 focus-visible:outline-primary-100 focus-visible:outline-offset-4
   }
 }
