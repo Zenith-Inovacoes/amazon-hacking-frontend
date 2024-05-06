@@ -52,7 +52,7 @@ export default function Partners() {
                             ease: "easeIn"
                         }
                     }
-                }} className="text-40 font-bold leading-[44px] md:text-60 md:leading-[66px]">
+                }} className="text-40 font-bold leading-[44px] md:text-60 md:leading-[66px] text-balance">
                     Nossos Parceiros
                 </motion.h3>
                 <motion.p variants={{
@@ -462,6 +462,54 @@ export default function Partners() {
                     <path className="translate-x-0 translate-y-0 opacity-100" fill="url(#sw-gradient-wave-partners-end)" d="M0,100L80,95.8C160,92,320,83,480,66.7C640,50,800,25,960,37.5C1120,50,1280,100,1440,133.3C1600,167,1760,183,1920,187.5C2080,192,2240,183,2400,175C2560,167,2720,158,2880,150C3040,142,3200,133,3360,116.7C3520,100,3680,75,3840,87.5C4000,100,4160,150,4320,150C4480,150,4640,100,4800,104.2C4960,108,5120,167,5280,179.2C5440,192,5600,158,5760,154.2C5920,150,6080,175,6240,154.2C6400,133,6560,67,6720,50C6880,33,7040,67,7200,91.7C7360,117,7520,133,7680,116.7C7840,100,8000,50,8160,62.5C8320,75,8480,150,8640,166.7C8800,183,8960,142,9120,104.2C9280,67,9440,33,9600,16.7C9760,0,9920,0,10080,8.3C10240,17,10400,33,10560,58.3C10720,83,10880,117,11040,133.3C11200,150,11360,150,11440,150L11520,150L11520,250L11440,250C11360,250,11200,250,11040,250C10880,250,10720,250,10560,250C10400,250,10240,250,10080,250C9920,250,9760,250,9600,250C9440,250,9280,250,9120,250C8960,250,8800,250,8640,250C8480,250,8320,250,8160,250C8000,250,7840,250,7680,250C7520,250,7360,250,7200,250C7040,250,6880,250,6720,250C6560,250,6400,250,6240,250C6080,250,5920,250,5760,250C5600,250,5440,250,5280,250C5120,250,4960,250,4800,250C4640,250,4480,250,4320,250C4160,250,4000,250,3840,250C3680,250,3520,250,3360,250C3200,250,3040,250,2880,250C2720,250,2560,250,2400,250C2240,250,2080,250,1920,250C1760,250,1600,250,1440,250C1280,250,1120,250,960,250C800,250,640,250,480,250C320,250,160,250,80,250L0,250Z"></path>
                 </svg>
             </div>
+            <motion.div initial="hidden" whileInView="show" viewport={{
+                once: true,
+                amount: .25
+            }} variants={{
+                hidden: {
+                    opacity: 0,
+                },
+                show: {
+                    opacity: 1,
+                    transition: {
+                        staggerChildren: .5,
+                        duration: .5,
+                        ease: "easeIn",
+                    },
+                }
+            }} className="text-black text-center gap-6 flex items-center justify-center flex-col mt-12 lg:mt-20">
+                <motion.span variants={{
+                    hidden: {
+                        opacity: 0,
+                        x: "-20px"
+                    },
+                    show: {
+                        opacity: 1,
+                        x: "0px",
+                        transition: {
+                            duration: 1,
+                            ease: "easeIn"
+                        }
+                    }
+                }} className="text-40 font-bold leading-[44px] md:text-60 md:leading-[66px] text-balance max-w-[24ch]">Venha fazer parte dessa equipe!</motion.span>
+                <motion.p variants={{
+                    hidden: {
+                        opacity: 0,
+                        x: "-20px"
+                    },
+                    show: {
+                        opacity: 1,
+                        x: "0px",
+                        transition: {
+                            duration: 1,
+                            ease: "easeIn"
+                        }
+                    }
+                }} className="text-16 font-normal leading-4 max-w-[54ch] mx-auto md:text-18 md:leading-5 lg:text-20 lg:leading-6 text-balance">
+                    Torne-se um patrocinador! Junte-se a nós para fazer deste evento um sucesso. Saiba como sua empresa pode contribuir e se destacar!
+                </motion.p>
+                {/* TO-DO: Add Button component here when it's done and merged in develop */}
+            </motion.div>
         </div>
     )
 }
