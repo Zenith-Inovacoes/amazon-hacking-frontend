@@ -18,7 +18,7 @@ export default {
     },
   ],
   args: {
-    children: <div className="text-6xl font-bold pt-32 text-black">Teste</div>,
+    children: <div className="text-6xl flex justify-center font-bold pt-32 text-black h-full"><span className='absolute bottom-0 left-1/2 text-xs -translate-x-1/2'>End of the page</span>Teste<div className='h-screen'/></div>,
   },
   argTypes: {
     children: {
