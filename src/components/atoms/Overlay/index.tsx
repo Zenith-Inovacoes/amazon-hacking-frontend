@@ -2,10 +2,11 @@
 
 import { PointerEvent, DragEvent, useLayoutEffect } from 'react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
-import { forwardRef, Ref, useRef, useState } from 'react'
+import { forwardRef, useRef, useState } from 'react'
 import { cn } from '@/services/utils/className.utils'
 import { IoMdClose } from 'react-icons/io'
 import { OverlayContentProps } from './types'
+import Button from '../Button'
 
 export const OverlayContent = forwardRef(
   (
@@ -83,16 +84,18 @@ export const OverlayContent = forwardRef(
             ref={contentRef}
           >
             <div className='lg:hidden w-full cursor-grab active:cursor-grabbing py-8'>
-              <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-zinc-300" />
+              <div className={cn("mx-auto w-32 h-2 flex-shrink-0 rounded-full bg-white", theme === 'dark' && "bg-black")} />
             </div>
             <div className="sticky left-0 top-0 flex h-fit w-full justify-end">
-              {/* TO-DO: Replace this Close Button by the icon button variant of the Button component when it's in the develop branch */}
               <DialogPrimitive.Close
                 ref={closeButtonRef}
                 aria-label="close"
-                className="hidden lg:flex m-10 h-8 w-8 cursor-pointer items-center justify-center overflow-hidden rounded-full border-none bg-primary-100 text-white transition-colors hover:bg-primary-50 focus-visible:outline-none focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-[#F28F8F] active:bg-secondary-15"
+                asChild
+              className="hidden lg:flex m-10"
               >
-                <IoMdClose size={16} />
+                <Button variant='icon' theme={theme}>
+                  <IoMdClose size={16} />
+                </Button>
               </DialogPrimitive.Close>
             </div>
             <div className='relative h-full flex-1'>

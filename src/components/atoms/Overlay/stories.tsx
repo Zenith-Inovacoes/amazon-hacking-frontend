@@ -18,25 +18,25 @@ export default {
     },
   ],
   args: {
-    children: <div className="text-6xl flex justify-center font-bold pt-32 text-black h-full"><span className='absolute bottom-0 left-1/2 text-xs -translate-x-1/2'>End of the page</span>Teste<div className='h-screen'/></div>,
+    children: <div className="text-6xl flex justify-center font-bold pt-32 text-black h-full"><span className='absolute bottom-0 left-1/2 text-xs -translate-x-1/2'>End of the page</span>Teste<div className='h-screen' /></div>,
   },
   argTypes: {
     children: {
-        table: {
-            disable: true,
-        }
+      table: {
+        disable: true,
+      }
     },
     theme: {
-        options: ['light', 'dark'],
-        type: "string",
-        control: {
-            type: "radio"
-        },
-        table: {
-            defaultValue: {
-                summary: 'light',
-            }
+      options: ['light', 'dark'],
+      type: "string",
+      control: {
+        type: "radio"
+      },
+      table: {
+        defaultValue: {
+          summary: 'light',
         }
+      }
     }
   },
   tags: ['autodocs'],
@@ -44,4 +44,17 @@ export default {
 
 type Story = StoryObj<OverlayContentProps>
 
-export const Default: Story = {}
+export const Default: Story = {
+  args: {
+    children: <div className="text-6xl flex justify-center font-bold pt-32 text-white h-full"><span className='absolute bottom-0 left-1/2 text-xs -translate-x-1/2'>End of the page</span>Teste<div className='h-screen' /></div>,
+    className: "bg-black"
+  }
+}
+
+export const Dark: Story = {
+  args: {
+    theme: 'dark',
+    children: <div className="text-6xl flex justify-center font-bold pt-32 text-black h-full"><span className='absolute bottom-0 left-1/2 text-xs -translate-x-1/2'>End of the page</span>Teste<div className='h-screen' /></div>,
+
+  }
+}
