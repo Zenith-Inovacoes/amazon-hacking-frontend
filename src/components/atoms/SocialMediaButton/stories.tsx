@@ -42,18 +42,21 @@ export const Instagram: Story = {
 export const InstagramFill: Story = {
     args: {
         children: <Image src={InstagramFillIcon} alt="Instagram"/>,
+        variant: "fill"
     }
 }
 
 export const Facebook: Story = {
     args: {
         children: <Image src={FacebookIcon} alt="Facebook"/>,
+        variant: "fill"
     }
 }
 
 export const Youtube: Story = {
     args: {
         children: <Image src={YoutubeIcon} alt="Youtube"/>,
+        variant: "fill"
     }
 }
 
