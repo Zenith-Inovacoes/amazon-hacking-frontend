@@ -5,14 +5,6 @@ const meta: Meta = {
   title: 'Components/Atoms/Badge',
   component: Badge,
 
-  decorators: [
-    (Story) => (
-      <div className='font-primary'>
-        <Badge />
-      </div>
-    ),
-  ],
-
   tags: ['autodocs'],
 }
 
