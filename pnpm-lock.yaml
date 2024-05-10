@@ -83,7 +83,7 @@ devDependencies:
     specifier: ^18
     version: 18.3.0
   chromatic:
-    specifier: ^11.3.1
+    specifier: ^11.3.2
     version: 11.3.2
   eslint:
     specifier: ^8
