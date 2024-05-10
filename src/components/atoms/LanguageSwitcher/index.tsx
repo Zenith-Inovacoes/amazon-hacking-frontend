@@ -46,14 +46,14 @@ const LanguageSwitcher = forwardRef(({ className, ...props }: LanguageSwitcherPr
             router.push(`/${value}`)
             setCurrentLanguage(locales.find(locale => locale.locale === value)!)
         }} {...props}>
-            <SelectPrimitive.Trigger ref={ref} className={cn("w-fit shadow-languageSwitcher tracking-normal focus-visible:outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-primary-100 min-w-14 overflow-hidden h-14 duration-300 max-w-14 hover:max-w-[200px] data-[state=open]:max-w-[200px] transition-maxWidth flex relative items-center gap-2 py-5 px-4 bg-black leading-4 text-base font-normal rounded-full group data-[state=open]:rounded-bl-none data-[state=open]:rounded-br-none data-[state=open]:rounded-tl-[24px] data-[state=open]:rounded-tr-[24px]", className)}>
+            <SelectPrimitive.Trigger ref={ref} className={cn("w-fit shadow-languageSwitcher tracking-normal focus-visible:outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-primary-100 min-w-14 overflow-hidden h-14 duration-700 max-w-14 hover:max-w-[200px] data-[state=open]:max-w-[200px] transition-maxWidth flex relative items-center gap-2 py-5 px-4 bg-black leading-4 text-base font-normal rounded-full group data-[state=open]:rounded-bl-none data-[state=open]:rounded-br-none data-[state=open]:rounded-tl-[24px] data-[state=open]:rounded-tr-[24px]", className)}>
                 <SelectPrimitive.Value>
                     <div className="flex items-center whitespace-nowrap">
                         {currentLanguage.flag}
-                        <span className="ml-2 opacity-0 invisible group-hover:visible group-data-[state=open]:visible group-hover:opacity-100 group-data-[state=open]:opacity-100 transition-all">
+                        <span className="ml-2 opacity-0 group-data-[state=open]:visible group-hover:opacity-100 group-data-[state=open]:opacity-100 transition-all duration-500">
                             {currentLanguage.label}
                         </span>
-                        <SelectPrimitive.Icon asChild className="ml-2 group-hover:visible group-data-[state=open]:visible opacity-0 group-hover:opacity-100 group-data-[state=open]:opacity-100 invisible group-data-[state=open]:rotate-180 group-data-[state=closed]:rotate-0 transition-transform">
+                        <SelectPrimitive.Icon asChild className="ml-2 group-data-[state=open]:visible opacity-0 group-hover:opacity-100 group-data-[state=open]:opacity-100 group-data-[state=open]:rotate-180 group-data-[state=closed]:rotate-0 transition-all duration-500">
                             <IoIosArrowDown size={24} />
                         </SelectPrimitive.Icon>
                     </div>
