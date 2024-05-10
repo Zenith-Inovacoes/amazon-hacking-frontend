@@ -15,6 +15,13 @@ const config: Config = {
       fontFamily: light.fontFamilies,
       fontSize: light.fontSizes,
       lineHeight: light.lineHeights,
+      transitionProperty: {
+        maxWidth: "max-width"
+      },
+      boxShadow: {
+        languageSwitcher: "0px 144px 40px 0px rgba(0, 0, 0, 0.01), 0px 92px 37px 0px rgba(0, 0, 0, 0.06), 0px 52px 31px 0px rgba(0, 0, 0, 0.20), 0px 23px 23px 0px rgba(0, 0, 0, 0.34), 0px 6px 13px 0px rgba(0, 0, 0, 0.39)",
+        floatingButton: "0px 75px 21px 0px rgba(0, 0, 0, 0.01), 0px 48px 19px 0px rgba(0, 0, 0, 0.06), 0px 27px 16px 0px rgba(0, 0, 0, 0.20), 0px 12px 12px 0px rgba(0, 0, 0, 0.34), 0px 3px 7px 0px rgba(0, 0, 0, 0.39)"
+      },
       keyframes: {
         overlayShow: {
           from: { opacity: '0' },
@@ -48,9 +55,6 @@ const config: Config = {
         contentShow: 'contentShow 400ms ease-out',
         dialogHide: 'dialogHide 600ms ease-out',
       },
-    },
-    boxShadow: {
-      floatingButton: "0px 75px 21px 0px rgba(0, 0, 0, 0.01), 0px 48px 19px 0px rgba(0, 0, 0, 0.06), 0px 27px 16px 0px rgba(0, 0, 0, 0.20), 0px 12px 12px 0px rgba(0, 0, 0, 0.34), 0px 3px 7px 0px rgba(0, 0, 0, 0.39)"
     }
   },
   plugins: [],
