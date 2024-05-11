@@ -16,24 +16,21 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: "☁️ checkout repository"
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: "🔧 setup node"
-        uses: actions/setup-node@v2.1.5
+        uses: actions/setup-node@v3
         with:
           node-version: 20
 
       - name: "🔧 install npm@latest"
         run: npm i -g npm@latest
 
-      - name: "install pnpm"
-        run: npm i -g pnpm
-
       - name: "📦 install dependencies"
-        uses: pnpm install
+        uses: npm install
 
       - name: "🔍 lint code"
-        run: pnpm lint
+        run: npm run lint
 
       - name: "build"
-        run: pnpm build
+        run: npm run build

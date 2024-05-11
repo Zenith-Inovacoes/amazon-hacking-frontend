@@ -18,7 +18,8 @@ import LogoW3 from "public/images/logo-w3.svg"
 import LogoSol from "public/images/logo-sol.png"
 
 import { motion } from "framer-motion"
-
+import Button from "@/components/atoms/Button"
+import { emailAddress } from "@/constants/contacts"
 
 export default function Partners() {
     return (
@@ -509,6 +510,11 @@ export default function Partners() {
                     Torne-se um patrocinador! Junte-se a nós para fazer deste evento um sucesso. Saiba como sua empresa pode contribuir e se destacar!
                 </motion.p>
                 {/* TO-DO: Add Button component here when it's done and merged in develop */}
+                <Button asChild>
+                    <a href={`mailto:${emailAddress}`} target="_blank">
+                        Entre em contato
+                    </a>
+                </Button>
             </motion.div>
         </div>
     )
