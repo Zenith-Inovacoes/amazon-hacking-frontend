@@ -5,6 +5,10 @@ const meta: Meta = {
   title: 'Components/Atoms/Badge',
   component: Badge,
 
+  args: {
+    children: 'Em Breve',
+  },
+
   tags: ['autodocs'],
 }
 
