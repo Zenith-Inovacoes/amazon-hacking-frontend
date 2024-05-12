@@ -38,4 +38,8 @@ body {
   .focus-amazon-hacking {
     @apply focus-visible:outline-none focus-visible:outline-1 focus-visible:outline-primary-100 focus-visible:outline-offset-4
   }
+
+  .projectOverlayShadow {
+    box-shadow: 0px 183px 51px 0px rgba(0, 0, 0, 0.00), 0px 117px 47px 0px rgba(0, 0, 0, 0.04), 0px 66px 39px 0px rgba(0, 0, 0, 0.13), 0px 29px 29px 0px rgba(0, 0, 0, 0.21), 0px 7px 16px 0px rgba(0, 0, 0, 0.25);
+  }
 }
