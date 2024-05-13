@@ -29,11 +29,10 @@ const ProjectOverlay = ({
   whatsapp,
   instagram,
   facebook,
-  overlayTrigger,
 }: ProjectOverlayProps) => {
   return (
     <Overlay>
-      <OverlayTrigger asChild>{overlayTrigger}</OverlayTrigger>
+      <OverlayTrigger asChild>{children.overlayTrigger}</OverlayTrigger>
       <OverlayContent theme='dark'>
         <div className='flex flex-col items-center justify-center gap-[108px] w-full h-full pb-36 overflow-hidden md:gap-[111px]'>
           <div className='flex flex-col w-full h-full items-center gap-[108px] px-6 pt-5 md:px-[65px] md:gap-[111px] lg:px-[102px]'>
@@ -83,7 +82,11 @@ const ProjectOverlay = ({
               alt='First Wave Top Shadow'
               className='translate-y-[18vw] -mt-[18vw] blur-[2px] opacity-30 -rotate-1 scale-x-105 lg:translate-y-[19vw] lg:-mt-[19vw] xl:translate-y-[min(19vw,270px)] xl:-mt-[min(19vw,270px)]'
             />
-            <Image src={FirstWaveTop} alt='First Wave Top' />
+            <Image
+              src={FirstWaveTop}
+              alt='First Wave Top'
+              className='scale-x-105'
+            />
             <div className='flex flex-col gap-[22px] w-full h-fit bg-black px-6 items-center justify-center outline outline-2 outline-black md:gap-[42px] md:px-[65px] lg:px-[102px]'>
               <h1 className='text-white text-center font-bold text-40 leading-[1.1] md:text-50 lg:text-60'>
                 Elevator Pitch

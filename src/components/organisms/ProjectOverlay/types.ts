@@ -7,6 +7,7 @@ export type ProjectOverlayChildrenProps = {
   altLogo: string
   solutionDescription: string
   teamMembers: string[]
+  overlayTrigger: ReactNode
 }
 
 export type ProjectOverlayProps = {
@@ -17,5 +18,4 @@ export type ProjectOverlayProps = {
   whatsapp: string
   instagram: string
   facebook: string
-  overlayTrigger: ReactNode
 }

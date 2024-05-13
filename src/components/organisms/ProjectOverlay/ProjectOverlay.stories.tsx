@@ -21,6 +21,11 @@ const childrenData: ProjectOverlayChildrenProps = {
     'André Sidrim',
     'Lucas Gabriel',
   ],
+  overlayTrigger: (
+    <div className='flex w-full h-full justify-center'>
+      <Button>Teste</Button>
+    </div>
+  ),
 }
 
 const meta: Meta<ProjectOverlayProps> = {
@@ -38,7 +43,6 @@ export const Default: Story = {
   render: () => {
     return (
       <ProjectOverlay
-        overlayTrigger={<Button>Teste</Button>}
         videoURL='https://www.youtube.com/embed/fPYSh680ZBY'
         videoTitle='What Your GitHub Says About You | LIVE from Brazil'
         twitter='https://twitter.com/'
