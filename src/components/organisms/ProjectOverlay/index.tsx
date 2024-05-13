@@ -5,6 +5,7 @@ import {
 } from '@/components/atoms/Overlay'
 import { ProjectOverlayProps } from './types'
 import Image from 'next/image'
+import { cn } from '@/services/utils/className.utils'
 
 import {
   PiTwitterLogoFill,
@@ -13,11 +14,13 @@ import {
 } from 'react-icons/pi'
 import { FaWhatsapp } from 'react-icons/fa'
 
-import FirstWaveTop from 'public/ProjectOverlay/Mobile/FirstWaveTop.svg'
-import FirstWaveBottom from 'public/ProjectOverlay/Mobile/FirstWaveBottom.svg'
+import FirstWaveTop from 'public/ProjectOverlayWaves/Mobile/FirstWaveTop.svg'
+import FirstWaveBottom from 'public/ProjectOverlayWaves/Mobile/FirstWaveBottom.svg'
 
-import SecondWaveMobile from 'public/ProjectOverlay/Mobile/SecondWave.svg'
-import SecondWaveTablet from 'public/ProjectOverlay/Tablet/SecondWave.svg'
+import SecondWaveMobile from 'public/ProjectOverlayWaves/Mobile/SecondWave.svg'
+import SecondWaveTablet from 'public/ProjectOverlayWaves/Tablet/SecondWave.svg'
+
+import PersonalGoals from 'public/PersonalGoals.svg'
 
 import { SocialMediaButton } from '@/components/atoms'
 
@@ -29,6 +32,7 @@ const ProjectOverlay = ({
   whatsapp,
   instagram,
   facebook,
+  variant = 'current',
 }: ProjectOverlayProps) => {
   return (
     <Overlay>
@@ -87,7 +91,7 @@ const ProjectOverlay = ({
               alt='First Wave Top'
               className='scale-x-105'
             />
-            <div className='flex flex-col gap-[22px] w-full h-fit bg-black px-6 items-center justify-center outline outline-2 outline-black md:gap-[42px] md:px-[65px] lg:px-[102px]'>
+            <div className='flex flex-col gap-[22px] w-full h-fit bg-black px-6 items-center justify-center outline outline-2 outline-black md:gap-[42px] md:px-[65px] lg:px-[102px] scale-[1.003]'>
               <h1 className='text-white text-center font-bold text-40 leading-[1.1] md:text-50 lg:text-60'>
                 Elevator Pitch
               </h1>
@@ -97,13 +101,37 @@ const ProjectOverlay = ({
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                 referrerPolicy='strict-origin-when-cross-origin'
                 allowFullScreen
-                className='rounded-[21px] w-full max-w-[400px] aspect-video md:max-w-[700px]'
+                className='rounded-[21px] w-full max-w-[400px] aspect-video md:max-w-[700px] lg:max-w-[1000px]'
               ></iframe>
             </div>
             <Image
               src={FirstWaveBottom}
               alt='First Wave Bottom'
               className='-scale-x-[1.75]'
+            />
+          </div>
+
+          <div
+            className={cn(
+              variant === 'current'
+                ? 'hidden'
+                : 'flex flex-col w-full h-full gap-[45px] px-6 items-center justify-center mb-8 md:px-[65px] lg:flex-row lg:gap-0 lg:justify-between'
+            )}
+          >
+            <div className='flex flex-col gap-[22px] w-full h-full items-center md:items-start'>
+              <h1 className='text-40 font-bold leading-[1.1] text-black w-fit px-3 md:text-50 text-start lg:max-w-[13ch]'>
+                Você pode ser o próximo!
+              </h1>
+              <p className='text-base leading-[20px] tracking-[0.192px] text-black px-3 w-full max-w-[60ch] lg:max-w-[50ch]'>
+                Sua solução pode ser a próxima inovação de destaque do Amazon
+                Hacking, juntando-se a um hall de projetos incríveis
+                apresentados no fim da Jornada.
+              </p>
+            </div>
+            <Image
+              src={PersonalGoals}
+              alt='Personal Goals'
+              className='w-[311px] h-[311px] md:w-[462px] md:h-[462px]'
             />
           </div>
 

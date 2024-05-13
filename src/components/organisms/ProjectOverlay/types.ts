@@ -18,4 +18,5 @@ export type ProjectOverlayProps = {
   whatsapp: string
   instagram: string
   facebook: string
+  variant?: 'current' | 'past'
 }
