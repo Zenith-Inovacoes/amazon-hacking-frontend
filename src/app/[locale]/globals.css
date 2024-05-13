@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer apply {
+  .horizontal-snap {
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scroll-padding: 0 1rem;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .horizontal-snap::-webkit-scrollbar {
+    display: none;
+  }
+
+  .horizontal-snap > * {
+    scroll-snap-align: start;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -22,12 +40,14 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  scroll-behavior: smooth;
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+    @apply overflow-x-hidden
 }
 
 @layer utilities {
