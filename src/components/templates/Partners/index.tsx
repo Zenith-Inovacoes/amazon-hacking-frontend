@@ -478,7 +478,7 @@ export default function Partners() {
                         ease: "easeIn",
                     },
                 }
-            }} className="text-black text-center gap-6 flex items-center justify-center flex-col mt-12 lg:mt-20">
+            }} className="text-black text-center px-8 gap-6 flex items-center justify-center flex-col mt-12 lg:mt-20">
                 <motion.span variants={{
                     hidden: {
                         opacity: 0,
@@ -492,7 +492,7 @@ export default function Partners() {
                             ease: "easeIn"
                         }
                     }
-                }} className="text-40 font-bold leading-[44px] md:text-60 md:leading-[66px] text-balance max-w-[24ch]">Venha fazer parte dessa equipe!</motion.span>
+                }} className="text-40 font-bold leading-[44px] md:text-60 md:leading-[66px] text-balance max-w-[24ch] md:max-w-none">Venha fazer parte dessa equipe!</motion.span>
                 <motion.p variants={{
                     hidden: {
                         opacity: 0,
@@ -506,7 +506,7 @@ export default function Partners() {
                             ease: "easeIn"
                         }
                     }
-                }} className="text-16 font-normal leading-4 max-w-[54ch] mx-auto md:text-18 md:leading-5 lg:text-20 lg:leading-6 text-balance">
+                }} className="text-16 font-normal leading-4 max-w-[54ch] md:max-w-[90ch] mx-auto md:text-18 md:leading-5 lg:text-20 lg:leading-6 text-balance">
                     Torne-se um patrocinador! Junte-se a nós para fazer deste evento um sucesso. Saiba como sua empresa pode contribuir e se destacar!
                 </motion.p>
                 {/* TO-DO: Add Button component here when it's done and merged in develop */}
