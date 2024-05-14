@@ -1,24 +1,23 @@
 import { Meta, StoryObj } from '@storybook/react'
-// import Menu from '.'
-// import { Suspense } from 'react'
 import Unlogged from './Unlogged'
 import Logged from './Logged'
 import Dandan from 'public/images/TesteMenu/Daniel.png'
 
 const meta: Meta = {
   title: 'Components/Molecules/Menu',
-  // component: Menu,
-  // decorators: [
-  //   (Story) => (
-  //     <div className='w-full h-full items-center justify-center flex'>
-  //       <Suspense fallback={<div>Loading...</div>}>
-  //         <Story />
-  //       </Suspense>
-  //     </div>
-  //   ),
-  // ],
 
-  // tags: ['autodocs'],
+  argTypes: {
+    'Unlogged Menu': {
+      description:
+        'Variante do componente Menu para quando o usuário não está conectado em nenhuma conta Google.',
+    },
+    'Logged Menu': {
+      description:
+        'Variante do componente Menu para quando o usuário está conectado em uma conta Google.',
+    },
+  },
+
+  tags: ['autodocs'],
 }
 
 export default meta
