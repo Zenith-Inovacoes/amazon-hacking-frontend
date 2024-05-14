@@ -1,8 +1,8 @@
-import React from "react";
-import type { Preview } from "@storybook/react";
-import "../src/app/[locale]/globals.css"
-import { themes } from '@storybook/theming';
-import { gilroy } from "../src/services/utils/fonts.utils"
+import React from 'react'
+import type { Preview } from '@storybook/react'
+import '../src/app/[locale]/globals.css'
+import { themes } from '@storybook/theming'
+import { gilroy } from '../src/services/utils/fonts.utils'
 
 const preview: Preview = {
   decorators: [
@@ -14,7 +14,7 @@ const preview: Preview = {
   ],
   parameters: {
     docs: {
-      theme: themes.dark
+      theme: themes.dark,
     },
     layout: 'fullscreen',
     controls: {
@@ -23,7 +23,10 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    nextjs: {
+      appDirectory: true,
+    },
   },
-};
+}
 
-export default preview;
+export default preview
