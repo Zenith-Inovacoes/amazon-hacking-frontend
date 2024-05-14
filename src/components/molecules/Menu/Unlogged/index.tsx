@@ -3,80 +3,91 @@
 import AmazonHackingLogo from 'public/images/AmazonHackingColoredLogo.svg'
 import Image from 'next/image'
 import { IoCloseOutline, IoMenu } from 'react-icons/io5'
-import * as Dialog from '@radix-ui/react-dialog'
-
-import { Button } from '@/components/atoms'
+import { Button, Link } from '@/components/atoms'
 import LoginButton from './LoginButton'
+import { useState } from 'react'
 import { cn } from '@/services/utils/className.utils'
 
 const Unlogged = () => {
+  const [open, setOpen] = useState<boolean>(false)
+
   return (
-    <Dialog.Dialog>
-      <div className='relative rounded-b-[30px] h-screen w-[min(364px,100%)] overflow-hidden'>
-        <Dialog.Close asChild>
-          <button className='absolute top-10 right-[70px] z-50'>
-            <IoCloseOutline
-              size={46}
-              className={cn(
-                'absolute opacity-100 transition-opacity duration-200 ease-linear'
-              )}
-            />
+    <div className='sticky w-full h-full flex items-center justify-end'>
+      <div
+        className={cn(
+          'relative h-full max-h-screen w-[min(364px,100%)] md:w-[405px] overflow-hidden z-50 hide-menu-scrollbar',
+          open && 'overflow-y-scroll'
+        )}
+      >
+        <button
+          className='absolute top-10 right-[70px] z-50'
+          onClick={() => setOpen((currState) => !currState)}
+        >
+          <IoCloseOutline
+            size={46}
+            className={cn(
+              'absolute opacity-100 transition-opacity duration-200 ease-linear',
+              !open && 'opacity-0'
+            )}
+          />
+          <IoMenu
+            size={46}
+            className={cn(
+              'absolute opacity-100 transition-opacity duration-200 ease-linear',
+              open && 'opacity-0'
+            )}
+          />
+        </button>
+        <div
+          className={cn(
+            'relative flex bg-black rounded-l-[30px] h-full w-full flex-col items-start justify-start gap-10 py-20 px-14 transition-transform duration-300 ease-in-out translate-x-full',
+            open && 'translate-x-0'
+          )}
+        >
+          <button>
+            <Image src={AmazonHackingLogo} alt='Amazon Hacking Logo' />
           </button>
-        </Dialog.Close>
-        <Dialog.Trigger asChild>
-          <button className='absolute top-10 right-[70px] data-[state=closed]:z-50 z-40'>
-            <IoMenu
-              size={46}
-              className={cn(
-                'absolute opacity-100 transition-opacity duration-200 ease-linear'
-              )}
-            />
-          </button>
-        </Dialog.Trigger>
-        <Dialog.Portal>
-          <div className='relative rounded-b-[30px] h-screen w-[min(364px,100%)] overflow-hidden'>
-            <div
-              className={cn(
-                'flex bg-black rounded-b-[30px] h-full w-full flex-col items-start justify-start gap-10 py-20 px-14 transition-transform duration-300 ease-in-out'
-              )}
-            >
-              <Image src={AmazonHackingLogo} alt='Amazon Hacking Logo' />
-              <div className='flex flex-col items-start justify-start gap-[18px]'>
-                <h2 className='text-[#979797] font-medium text-sm tracking-[0.168px]'>
-                  Menu
-                </h2>
-                <span className='font-medium text-20 tracking-[0.24px] text-white'>
-                  O Programa
-                </span>
-                <span className='font-medium text-20 tracking-[0.24px] text-white'>
-                  Edições
-                </span>
-                <span className='font-medium text-20 tracking-[0.24px] text-white'>
-                  Vencedores
-                </span>
-                <span className='font-medium text-20 tracking-[0.24px] text-white'>
-                  Patrocinadores
-                </span>
-              </div>
-
-              <div className='flex flex-col items-start justify-start gap-[18px]'>
-                <h2 className='text-[#979797] font-medium text-sm tracking-[0.168px]'>
-                  Projetos
-                </h2>
-                <Button>Soluções</Button>
-              </div>
-
-              <div className='flex flex-col items-start justify-start gap-[18px]'>
-                <h2 className='text-[#979797] font-medium text-sm tracking-[0.168px]'>
-                  Login
-                </h2>
-                <LoginButton />
-              </div>
-            </div>
+          <div className='flex flex-col items-start justify-start gap-[18px]'>
+            <h2 className='text-[#979797] font-medium text-sm tracking-[0.168px]'>
+              Menu
+            </h2>
+            <Link className='font-medium text-20 tracking-[0.24px] text-white'>
+              O Programa
+            </Link>
+            <Link className='font-medium text-20 tracking-[0.24px] text-white'>
+              Edições
+            </Link>
+            <Link className='font-medium text-20 tracking-[0.24px] text-white'>
+              Vencedores
+            </Link>
+            <Link className='font-medium text-20 tracking-[0.24px] text-white'>
+              Patrocinadores
+            </Link>
           </div>
-        </Dialog.Portal>
+
+          <div className='flex flex-col items-start justify-start gap-[18px]'>
+            <h2 className='text-[#979797] font-medium text-sm tracking-[0.168px]'>
+              Projetos
+            </h2>
+            <Button>Ver Soluções</Button>
+          </div>
+
+          <div className='flex flex-col items-start justify-start gap-[18px]'>
+            <h2 className='text-[#979797] font-medium text-sm tracking-[0.168px]'>
+              Login
+            </h2>
+            <LoginButton />
+          </div>
+        </div>
       </div>
-    </Dialog.Dialog>
+      <div
+        className={cn(
+          'bg-black opacity-0 w-full h-full absolute transition-opacity duration-200',
+          open && 'opacity-40'
+        )}
+        onClick={() => setOpen((currState) => currState && false)}
+      />
+    </div>
   )
 }
 
