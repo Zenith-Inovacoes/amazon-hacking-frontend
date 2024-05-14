@@ -8,8 +8,8 @@ const Link = forwardRef(({className, children, target, ...props}: LinkProps, ref
     const hasTargetBlank = target === "_blank";
 
     return (
-        <a ref={ref} className={cn("group w-fit h-8 inline-flex gap-x-1 justify-center  focus-visible:outline-none", className)} {...props}>
-            <span className="group-hover:border-b-[1px] text-20 group-focus-visible:border-b-[1px] border-white">
+        <a ref={ref} className={cn("group w-fit inline-flex gap-x-1 justify-center  focus-visible:outline-none text-20", className)} {...props}>
+            <span className="group-hover:underline text-inherit group-focus-visible:underline border-white">
                 {children}
             </span>
             <IoOpenOutline size={27} className={cn("my-auto",hasTargetBlank ? "" : "hidden")} />
