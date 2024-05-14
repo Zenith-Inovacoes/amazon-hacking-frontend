@@ -67,11 +67,19 @@ export default function About() {
     }
 
     useEffect(() => {
-        window.addEventListener("scroll", () => {
+        let offsetTop = aboutNumbersRef.current!.offsetTop
+
+        window.addEventListener("resize", () => {
+            aboutNumbersRef.current!.style.position = "static"
+            offsetTop = aboutNumbersRef.current!.offsetTop
+            aboutNumbersRef.current!.style.position = "sticky"
+        })
+
+        function scroll() {
             const elementHeight = aboutNumbersRef.current!.offsetHeight
             const windowHeight = window.innerHeight
             const spaceLeft = elementHeight - windowHeight
-            const diff = elementHeight - window.scrollY
+            const diff = offsetTop - window.scrollY
 
             if (diff < 0) {
                 if (Math.abs(diff) >= spaceLeft) {
@@ -80,9 +88,16 @@ export default function About() {
                     aboutNumbersRef.current!.style.top = `${diff}px`
                 }
             }
-        })
+        }
 
-        return () => window.removeEventListener("scroll", () => { })
+        window.addEventListener("scroll", scroll)
+
+        return () => {
+            window.removeEventListener("resize", () => {
+                offsetTop = aboutNumbersRef.current!.offsetTop
+            })
+            window.removeEventListener("scroll", scroll)
+        }
     }, [aboutNumbersRef])
 
     return (
@@ -107,7 +122,7 @@ export default function About() {
                                 ease: "easeIn",
                             },
                         }
-                    }} className="flex gap-7 items-center justify-center flex-col px-8 lg:flex-1">
+                    }} className="flex gap-7 items-center justify-center flex-col px-8 lg:flex-1 lg:items-start">
                         <motion.h3 variants={{
                             hidden: {
                                 opacity: 0,
@@ -121,7 +136,7 @@ export default function About() {
                                     ease: "easeIn"
                                 }
                             }
-                        }} className="text-40 font-bold text-black leading-44 text-center md:text-50 md:leading-62 lg:text-60">O Programa</motion.h3>
+                        }} className="text-40 font-bold text-black leading-44 text-center md:text-50 md:leading-62 lg:text-60 lg:text-left">O Programa</motion.h3>
                         <motion.p variants={{
                             hidden: {
                                 opacity: 0,
@@ -135,7 +150,7 @@ export default function About() {
                                     ease: "easeIn"
                                 }
                             }
-                        }} className="font-normal text-16 leading-5 text-black text-center md:text-18 lg:text-20 lg:leading-6">
+                        }} className="font-normal text-16 leading-5 text-black text-center md:text-18 lg:text-20 lg:leading-6 lg:text-left">
                             O Amazon Hacking é um programa de formação para alunos da Escola de Negócios, Tecnologia e Inovação do CESUPA - ARGO, que visa conectar empresas comprometidas com a sustentabilidade amazônica, a comunidade local e seu conhecimento tradicional, junto ao conhecimento científico e tecnológico em prol do  desenvolvimento bioeconômico da região olhando para uma perspectiva global.
                         </motion.p>
                         <motion.div variants={{
@@ -241,7 +256,7 @@ export default function About() {
                 </div>
                 <div className="bg-black md:bg-transparent relative">
                     <div className="flex gap-16 max-w-screen-2xl w-full mx-auto px-8">
-                        <div className="flex flex-1 pt-20 md:pb-20 flex-col gap-3 relative z-10 grid-cols-2 grid-rows-[1fr_1fr] md:grid">
+                        <div className="flex flex-1 pt-20 pb-20 flex-col gap-3 relative z-10 grid-cols-2 grid-rows-[1fr_1fr] md:grid lg:grid-cols-[1fr_auto] xl:grid-cols-2">
                             <NumberCard className="md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-3" title="Alunos" number={244} image={AboutNumber1} altImage="Ícone de um usuário" />
                             <NumberCard title="Equipes" number={30} image={AboutNumber2} altImage="Ícone de vários usuários" />
                             <NumberCard title="Mentores" number={27} image={AboutNumber3} altImage="Ícone de vários executivos" />

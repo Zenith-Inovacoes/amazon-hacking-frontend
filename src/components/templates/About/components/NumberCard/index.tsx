@@ -39,7 +39,7 @@ const NumberCard = forwardRef(({ title, image, altImage, number, className, ...p
                         <span className="text-36 text-primary-100">
                             <FaPlus />
                         </span>
-                        <span className="text-black text-50 font-bold tabular-nums">{currentNumber}</span>
+                        <span className="text-black text-50 font-bold tabular-nums min-w-24 text-left">{currentNumber}</span>
                     </div>
                     <span className="text-black font-normal text-20 leading-6 text-center lg:text-26 lg:leading-7">{title}</span>
                 </div>
