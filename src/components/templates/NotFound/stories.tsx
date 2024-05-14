@@ -5,13 +5,6 @@ import NotFound from './NotFound';
 export default {
   title: 'Components/Templates/NotFound',
   component: NotFound,
-  decorators: [
-    (Story) => (
-    //   <div className="w-full grid place-items-center py-8">
-        <Story />
-    //   </div>
-    ),
-  ],
   parameters: {
     docs: {
       description: {
