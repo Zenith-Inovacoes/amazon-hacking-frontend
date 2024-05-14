@@ -16,7 +16,7 @@ const config: Config = {
       fontSize: light.fontSizes,
       lineHeight: light.lineHeights,
       backgroundImage: {
-        '404Decorator': "url('public/404Decorator.svg')",
+        '404Decorator': "url('/404Decorator.svg')",
       },
       transitionProperty: {
         maxWidth: "max-width"
