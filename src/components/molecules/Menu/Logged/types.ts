@@ -1,3 +1,4 @@
+import { StaticImageData } from 'next/image'
 import { HTMLAttributes } from 'react'
 
 export type LoggedMenuProps = {

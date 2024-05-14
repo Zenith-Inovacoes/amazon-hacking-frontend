@@ -1,7 +1,7 @@
 'use client'
 
 import { IoCloseOutline, IoMenu } from 'react-icons/io5'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import AmazonHackingLogo from 'public/images/AmazonHackingColoredLogo.svg'
 import { Button, Link, Badge } from '@/components/atoms'
 import { LoggedMenuProps } from './types'
@@ -9,6 +9,9 @@ import { cn } from '@/services/utils/className.utils'
 import { useState } from 'react'
 
 const Logged = ({ name, email, image, ...props }: LoggedMenuProps) => {
+  const names = name?.split(' ') as string[]
+  const uName: string = names[0] + ' ' + names[names.length - 1]
+
   const [open, setOpen] = useState<boolean>(false)
 
   return (
@@ -18,7 +21,7 @@ const Logged = ({ name, email, image, ...props }: LoggedMenuProps) => {
     >
       <div
         className={cn(
-          'relative h-full max-h-screen w-[min(364px,100%)] md:w-[405px] overflow-y-scroll z-50 hide-menu-scrollbar',
+          'relative h-full min-h-screen w-[min(364px,100%)] md:w-[405px] overflow-y-scroll z-50 hide-menu-scrollbar',
           open && 'overflow-y-scroll'
         )}
       >
@@ -111,16 +114,18 @@ const Logged = ({ name, email, image, ...props }: LoggedMenuProps) => {
             </Link>
           </div>
           <div className='flex items-center justify-center gap-5'>
-            <div className='w-[52px] h-[52px] bg-gradient-to-bl from-[#005194] via-[#005194] to-[#70BAE9] rounded-full flex items-center justify-center'>
-              <Image
-                src={image!}
-                alt='Imagem do perfil do usuário'
-                className='w-12 h-12 rounded-full'
-              />
+            <div className='w-[52px] h-[52px] bg-gradient-to-bl from-[#005194] via-[#005194] to-[#70BAE9] rounded-full flex items-center justify-center flex-shrink-0'>
+              <div className='relative w-12 h-12 rounded-full overflow-hidden'>
+                <Image
+                  src={image || ''}
+                  alt='Imagem do perfil do usuário'
+                  fill
+                />
+              </div>
             </div>
             <div className='flex flex-col'>
               <span className='font-bold text-base tracking-[0.32px]'>
-                {name}
+                {uName}
               </span>
               <span
                 title={email as string}
@@ -134,7 +139,7 @@ const Logged = ({ name, email, image, ...props }: LoggedMenuProps) => {
       </div>
       <div
         className={cn(
-          'bg-black opacity-0 w-full h-full absolute transition-opacity duration-200',
+          'bg-black opacity-0 w-full h-full absolute transition-opacity duration-200 inset-0',
           open && 'opacity-40'
         )}
         onClick={() => setOpen((currState) => currState && false)}

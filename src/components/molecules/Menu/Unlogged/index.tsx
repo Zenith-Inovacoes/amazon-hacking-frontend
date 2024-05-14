@@ -15,7 +15,7 @@ const Unlogged = () => {
     <div className='sticky w-full h-full flex items-center justify-end'>
       <div
         className={cn(
-          'relative h-full max-h-screen w-[min(364px,100%)] md:w-[405px] overflow-hidden z-50 hide-menu-scrollbar',
+          'relative h-screen w-[min(364px,100%)] md:w-[405px] overflow-hidden z-50 hide-menu-scrollbar',
           open && 'overflow-y-scroll'
         )}
       >
@@ -82,7 +82,7 @@ const Unlogged = () => {
       </div>
       <div
         className={cn(
-          'bg-black opacity-0 w-full h-full absolute transition-opacity duration-200',
+          'bg-black opacity-0 w-full h-full absolute transition-opacity duration-200 inset-0',
           open && 'opacity-40'
         )}
         onClick={() => setOpen((currState) => currState && false)}
