@@ -51,12 +51,32 @@ const config: Config = {
             top: '100%',
           },
         },
+        menuOpen: {
+          from: {
+            transform: 'translateX(100%)',
+          },
+          to: {
+            transform: 'translateX(0)',
+          },
+        },
+        menuClose: {
+          from: {
+            transform: 'translateX(0)',
+          },
+          to: {
+            transform: 'translateX(100%)',
+          },
+        },
       },
       animation: {
         overlayShow: 'overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
         overlayHide: 'overlayHide 500ms cubic-bezier(0.16, 1, 0.3, 1)',
         contentShow: 'contentShow 400ms ease-out',
         dialogHide: 'dialogHide 600ms ease-out',
+        menuOpen: 'menuOpen 200ms ease-in-out',
+        menuClose: 'menuClose 200ms ease-in-out',
+        menuOverlayShow: 'overlayShow 200ms ease-in-out',
+        menuOverlayHide: 'overlayHide 200ms ease-in-out',
       },
     },
   },

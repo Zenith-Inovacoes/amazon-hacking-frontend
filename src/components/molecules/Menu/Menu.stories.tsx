@@ -26,18 +26,24 @@ type Story = StoryObj
 
 export const UnloggedMenu: Story = {
   render: () => {
-    return <Unlogged />
+    return (
+      <div className='relative flex w-full min-h-[500vh] bg-gradient-to-b from-green-400 to-red-700'>
+        <Unlogged />
+      </div>
+    )
   },
 }
 
 export const LoggedMenu: Story = {
   render: () => {
     return (
-      <Logged
-        name={'Daniel Pinheiro Marcelino de Oliveira'}
-        email={'daniel22300012@aluno.cesupa.br'}
-        image={Dandan.src}
-      />
+      <div className='relative flex w-full min-h-[500vh] bg-gradient-to-b from-green-400 to-red-700'>
+        <Logged
+          name={'Daniel Pinheiro Marcelino de Oliveira'}
+          email={'daniel22300012@aluno.cesupa.br'}
+          image={Dandan.src}
+        />
+      </div>
     )
   },
 }
