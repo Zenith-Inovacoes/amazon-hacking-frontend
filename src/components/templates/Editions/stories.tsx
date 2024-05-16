@@ -1,15 +1,16 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
 import Editions from '.';
+import { NextIntlClientProvider } from 'next-intl';
 
 export default {
   title: 'Components/templates/Editions',
   component: Editions,
   decorators: [
     (Story) => (
- 
+      <NextIntlClientProvider locale='pt'>
         <Story />
-  
+      </NextIntlClientProvider>
     ),
   ],
   parameters: {
