@@ -8,20 +8,20 @@ import Image from 'next/image'
 
 import OverlayImg1 from 'public/ZenithOverlay1.svg'
 import OverlayImg2 from 'public/ZenithOverlay2.svg'
+import OverlayImg3 from 'public/ZenithOverlay3.svg'
 
 import BottomWave from 'public/ZenithWaves/ZenithOverlay/Mobile/BottomWave.svg'
+import BottomWaveShadow from 'public/ZenithWaves/ZenithOverlay/Mobile/BottomWaveShadow.svg'
 
 import Button from '@/components/atoms/Button'
 
-const ZenithOverlay = ({
-  overlayTrigger = <button>asdjhfs</button>,
-}: ZenithOverlayProps) => {
+const ZenithOverlay = ({ overlayTrigger }: ZenithOverlayProps) => {
   return (
     <Overlay>
       <OverlayTrigger>{overlayTrigger}</OverlayTrigger>
       <OverlayContent theme='light' className='text-white overflow-hidden'>
         <div className='flex flex-col'>
-          <div className='flex flex-col zenith-overlay-shadow bg-secondary-400 w-full h-fit gap-[6px] pt-[100px] px-7 items-start justify-center'>
+          <div className='flex flex-col zenith-overlay-shadow bg-secondary-400 w-full h-fit gap-[6px] pt-[100px] px-7 items-start justify-center pb-6'>
             <h1 className='text-white font-bold text-40 leading-[1.1] mb-[6px]'>
               Não há limites para inovar
             </h1>
@@ -57,7 +57,7 @@ const ZenithOverlay = ({
             />
           </div>
 
-          <div className='flex flex-col bg-secondary-400 px-[38px] gap-4 pt-9 items-center justify-center pb-[70px]'>
+          <div className='flex flex-col bg-secondary-400 px-[38px] gap-4 pt-9 items-center justify-center pb-[130px]'>
             <h1 className='text-white font-bold text-40 leading-[1.1] text-center'>
               Guiados pela paixão da inovação
             </h1>
@@ -72,8 +72,16 @@ const ZenithOverlay = ({
           <Image
             src={BottomWave}
             alt='Bottom Wave'
-            className='-mt-full -translate-y-full scale-[1.01]'
+            className='-translate-y-[27vw] scale-[1.01] z-50'
           />
+          <Image
+            src={BottomWaveShadow}
+            alt='Bottom Wave Shadow'
+            className='-translate-y-[60.5vw] scale-[1.01] blur-[2px]'
+          />
+          <div className='flex w-full h-fit items-center justify-center -mt-[60.5vw] mb-8'>
+            <Image src={OverlayImg3} alt='Overlay Image 3' />
+          </div>
         </div>
       </OverlayContent>
     </Overlay>

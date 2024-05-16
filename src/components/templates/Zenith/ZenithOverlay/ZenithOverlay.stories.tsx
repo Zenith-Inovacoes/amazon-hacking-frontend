@@ -4,6 +4,10 @@ import ZenithOverlay from '.'
 export default {
   title: 'Components/Templates/Zenith/ZenithOverlay',
   component: ZenithOverlay,
+
+  args: {
+    overlayTrigger: <button>Teste</button>,
+  },
 }
 
 type Story = StoryObj
