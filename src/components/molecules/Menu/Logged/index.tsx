@@ -7,6 +7,7 @@ import { Button, Link, Badge } from '@/components/atoms'
 import { LoggedMenuProps } from './types'
 import { cn } from '@/services/utils/className.utils'
 import { useState } from 'react'
+import { signOut } from 'next-auth/react'
 
 import * as Dialog from '@radix-ui/react-dialog'
 
@@ -97,6 +98,10 @@ const Logged = ({ name, email, image, ...props }: LoggedMenuProps) => {
                 <Link
                   href='/'
                   className='font-medium text-20 tracking-[0.24px] text-white'
+                  onClick={(e) => {
+                    e.preventDefault()
+                    signOut()
+                  }}
                 >
                   Sair
                 </Link>
