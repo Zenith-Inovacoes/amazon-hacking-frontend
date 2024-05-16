@@ -83,15 +83,17 @@ export const OverlayContent = forwardRef(
             )}
             ref={contentRef}
           >
-            <div className='lg:hidden w-full cursor-grab active:cursor-grabbing py-8'>
-              <div className={cn("mx-auto w-32 h-2 flex-shrink-0 rounded-full bg-white", theme === 'dark' && "bg-black")} />
+            <div className='lg:hidden w-full cursor-grab active:cursor-grabbing absolute z-10'>
+              <div className='py-8'>
+                <div className={cn("mx-auto w-32 h-2 flex-shrink-0 rounded-full bg-white", theme === 'dark' && "bg-black")} />
+              </div>
             </div>
-            <div className="sticky left-0 top-0 flex h-fit w-full justify-end">
+            <div className="sticky left-0 top-0 flex h-0 overflow-visible w-full justify-end z-10">
               <DialogPrimitive.Close
                 ref={closeButtonRef}
                 aria-label="close"
                 asChild
-              className="hidden lg:flex m-10"
+                className="hidden lg:flex m-10"
               >
                 <Button variant='icon' theme={theme}>
                   <IoMdClose size={16} />
