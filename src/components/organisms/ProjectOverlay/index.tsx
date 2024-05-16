@@ -1,3 +1,5 @@
+'ues client'
+
 import {
   Overlay,
   OverlayTrigger,
@@ -23,6 +25,7 @@ import SecondWaveTablet from 'public/ProjectOverlayWaves/Tablet/SecondWave.svg'
 import PersonalGoals from 'public/PersonalGoals.svg'
 
 import { Button, SocialMediaButton } from '@/components/atoms'
+import { signIn } from 'next-auth/react'
 
 const ProjectOverlay = ({
   children,
@@ -115,22 +118,22 @@ const ProjectOverlay = ({
             className={cn(
               variant === 'past'
                 ? 'hidden'
-                : 'flex flex-col w-full h-full items-center justify-center gap-6 mb-[108px]'
+                : 'flex flex-col w-full h-full items-center justify-center gap-6 mb-[108px] px-6 md:px-[65px] md:mb-[150px] lg:px-[265px] lg:mb-[230px]'
             )}
           >
-            <h1 className='font-bold leading-[1.1] text-40 text-center text-black'>
+            <h1 className='font-bold leading-[1.1] text-40 text-center text-black md:text-50 lg:text-60'>
               Escolha seu favorito:
             </h1>
-            <p className='tracking-[0.192px] text-base text-center text-black'>
+            <p className='tracking-[0.192px] text-base text-center text-black md:tracking-[0.216px] md:text-18 lg:text-20 lg:tracking-[0.24px]'>
               Cada voto conta para destacar as ideias mais promissoras e
               inspiradoras de 2024. Não perca a chance de apoiar a criatividade
               e a inovação!
             </p>
-            <h2 className='font-bold tracking-[0.192px] text-base text-center text-black'>
+            <h2 className='font-bold tracking-[0.192px] text-base text-center text-black md:tracking-[0.216px] md:text-18 lg:text-20 lg:tracking-[0.24px]'>
               Faça login para prosseguir:
             </h2>
-            <Button>Fazer Login</Button>
-            <span className='font-bold tracking-[0.192px] text-base text-center text-black'>
+            <Button onClick={() => signIn()}>Fazer Login</Button>
+            <span className='font-bold tracking-[0.192px] text-base text-center text-black lg:tracking-[0.216px] lg:text-18'>
               Obs: Seu voto é único
             </span>
           </div>
