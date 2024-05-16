@@ -22,7 +22,7 @@ import SecondWaveTablet from 'public/ProjectOverlayWaves/Tablet/SecondWave.svg'
 
 import PersonalGoals from 'public/PersonalGoals.svg'
 
-import { SocialMediaButton } from '@/components/atoms'
+import { Button, SocialMediaButton } from '@/components/atoms'
 
 const ProjectOverlay = ({
   children,
@@ -109,6 +109,30 @@ const ProjectOverlay = ({
               alt='First Wave Bottom'
               className='-scale-x-[1.75]'
             />
+          </div>
+
+          <div
+            className={cn(
+              variant === 'past'
+                ? 'hidden'
+                : 'flex flex-col w-full h-full items-center justify-center gap-6 mb-[108px]'
+            )}
+          >
+            <h1 className='font-bold leading-[1.1] text-40 text-center text-black'>
+              Escolha seu favorito:
+            </h1>
+            <p className='tracking-[0.192px] text-base text-center text-black'>
+              Cada voto conta para destacar as ideias mais promissoras e
+              inspiradoras de 2024. Não perca a chance de apoiar a criatividade
+              e a inovação!
+            </p>
+            <h2 className='font-bold tracking-[0.192px] text-base text-center text-black'>
+              Faça login para prosseguir:
+            </h2>
+            <Button>Fazer Login</Button>
+            <span className='font-bold tracking-[0.192px] text-base text-center text-black'>
+              Obs: Seu voto é único
+            </span>
           </div>
 
           <div
