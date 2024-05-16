@@ -38,4 +38,8 @@ body {
   .focus-amazon-hacking {
     @apply focus-visible:outline-none focus-visible:outline-1 focus-visible:outline-primary-100 focus-visible:outline-offset-4
   }
+
+  .zenith-overlay-shadow {
+    box-shadow: 0px 5px 4px 0px rgba(0,0,0,0.2);
+  }
 }
