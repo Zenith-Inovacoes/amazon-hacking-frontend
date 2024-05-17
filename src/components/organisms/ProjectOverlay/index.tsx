@@ -68,7 +68,7 @@ const ProjectOverlay = ({
               </h2>
               <div className='w-fit px-9 h-fit'>
                 <div className='projectOverlayShadow w-full h-fit rounded-[10px] flex flex-col items-center p-5 md:mb-[71px] md:px-[60px] md:py-10'>
-                  <ul className='block md:grid md:place-items-center md:grid-cols-2 md:gap-4'>
+                  <ul className='flex flex-col md:grid md:place-items-center md:grid-cols-2 gap-3 md:gap-4'>
                     {children.teamMembers.map((member, idx) => (
                       <li
                         key={idx}
