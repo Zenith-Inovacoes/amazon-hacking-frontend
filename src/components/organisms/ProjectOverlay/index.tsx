@@ -19,8 +19,8 @@ import { FaWhatsapp } from 'react-icons/fa'
 import FirstWaveTop from 'public/ProjectOverlayWaves/Mobile/FirstWaveTop.svg'
 import FirstWaveBottom from 'public/ProjectOverlayWaves/Mobile/FirstWaveBottom.svg'
 
-import SecondWaveMobile from 'public/ProjectOverlayWaves/Mobile/SecondWave.svg'
-import SecondWaveTablet from 'public/ProjectOverlayWaves/Tablet/SecondWave.svg'
+import SecondWaveMobile from 'public/ProjectOverlayWaves/Mobile/SecondWave.png'
+import SecondWaveTablet from 'public/ProjectOverlayWaves/Tablet/SecondWave.png'
 
 import PersonalGoals from 'public/PersonalGoals.svg'
 
@@ -86,7 +86,7 @@ const ProjectOverlay = ({
           <div className='flex flex-col w-full h-full'>
             <Image
               src={FirstWaveTop}
-              alt='First Wave Top Shadow'
+              alt='sdsdf'
               className='translate-y-[18vw] -mt-[18vw] blur-[2px] opacity-30 -rotate-1 scale-x-105 lg:translate-y-[19vw] lg:-mt-[19vw] xl:translate-y-[min(19vw,270px)] xl:-mt-[min(19vw,270px)]'
             />
             <Image
@@ -162,20 +162,20 @@ const ProjectOverlay = ({
             />
           </div>
 
-          <div className='relative flex flex-col w-full h-full translate-y-1/2 mb-[50%] md:mb-[20%]'>
+          <div className='relative flex flex-col w-full h-full mb-[50%] md:mb-[20%]'>
             <Image
               src={SecondWaveMobile}
               alt='Second Wave'
-              fill
-              className='-z-50 scale-[2.65] md:hidden'
+              // fill
+              className='absolute -z-50 md:hidden w-full h-fit max-w-[600px] right-0'
             />
             <Image
               src={SecondWaveTablet}
               alt='Second Wave'
-              fill
-              className='-z-50 scale-[3] hidden md:block translate-x-12 lg:scale-[3.5] lg:translate-x-20'
+              // fill
+              className='absolute -z-50 hidden md:block translate-x-12 lg:translate-x-20 w-full max-w-[1024px] right-0'
             />
-            <div className='flex flex-col gap-[22px] w-full h-fit px-6 items-center justify-center pb-11 md:px-[65px] lg:px-[102px]'>
+            <div className='flex flex-col gap-[22px] w-full h-fit px-6 items-center justify-center pb-11 md:px-[65px] lg:px-[102px] mt-[min(25vw,320px)]'>
               <h1 className='text-white text-center font-bold text-40 leading-[1.1] md:text-50 lg:text-60'>
                 Compartilhar
               </h1>
