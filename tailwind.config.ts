@@ -20,6 +20,7 @@ const config: Config = {
       },
       backgroundImage: {
         'editionsMobileWave': "url('/waveMobileEditions.svg')",
+        'tribalDecorator': "url('/symbol.svg')"
       },
       boxShadow: {
         languageSwitcher: "0px 144px 40px 0px rgba(0, 0, 0, 0.01), 0px 92px 37px 0px rgba(0, 0, 0, 0.06), 0px 52px 31px 0px rgba(0, 0, 0, 0.20), 0px 23px 23px 0px rgba(0, 0, 0, 0.34), 0px 6px 13px 0px rgba(0, 0, 0, 0.39)",

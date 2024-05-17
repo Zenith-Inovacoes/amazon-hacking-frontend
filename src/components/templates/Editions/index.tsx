@@ -1,15 +1,15 @@
 import { cn } from "@/services/utils/className.utils"
 import Image from "next/image"
+import { Overlay } from "@/components/atoms/Overlay";
 import editionsFlatArt from 'public/EditionsFlatArt.svg'
 import { useTranslations } from "next-intl";
-import waveMobile from 'public/waveMobileEditions.svg'
 
 export default function Editions() {
     const t = useTranslations("Editions");
 
     return (
-        <section className="bg-white mx-auto flex max-w-screen-2xl flex-col gap-9 md:gap-20">
-            <div className="w-full flex flex-col items-center px-5 mb-5 ">
+        <section className="bg-white mx-auto flex flex-col gap-9 md:gap-20 h-full">
+            <div className="w-full flex flex-col items-center px-5 mb-5 max-w-screen-2xl">
                 <div className="relative w-[279px] h-[247px]">
                     <Image src={editionsFlatArt} alt='Flat Art de uma ilha' fill />
                 </div>
@@ -21,10 +21,23 @@ export default function Editions() {
                         <p className="text-neutral-500 font-medium text-16 leading-4">{t("mainText2")}</p>
                     </div>
                 </div>
-
-                <div className="relative h-24">
-                    <div className="absolute bg-cover bg-editionsMobileWave w-[100vw] ">
-                        asdadas
+            </div>
+            <div className="relative w-[100vw]">
+                <div className="absolute bg-cover bg-editionsMobileWave w-full ">
+                    <div className="w-full my-8 flex flex-col gap-y-7 justify-center items-center px-5">
+                        <h4 className="text-40">
+                            {t("retrospective")}
+                        </h4>
+                        <p className="text-16 font-medium text-center">{t("retrospectiveText")}</p>
+                    </div>
+                </div>
+                <div className="flex flex-col w-full h-64">
+                </div>
+                <div className="bg-tribalDecorator bg-repeat w-full flex jus">
+                    <div className="relative h-[387px] pt-7">
+                        <div className="absolute w-[295px] h-[387px] bg-white rounded-xl">
+                            aaaaaa
+                        </div>
                     </div>
                 </div>
             </div>
