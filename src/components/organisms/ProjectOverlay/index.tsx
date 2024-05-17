@@ -166,13 +166,13 @@ const ProjectOverlay = ({
             <Image
               src={SecondWaveMobile}
               alt='Second Wave'
-              // fill
+              priority
               className='absolute -z-50 md:hidden w-full h-fit max-w-[600px] right-0'
             />
             <Image
               src={SecondWaveTablet}
               alt='Second Wave'
-              // fill
+              priority
               className='absolute -z-50 hidden md:block translate-x-12 lg:translate-x-20 w-full max-w-[1024px] right-0'
             />
             <div className='flex flex-col gap-[22px] w-full h-fit px-6 items-center justify-center pb-11 md:px-[65px] lg:px-[102px] mt-[min(25vw,320px)]'>
