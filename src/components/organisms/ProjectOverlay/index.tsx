@@ -9,12 +9,9 @@ import { ProjectOverlayProps } from './types'
 import Image from 'next/image'
 import { cn } from '@/services/utils/className.utils'
 
-import {
-  PiTwitterLogoFill,
-  PiInstagramLogo,
-  PiFacebookLogoBold,
-} from 'react-icons/pi'
-import { FaWhatsapp } from 'react-icons/fa'
+import InstagramIcon from 'public/icons/instagram.svg'
+import WhatsappIcon from 'public/icons/whatsapp.svg'
+import XIcon from 'public/icons/twitter.svg'
 
 import FirstWaveTop from 'public/ProjectOverlayWaves/Mobile/FirstWaveTop.svg'
 import FirstWaveBottom from 'public/ProjectOverlayWaves/Mobile/FirstWaveBottom.svg'
@@ -26,6 +23,7 @@ import PersonalGoals from 'public/PersonalGoals.svg'
 
 import { Button, SocialMediaButton } from '@/components/atoms'
 import { signIn } from 'next-auth/react'
+import { PiFacebookLogoBold } from 'react-icons/pi'
 
 const ProjectOverlay = ({
   children,
@@ -83,7 +81,7 @@ const ProjectOverlay = ({
               </div>
             </div>
           </div>
-          <div className='flex flex-col w-full h-full'>
+          <div className='flex flex-col w-full h-full overflow-hidden'>
             <Image
               src={FirstWaveTop}
               alt='sdsdf'
@@ -181,13 +179,13 @@ const ProjectOverlay = ({
               </h1>
               <div className='flex gap-5 items-center justify-center'>
                 <SocialMediaButton href={twitter}>
-                  <PiTwitterLogoFill size={46} />
+                  <Image src={XIcon} alt='X Icon' className='min-h-10' />
                 </SocialMediaButton>
                 <SocialMediaButton href={instagram}>
-                  <PiInstagramLogo size={46} />
+                  <Image src={WhatsappIcon} alt='Whatsapp Icon' />
                 </SocialMediaButton>
                 <SocialMediaButton href={whatsapp}>
-                  <FaWhatsapp size={46} />
+                  <Image src={InstagramIcon} alt='Instagram Icon' />
                 </SocialMediaButton>
                 <SocialMediaButton href={facebook}>
                   <PiFacebookLogoBold size={46} />
