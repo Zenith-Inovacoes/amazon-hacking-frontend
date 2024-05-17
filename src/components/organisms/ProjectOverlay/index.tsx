@@ -94,7 +94,7 @@ const ProjectOverlay = ({
               alt='First Wave Top'
               className='scale-x-105'
             />
-            <div className='flex flex-col gap-[22px] w-full h-fit bg-black px-6 items-center justify-center outline outline-2 outline-black md:gap-[42px] md:px-[65px] lg:px-[102px] scale-[1.003]'>
+            <div className='flex flex-col gap-[22px] w-full h-fit bg-black px-6 items-center justify-center outline outline-2 outline-black md:gap-[42px] md:px-[65px] lg:px-[102px] scale-[1.01]'>
               <h1 className='text-white text-center font-bold text-40 leading-[1.1] md:text-50 lg:text-60'>
                 Elevator Pitch
               </h1>
