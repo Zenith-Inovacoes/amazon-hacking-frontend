@@ -23,16 +23,16 @@ import LinkedInIcon from 'public/icons/linkedin.svg'
 
 const Zenith = () => {
   return (
-    <div className='relative flex w-full h-full justify-center overflow-hidden flex-col bg-white'>
+    <div className='relative flex w-full h-full justify-center flex-col bg-white'>
       <Image
         src={TopWaveShadow}
         alt='First Wave Top Shadow'
-        className='-mb-[34vw] translate-y-[2vw] blur-[2px] opacity-30 scale-x-110 scale-y-[1.01] md:hidden'
+        className='-mb-[34vw] translate-y-[2vw] blur-[2px] opacity-30 scale-y-[1.01] md:hidden'
       />
       <Image
         src={TopWave}
         alt='Zenith Top Wave'
-        className='-mb-[21vw] w-full h-full scale-y-[1.01] scale-x-110 md:hidden'
+        className='-mb-[21vw] w-full h-full scale-y-[1.01] md:hidden'
       />
 
       <Image
@@ -116,12 +116,12 @@ const Zenith = () => {
       <Image
         src={BottomWaveShadow}
         alt='First Wave Top Shadow'
-        className='-mt-[7.5vw] -translate-y-[1vw] blur-[2px] opacity-30 scale-x-125 scale-y-[1.01] min-w-[100vw] md:-translate-y-[0.5vw] lg:-translate-y-[0.1vw]'
+        className='-mt-[7.5vw] -translate-y-[1vw] blur-[2px] opacity-30 scale-y-[1.01] min-w-[100vw] md:-translate-y-[0.5vw] lg:-translate-y-[0.1vw]'
       />
       <Image
         src={BottomWave}
         alt='Zenith Bottom Wave'
-        className='-mt-[7.5vw] w-full h-full scale-y-[1.01] scale-x-125 min-w-[100vw]'
+        className='-mt-[7.5vw] w-full h-full scale-y-[1.01] min-w-[100vw]'
       />
     </div>
   )

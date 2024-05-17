@@ -24,9 +24,9 @@ const ZenithOverlay = ({ overlayTrigger, className }: ZenithOverlayProps) => {
       <OverlayTrigger className={cn(className)}>
         {overlayTrigger}
       </OverlayTrigger>
-      <OverlayContent theme='light' className='text-white overflow-hidden'>
+      <OverlayContent theme='light' className='text-white'>
         <div className='flex flex-col'>
-          <div className='flex flex-col zenith-overlay-shadow bg-secondary-400 w-full h-fit gap-4 *:gap-[6px] pt-[100px] px-7 items-start justify-center pb-6 md:pt-[145px] md:gap-7 *:md:gap-7 md:pb-[126px] md:px-[60px] lg:flex-row *:lg:gap-[42px] lg:gap-[42px] lg:px-[90px] lg:py-[135px]'>
+          <div className='flex flex-col zenith-overlay-shadow bg-secondary-400 w-full h-fit gap-4 *:gap-[6px] pt-[100px] px-7 items-start justify-center pb-6 md:pt-[145px] md:gap-7 *:md:gap-7 md:pb-[126px] md:px-[60px] lg:flex-row *:lg:gap-[42px] lg:gap-[42px] lg:px-[90px] lg:py-[135px] rounded-t-[48px]'>
             <div className='flex flex-col w-full h-full lg:items-center lg:justify-center lg:my-auto'>
               <h1 className='text-white font-bold text-40 leading-[1.1 md:text-50 lg:text-60'>
                 Não há limites para inovar
@@ -80,7 +80,7 @@ const ZenithOverlay = ({ overlayTrigger, className }: ZenithOverlayProps) => {
             <Button variant='secondary' className='w-fit'>
               Explorar Mais
             </Button>
-            <div className='hidden relative w-full h-fit items-end justify-start md:flex'>
+            <div className='hidden relative w-full h-fit items-end justify-start md:flex overflow-hidden'>
               <Image src={WaveTablet} alt='Tablet Wave' className='lg:hidden' />
               <Image
                 src={WaveDesktop}
@@ -99,12 +99,12 @@ const ZenithOverlay = ({ overlayTrigger, className }: ZenithOverlayProps) => {
           <Image
             src={BottomWave}
             alt='Bottom Wave'
-            className='-translate-y-[27vw] scale-[1.01] z-50 md:hidden'
+            className='-translate-y-[27vw] z-50 md:hidden'
           />
           <Image
             src={BottomWaveShadow}
             alt='Bottom Wave Shadow'
-            className='-translate-y-[60.5vw] scale-[1.01] blur-[2px] md:hidden'
+            className='-translate-y-[60.5vw] blur-[2px] md:hidden max-w-full'
           />
           <div className='flex w-full h-fit items-center justify-center -mt-[60.5vw] mb-8 md:hidden'>
             <Image src={OverlayImg3} alt='Overlay Image 3' />
