@@ -5,6 +5,8 @@ import {
 } from '@/components/atoms/Overlay'
 import { ZenithOverlayProps } from './types'
 import Image from 'next/image'
+import Button from '@/components/atoms/Button'
+import { cn } from '@/services/utils/className.utils'
 
 import OverlayImg1 from 'public/ZenithOverlay1.svg'
 import OverlayImg2 from 'public/ZenithOverlay2.svg'
@@ -16,12 +18,12 @@ import BottomWaveShadow from 'public/ZenithWaves/ZenithOverlay/Mobile/BottomWave
 import WaveTablet from 'public/ZenithWaves/ZenithOverlay/Tablet/Wave.svg'
 import WaveDesktop from 'public/ZenithWaves/ZenithOverlay/Desktop/Wave.svg'
 
-import Button from '@/components/atoms/Button'
-
-const ZenithOverlay = ({ overlayTrigger }: ZenithOverlayProps) => {
+const ZenithOverlay = ({ overlayTrigger, className }: ZenithOverlayProps) => {
   return (
     <Overlay>
-      <OverlayTrigger>{overlayTrigger}</OverlayTrigger>
+      <OverlayTrigger className={cn(className)}>
+        {overlayTrigger}
+      </OverlayTrigger>
       <OverlayContent theme='light' className='text-white overflow-hidden'>
         <div className='flex flex-col'>
           <div className='flex flex-col zenith-overlay-shadow bg-secondary-400 w-full h-fit gap-4 *:gap-[6px] pt-[100px] px-7 items-start justify-center pb-6 md:pt-[145px] md:gap-7 *:md:gap-7 md:pb-[126px] md:px-[60px] lg:flex-row *:lg:gap-[42px] lg:gap-[42px] lg:px-[90px] lg:py-[135px]'>
