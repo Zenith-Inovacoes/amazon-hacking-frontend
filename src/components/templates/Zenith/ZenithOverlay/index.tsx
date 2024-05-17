@@ -45,7 +45,7 @@ const ZenithOverlay = ({ overlayTrigger, className }: ZenithOverlayProps) => {
             </div>
           </div>
 
-          <div className='flex xs:flex-row py-[52px] px-7 flex-col xs:items-end xs:justify-between justify-center items-center md:flex-col md:items-center md:px-[60px] md:gap-[60px] md:py-36 lg:flex-row lg:px-[90px] lg:py-[135px]'>
+          <div className='flex xs:flex-row py-[52px] px-7 xs:pr-1 flex-col xs:items-end xs:justify-between justify-center items-center md:flex-col md:items-center md:px-[60px] md:gap-[60px] md:py-36 lg:flex-row lg:px-[90px] lg:py-[135px]'>
             <div className='flex flex-col gap-7 md:w-full md:items-start'>
               <h1 className='text-black font-bold text-40 leading-[1.1] max-w-[44.7vw] md:max-w-[560px] md:text-50 lg:text-60'>
                 Conectar e cultivar o futuro
