@@ -97,7 +97,7 @@ export const OverlayContent = forwardRef(
                 )}
               />
             </div>
-            <div className='sticky left-0 top-0 flex h-fit w-full justify-end'>
+            <div className='sticky left-0 top-0 flex h-fit w-full justify-end z-10'>
               <DialogPrimitive.Close
                 ref={closeButtonRef}
                 aria-label='close'
