@@ -1,7 +1,7 @@
 'use client'
 
 import { Button, Link, LogoButton } from '@/components/atoms'
-import { Menu } from '@/components/molecules'
+import Menu from '../Menu'
 import { cn } from '@/services/utils/className.utils'
 import { useMenu } from '@/contexts/menu'
 import LoginButton from '../Menu/Unlogged/LoginButton'
