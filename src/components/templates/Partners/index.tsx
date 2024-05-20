@@ -121,7 +121,7 @@ export default function Partners() {
                                 ease: "easeIn"
                             }
                         }
-                    }} className="text-white font-bold text-28 leading-8 lg:text-60 lg:leading-65">Patrocinador Master</motion.h4>
+                    }} className="text-white font-bold text-28 leading-8 lg:text-60 lg:leading-65">Master</motion.h4>
                     <motion.div variants={{
                         hidden: {
                             opacity: 0,
@@ -289,7 +289,7 @@ export default function Partners() {
                                 ease: "easeIn"
                             }
                         }
-                    }} className="text-white font-bold text-28 leading-8 lg:text-60 lg:leading-65">Padrinhos</motion.h4>
+                    }} className="text-white font-bold text-28 leading-8 lg:text-60 lg:leading-65">Madrinhas</motion.h4>
                     <motion.div className="flex flex-col items-center gap-14">
                         <motion.div variants={{
                             hidden: {
