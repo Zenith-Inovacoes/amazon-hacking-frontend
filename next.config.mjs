@@ -3,63 +3,71 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin('./src/services/libs/i18n.ts')
 
 const securityHeaders = [
-    {
-      key: "X-XSS-Protection",
-      value: "1; mode=block",
-    },
-    {
-      key: "X-Content-Type-Options",
-      value: "nosniff",
-    },
-    {
-      key: "X-Frame-Options",
-      value: "SAMEORIGIN",
-    },
-    {
-      key: "Referrer-Policy",
-      value: "strict-origin-when-cross-origin",
-    },
-    {
-      key: "Strict-Transport-Security",
-      value: "max-age=63072000; includeSubDomains; preload",
-    },
-    {
-      key: 'X-DNS-Prefetch-Control',
-      value: 'on'
-    }
-  ];
+  {
+    key: "X-XSS-Protection",
+    value: "1; mode=block",
+  },
+  {
+    key: "X-Content-Type-Options",
+    value: "nosniff",
+  },
+  {
+    key: "X-Frame-Options",
+    value: "SAMEORIGIN",
+  },
+  {
+    key: "Referrer-Policy",
+    value: "strict-origin-when-cross-origin",
+  },
+  {
+    key: "Strict-Transport-Security",
+    value: "max-age=63072000; includeSubDomains; preload",
+  },
+  {
+    key: 'X-DNS-Prefetch-Control',
+    value: 'on'
+  }
+];
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        remotePatterns: [
-            {
-                protocol: "https",
-                hostname: "lh3.googleusercontent.com"
-            }
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com"
+      }
+    ]
+  },
+  headers: async () => {
+    return [
+      {
+        source: "/(.*)",
+        headers: securityHeaders
+      },
+      {
+        source: "/api/:path*",
+        headers: [
+          {
+            key: "Access-Control-Allow-Methods",
+            value: "GET,OPTIONS,PATCH,POST,PUT"
+          },
+          {
+            key: "Access-Control-Allow-Origin",
+            value: "https://amazon-hacking.com.br"
+          }
         ]
-    },
-    headers: async () => {
-        return [
-            {
-                source: "/(.*)",
-                headers: securityHeaders
-            },
-            {
-                source: "/api/:path*",
-                headers: [
-                    {
-                        key: "Access-Control-Allow-Methods",
-                        value: "GET,OPTIONS,PATCH,POST,PUT"
-                    },
-                    {
-                        key: "Access-Control-Allow-Origin",
-                        value: "http://localhost:3000"
-                    }
-                ]
-            }
-        ]
-    }
+      }
+    ]
+  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/api/:path*",
+  //       destination: `${env.API_URL}/:path*`,
+  //     },
+  //   ]
+  // }
 };
 
 export default withNextIntl(nextConfig);
