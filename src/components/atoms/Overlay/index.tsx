@@ -89,15 +89,17 @@ export const OverlayContent = forwardRef(
             )}
             ref={contentRef}
           >
-            <div className='lg:hidden w-full cursor-grab active:cursor-grabbing py-8'>
-              <div
-                className={cn(
-                  'mx-auto w-32 h-2 flex-shrink-0 rounded-full bg-white',
-                  theme === 'dark' && 'bg-black'
-                )}
-              />
+            <div className='absolute lg:hidden w-full cursor-grab active:cursor-grabbing z-10'>
+              <div className='py-8'>
+                <div
+                  className={cn(
+                    'mx-auto w-32 h-2 flex-shrink-0 rounded-full bg-white',
+                    theme === 'dark' && 'bg-black'
+                  )}
+                />
+              </div>
             </div>
-            <div className='sticky left-0 top-0 flex h-fit w-full justify-end z-10'>
+            <div className='sticky left-0 top-0 flex h-0 w-full justify-end overflow-visible z-10'>
               <DialogPrimitive.Close
                 ref={closeButtonRef}
                 aria-label='close'
