@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-type Options = {
+export type CountingNumberOptions = {
     /**
      * Initial number of the animation
      * @type Number
@@ -31,7 +31,7 @@ type Options = {
     interval?: number
 }
 
-export default function useCountingUpNumber(endNumber: number, options?: Options) {
+export default function useCountingUpNumber(endNumber: number, options?: CountingNumberOptions) {
     const ACCELERATION_FACTOR = 1.05
     const INTERVAL = 20
 

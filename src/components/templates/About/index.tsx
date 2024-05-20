@@ -211,7 +211,7 @@ export default function About() {
                                     ease: "easeIn"
                                 }
                             }
-                        }} className="text-40 font-bold text-white leading-44 text-center md:text-50 md:leading-62 lg:text-60">O que buscamos?</motion.h3>
+                        }} className="text-40 font-bold text-white leading-44 w-full text-center md:text-50 md:text-left md:leading-62 lg:text-60">O que buscamos?</motion.h3>
                         <motion.p variants={{
                             hidden: {
                                 opacity: 0,
@@ -225,7 +225,7 @@ export default function About() {
                                     ease: "easeIn"
                                 }
                             }
-                        }} className="font-normal text-16 leading-5 text-white text-center md:text-18 lg:text-20 lg:leading-6">
+                        }} className="font-normal text-16 leading-5 text-white text-center md:text-left md:text-18 lg:text-20 lg:leading-6">
                             Os universitários irão elaborar projetos de impacto para resolução de problemas complexos a partir dos desafios pontuados pelos próprios moradores locais.
                         </motion.p>
                     </motion.div>
@@ -257,9 +257,9 @@ export default function About() {
                 <div className="bg-black md:bg-transparent relative">
                     <div className="flex gap-16 max-w-screen-2xl w-full mx-auto px-8">
                         <div className="flex flex-1 pt-20 pb-20 flex-col gap-3 relative z-10 grid-cols-2 grid-rows-[1fr_1fr] md:grid lg:grid-cols-[1fr_auto] xl:grid-cols-2">
-                            <NumberCard className="md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-3" title="Alunos" number={244} image={AboutNumber1} altImage="Ícone de um usuário" />
+                            <NumberCard className="md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-3" title="Alunos" slowStartAnimation={false} interval={10} number={240} image={AboutNumber1} altImage="Ícone de um usuário" />
                             <NumberCard title="Equipes" number={30} image={AboutNumber2} altImage="Ícone de vários usuários" />
-                            <NumberCard title="Mentores" number={27} image={AboutNumber3} altImage="Ícone de vários executivos" />
+                            <NumberCard title="Mentores" number={25} image={AboutNumber3} altImage="Ícone de vários executivos" />
                             <Image src={AboutNumberPlant} alt="Planta" className="hidden lg:block absolute bottom-4 -left-8 z-10" height={248} width={160} />
                         </div>
                         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .5 }} transition={{ duration: .8, ease: "easeOut" }} className="relative hidden lg:block w-[30%] translate-y-6">

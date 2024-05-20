@@ -6,7 +6,7 @@ import { FaPlus } from "react-icons/fa";
 import useCountingUpNumber from "@/hooks/useCountingUpNumber";
 import { useInView } from "framer-motion";
 
-const NumberCard = forwardRef(({ title, image, altImage, number, className, ...props }: NumberCardProps, ref: Ref<HTMLDivElement>) => {
+const NumberCard = forwardRef(({ title, image, altImage, number, className, interval, slowStartAnimation = true, isMarginNumber = false, ...props }: NumberCardProps, ref: Ref<HTMLDivElement>) => {
     const numberRef = useRef<HTMLDivElement>(null)
     const inView = useInView(numberRef, {
         amount: .5,
@@ -15,8 +15,9 @@ const NumberCard = forwardRef(({ title, image, altImage, number, className, ...p
 
     const { number: currentNumber, start } = useCountingUpNumber(number, {
         defaultPaused: true,
-        slowStartAnimation: true,
+        slowStartAnimation,
         slowEndAnimation: true,
+        interval,
     })
 
     useEffect(() => {
@@ -30,16 +31,16 @@ const NumberCard = forwardRef(({ title, image, altImage, number, className, ...p
                 <span className="rounded-full h-2 w-2 bg-[#F5F5F5] shrink-0" />
                 <span className="rounded-full h-2 w-2 bg-[#F5F5F5] shrink-0" />
             </div>
-            <div className="bg-white h-full py-7 px-10 flex gap-8 items-center justify-center md:group-first:flex-col">
+            <div className="bg-white h-full px-2 py-7 sm:px-10 flex gap-8 items-center justify-center md:group-first:flex-col">
                 <div className="w-24 h-20 relative">
                     <Image src={image} alt={altImage} fill />
                 </div>
                 <div className="flex flex-col items-center justify-center">
                     <div className="flex gap-2 items-center justify-center">
-                        <span className="text-36 text-primary-100">
+                        {isMarginNumber ? <span className="text-36 text-primary-100">
                             <FaPlus />
-                        </span>
-                        <span className="text-black text-50 font-bold tabular-nums min-w-24 text-left">{currentNumber}</span>
+                        </span> : null}
+                        <span className="text-black text-50 font-bold tabular-nums min-w-24 text-center">{currentNumber}</span>
                     </div>
                     <span className="text-black font-normal text-20 leading-6 text-center lg:text-26 lg:leading-7">{title}</span>
                 </div>
