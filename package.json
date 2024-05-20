@@ -13,9 +13,12 @@
     "chromatic": "chromatic"
   },
   "dependencies": {
-    "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
+    "@tanstack/react-query": "^5.36.0",
+    "@tanstack/react-query-devtools": "^5.36.0",
+    "axios": "^1.6.8",
     "clsx": "^2.1.1",
     "framer-motion": "^11.1.7",
     "country-flag-icons": "^1.5.11",
@@ -41,6 +44,7 @@
     "@storybook/react": "^8.0.9",
     "@storybook/test": "^8.0.9",
     "@storybook/theming": "^8.0.9",
+    "@tanstack/eslint-plugin-query": "^5.35.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

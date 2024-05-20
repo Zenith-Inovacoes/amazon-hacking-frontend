@@ -41,3 +41,14 @@ body {
     @apply focus-visible:outline-none focus-visible:outline-1 focus-visible:outline-primary-100 focus-visible:outline-offset-4
   }
 }
+
+@layer apply {
+  .hide-menu-scrollbar {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .hide-menu-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
