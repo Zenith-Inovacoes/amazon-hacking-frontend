@@ -3,9 +3,27 @@ import Image from "next/image"
 import { Overlay } from "@/components/atoms/Overlay";
 import editionsFlatArt from 'public/EditionsFlatArt.svg'
 import { useTranslations } from "next-intl";
+import waveMobile from 'public/waveMobileEditions.svg'
+import { motion } from "framer-motion"
 
 export default function Editions() {
     const t = useTranslations("Editions");
+
+    const goalCardVariants = {
+        hidden: {
+            opacity: 0,
+            x: -20
+        },
+        show: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                staggerChildren: .4,
+                duration: .5,
+                ease: "easeIn",
+            },
+        }
+    }
 
     return (
         <section className="bg-white mx-auto flex flex-col gap-9 md:gap-20 h-full">
@@ -23,7 +41,8 @@ export default function Editions() {
                 </div>
             </div>
             <div className="relative w-[100vw]">
-                <div className="absolute bg-cover bg-editionsMobileWave w-full ">
+                {/* <Image src={waveMobile} alt="mobileWave" /> */}
+                <div className="absolute bg-cover bg-editionsMobileWave w-full  ">
                     <div className="w-full my-8 flex flex-col gap-y-7 justify-center items-center px-5">
                         <h4 className="text-40">
                             {t("retrospective")}
@@ -33,13 +52,40 @@ export default function Editions() {
                 </div>
                 <div className="flex flex-col w-full h-64">
                 </div>
-                <div className="bg-tribalDecorator bg-repeat w-full flex jus">
-                    <div className="relative h-[387px] pt-7">
+                {/* <div className=" w-full flex jus"> */}
+                    {/* <div className="relative h-[387px] pt-7">
                         <div className="absolute w-[295px] h-[387px] bg-white rounded-xl">
                             aaaaaa
                         </div>
                     </div>
-                </div>
+
+                    <div className="relative h-[387px] pt-7">
+                        <div className="absolute w-[295px] h-[387px] bg-white rounded-xl">
+                            aaaaaa
+                        </div>
+                    </div> */}
+
+                    <div className="relative z-10 max-w-[100vw] w-full mx-auto bg-tribalDecorator bg-repeat">
+                        {/* <div className="w-full h-24 opacity-30 z-0 bg-[url('/images/symbol.png')] bg-repeat bg-contain absolute bottom-[60%]" /> */}
+                        {/* <div className="w-full h-24 opacity-30 z-0 bg-[url('/images/symbol.png')] bg-repeat bg-contain absolute bottom-[20%]" /> */}
+                        <motion.div viewport={{
+                            once: true,
+                            amount: .5,
+                        }} initial="hidden" whileInView="show" variants={goalCardVariants} className="horizontal-snap cursor-grab lg:cursor-default flex grid-cols-2 gap-5 py-16 pl-16 relative z-10 lg:grid lg:px-8 max-w-screen-2xl lg:mx-auto lg:place-items-center">
+                            <div className="relative h-[387px] pt-7">
+                                <div className="absolute w-[295px] h-[387px] bg-white rounded-xl">
+                                    aaaaaa
+                                </div>
+                            </div>
+
+                            <div className="relative h-[387px] pt-7">
+                                <div className="absolute w-[295px] h-[387px] bg-white rounded-xl">
+                                    aaaaaa
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                {/* </div> */}
             </div>
         </section>
     )
