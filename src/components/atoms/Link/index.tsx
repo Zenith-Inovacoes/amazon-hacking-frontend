@@ -15,12 +15,12 @@ const Link = forwardRef(
       <a
         ref={ref}
         className={cn(
-          'group w-fit h-8 inline-flex gap-x-1 justify-center  focus-visible:outline-none',
+          'group w-fit h-8 inline-flex gap-x-1 justify-center cursor-pointer focus-visible:outline-none',
           className
         )}
         {...props}
       >
-        <span className='group-hover:border-b-2 text-20 group-focus-visible:border-b-2 border-white'>
+        <span className='group-hover:border-b-[1px] text-20 group-focus-visible:border-b-[1px] border-white'>
           {children}
         </span>
         <IoOpenOutline
