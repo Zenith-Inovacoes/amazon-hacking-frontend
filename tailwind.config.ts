@@ -27,7 +27,8 @@ const config: Config = {
       },
       backgroundImage: {
         'editionsMobileWave': "url('/waveMobileEditions.svg')",
-        'tribalDecorator': "url('/symbol.svg')"
+        'tribalDecorator': "url('/symbol.svg')",
+        'OverlayEditionsMobileWave': "url('/WaveMobileEditionOverlay.svg')"
       },
       boxShadow: {
         languageSwitcher:
