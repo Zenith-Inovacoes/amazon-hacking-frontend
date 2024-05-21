@@ -11,6 +11,11 @@ const config: Config = {
     // '**/*.{js,jsx,ts,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      xs: '375px',
+      ...screens,
+    },
+
     extend: {
       screens: {
         xs: '375px',
