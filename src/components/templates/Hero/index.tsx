@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 export default function Hero() {
 
     return (
-        <section className="bg-[url('/images/Hero-Bg.png')] bg-cover bg-center bg-no-repeat relative min-h-[100vh] py-48 md:bg-left lg:bg-center">
+        <section className="bg-[url('/images/Hero-Bg.png')] bg-cover bg-center bg-no-repeat relative py-48 md:bg-left lg:bg-center">
             <div className="absolute inset-0 bg-primary-100 mix-blend-soft-light" />
             <div className="w-full h-16 opacity-30 z-0 bg-[url('/images/symbol.png')] bg-repeat bg-contain absolute bottom-[5%]" />
             <div className="flex flex-col text-left max-w-screen-2xl mx-auto gap-10 relative z-10 items-center justify-center px-8 md:grid md:grid-cols-2 md:grid-rows-[auto_1fr] md:place-items-center md:gap-y-12 lg:px-16 lg:gap-y-8 xl:gap-y-12 xl:gap-x-20">
