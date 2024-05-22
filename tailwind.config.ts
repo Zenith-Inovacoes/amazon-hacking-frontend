@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { screens } from 'tailwindcss/defaultTheme'
 import light from './src/styles/themes/light'
 
 const config: Config = {
@@ -10,6 +11,11 @@ const config: Config = {
     // '**/*.{js,jsx,ts,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      xs: '375px',
+      ...screens,
+    },
+
     extend: {
       screens: { xs: '23.376rem' },
       colors: light.colors,
