@@ -14,8 +14,5 @@ export default function Providers({ children }: { children: ReactNode }) {
         </GenerateSessionProvider>
       </ReactQueryProvider>
     </SessionProvider>
-    // <SessionProvider>
-    //   {children}
-    // </SessionProvider>
   )
 }

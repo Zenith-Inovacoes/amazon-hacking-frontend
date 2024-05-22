@@ -13,14 +13,14 @@ export const getUserSession = async (): Promise<User> => {
         },
     })
 
-    if (!authUserSession) throw new Error("Unauthorized")
+    // if (!authUserSession) throw new Error("Unauthorized")
 
-    await putGenerateSession({
-        email: authUserSession.user.email,
-        name: authUserSession.user.name,
-    }).catch((error) => {
-        throw new Error(error.response.data.message)
-    })
+    // await putGenerateSession({
+    //     email: authUserSession.user.email,
+    //     name: authUserSession.user.name,
+    // }).catch((error) => {
+    //     throw new Error(error.response.data.message)
+    // })
 
     return authUserSession.user
 }
