@@ -86,6 +86,7 @@ const CommunityPrize = () => {
                 instagram='/'
                 whatsapp='/'
                 videoURL='https://www.youtube-nocookie.com/embed/djD7vOYDc9w'
+                variant='past'
                 overlayTrigger={
                   <Button variant='secondary'>Conheça o projeto</Button>
                 }
