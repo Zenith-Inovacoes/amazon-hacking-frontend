@@ -6,11 +6,6 @@ export default {
   title: 'Components/Templates/Winners/WinnerCard',
   component: WinnerCard,
 
-  args: {
-    children: 'TucuExtract',
-    variant: 'first',
-  },
-
   tags: ['autodocs'],
 } as Meta<WinnerCardProps>
 
