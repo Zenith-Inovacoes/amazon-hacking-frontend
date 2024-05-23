@@ -45,10 +45,6 @@ export const Current: Story = {
       <ProjectOverlay
         videoURL='https://www.youtube.com/embed/fPYSh680ZBY'
         videoTitle='What Your GitHub Says About You | LIVE from Brazil'
-        twitter='https://twitter.com/'
-        whatsapp='https://web.whatsapp.com/'
-        instagram='https://www.instagram.com/'
-        facebook='https://www.facebook.com/'
       >
         {childrenData}
       </ProjectOverlay>
@@ -63,10 +59,6 @@ export const Past: Story = {
         variant='past'
         videoURL='https://www.youtube.com/embed/fPYSh680ZBY'
         videoTitle='What Your GitHub Says About You | LIVE from Brazil'
-        twitter='https://twitter.com/'
-        whatsapp='https://web.whatsapp.com/'
-        instagram='https://www.instagram.com/'
-        facebook='https://www.facebook.com/'
       >
         {childrenData}
       </ProjectOverlay>
