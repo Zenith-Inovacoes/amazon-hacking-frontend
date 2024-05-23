@@ -11,7 +11,7 @@ import CommunityPrize2Shadow from 'public/images/CommunityPrize2Shadow.svg'
 import CommunityPrize2Tablet from 'public/images/CommunityPrizeTablet2.svg'
 import CommunityPrize2TabletShadow from 'public/images/CommunityPrizeTablet2Shadow.svg'
 
-import AranduLogo from 'public/images/AranduLogo.png'
+import AranduLogo from 'public/images/AranduLogo.svg'
 import { ProjectOverlayChildrenProps } from '@/components/organisms/ProjectOverlay/types'
 
 const CommunityPrize = () => {
