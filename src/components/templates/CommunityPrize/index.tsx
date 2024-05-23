@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import { Button } from '@/components/atoms'
+import ProjectOverlay from '@/components/organisms/ProjectOverlay'
 
 import CommunityPrize1 from 'public/images/CommunityPrize1.svg'
 import CommunityPrize1Shadow from 'public/images/CommunityPrize1Shadow.svg'
@@ -10,9 +12,18 @@ import CommunityPrize2Tablet from 'public/images/CommunityPrizeTablet2.svg'
 import CommunityPrize2TabletShadow from 'public/images/CommunityPrizeTablet2Shadow.svg'
 
 import AranduLogo from 'public/images/AranduLogo.png'
-import { Button } from '@/components/atoms'
+import { ProjectOverlayChildrenProps } from '@/components/organisms/ProjectOverlay/types'
 
 const CommunityPrize = () => {
+  const overlayData: ProjectOverlayChildrenProps = {
+    solutionName: 'Curumin',
+    teamLogo: AranduLogo,
+    solutionDescription:
+      'Curumim é um software acessível e simples para a catalogação, empréstimo e devolução de livros utilizando o sistema open source Biblivre integrado a tecnologia RFID.',
+    altLogo: 'Logo da Arandu Technology',
+    teamMembers: ['Bruna Melido', 'Isadora Lacerda', 'Ícaro Macedo'],
+  }
+
   return (
     <section className='relative bg-white flex flex-col items-center justify-center'>
       <div className='flex flex-col w-full h-full max-w-screen-2xl pt-32 pb-11 gap-[42px] px-6'>
@@ -69,7 +80,18 @@ const CommunityPrize = () => {
                 alt='Logo Arandu Technology'
                 className='w-full h-fit md:max-w-[230px]'
               />
-              <Button variant='secondary'>Conheça o projeto</Button>
+              <ProjectOverlay
+                facebook='/'
+                twitter='/'
+                instagram='/'
+                whatsapp='/'
+                videoURL='https://www.youtube-nocookie.com/embed/djD7vOYDc9w'
+                overlayTrigger={
+                  <Button variant='secondary'>Conheça o projeto</Button>
+                }
+              >
+                {overlayData}
+              </ProjectOverlay>
             </div>
           </div>
         </div>
