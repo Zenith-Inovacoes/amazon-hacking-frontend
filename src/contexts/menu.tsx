@@ -18,7 +18,6 @@ const MenuProvider = ({ children }: menuProviderProps) => {
 
   const handleOpenChange = () => {
     setOpen((currState) => !currState)
-    console.log('sdhfuisdf')
   }
 
   return (

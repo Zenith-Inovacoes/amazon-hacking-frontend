@@ -5,12 +5,32 @@ import Menu from '../Menu'
 import { cn } from '@/services/utils/className.utils'
 import { useMenu } from '@/contexts/menu'
 import LoginButton from '../Menu/Unlogged/LoginButton'
+import { useScroll } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 const Header = () => {
   const { open } = useMenu()
+  const { scrollY } = useScroll()
+  const [isDown, setIsDown] = useState<boolean>(false)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const scrollYValue = window.scrollY
+
+      if (!isDown && scrollYValue >= 60) setIsDown(true)
+      else if (isDown && scrollYValue < 60) setIsDown(false)
+    }, 100)
+
+    return () => clearInterval(interval)
+  }, [isDown, scrollY])
 
   return (
-    <header className='sticky w-full h-fit top-[62px] md:top-[42px] flex justify-center items-start'>
+    <header
+      className={cn(
+        'sticky w-full h-fit top-0 flex justify-center items-start transition-colors duration-500 rounded-b-[30px] overflow-hidden',
+        isDown && 'bg-black'
+      )}
+    >
       <div className=' flex w-full h-fit flex-row items-center justify-between max-w-screen-2xl'>
         <div
           className={cn(

@@ -22,7 +22,7 @@ const Unlogged = () => {
         <Dialog.Overlay className='fixed w-full h-full top-0 flex justify-end bg-black bg-opacity-40 data-[state=open]:animate-menuOverlayShow data-[state=closed]:animate-menuOverlayHide overflow-y-auto'>
           <Dialog.Close
             className={cn(
-              'absolute w-fit h-fit inset-0 top-[62px] md:top-[42px] left-[100%] z-10 opacity-0 transition-all duration-200 ease-linear -translate-x-full pr-[42px] md:pr-[62px] mt-9',
+              'absolute w-fit h-fit inset-0 top-0 left-[100%] z-10 opacity-0 transition-all duration-200 ease-linear -translate-x-full pr-[42px] md:pr-[62px] mt-9',
               open && 'z-50 pointer-events-auto opacity-100'
             )}
           >

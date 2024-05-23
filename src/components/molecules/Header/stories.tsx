@@ -11,7 +11,9 @@ const meta: Meta = {
     (Story) => (
       <SessionProvider>
         <MenuProvider>
-          <Story />
+          <div className='relative h-[500vh] bg-gradient-to-b from-green-500 to-secondary-400'>
+            <Story />
+          </div>
         </MenuProvider>
       </SessionProvider>
     ),
