@@ -5,7 +5,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import art2022 from 'public/FlatArt2022.svg'
 
 export default {
-  title: 'Components/templates/Components/EditionOverlay',
+  title: 'Components/Templates/Editions/Components/EditionOverlay',
   component: EditionOverlay,
   decorators: [
     (Story) => (
