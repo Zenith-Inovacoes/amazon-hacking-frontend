@@ -34,7 +34,7 @@ const Header = () => {
       <div className=' flex w-full h-fit flex-row items-center justify-between max-w-screen-2xl'>
         <div
           className={cn(
-            'pl-4 xs:pl-[42px] md:pl-[62px] duration-200 transition-opacity -mx-6',
+            'pl-4 xs:pl-[42px] md:pl-[62px] duration-200 transition-opacity sm:-mx-6 scale-[0.532] sm:scale-100 origin-left',
             open && 'opacity-0'
           )}
         >
