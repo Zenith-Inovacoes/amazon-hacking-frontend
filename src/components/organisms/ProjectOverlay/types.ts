@@ -13,10 +13,6 @@ export type ProjectOverlayChildrenProps = {
 export type ProjectOverlayProps = {
   children: ProjectOverlayChildrenProps
   videoURL: string
-  videoTitle: string
-  twitter: string
-  whatsapp: string
-  instagram: string
-  facebook: string
+  videoTitle?: string
   variant?: 'current' | 'past'
 }
