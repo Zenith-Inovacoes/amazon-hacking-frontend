@@ -8,19 +8,6 @@ import {
 import { EditionOverlayProps } from './types'
 import Image from 'next/image'
 import { useBreakpoint } from '@/services/utils/useBreackpoint'
-import { cn } from '@/services/utils/className.utils'
-
-import InstagramIcon from 'public/icons/instagram.svg'
-import WhatsappIcon from 'public/icons/whatsapp.svg'
-import XIcon from 'public/icons/twitter.svg'
-
-import FirstWaveTop from 'public/ProjectOverlayWaves/Mobile/FirstWaveTop.svg'
-import FirstWaveBottom from 'public/ProjectOverlayWaves/Mobile/FirstWaveBottom.svg'
-
-import SecondWaveMobile from 'public/ProjectOverlayWaves/Mobile/SecondWave.png'
-import SecondWaveTablet from 'public/ProjectOverlayWaves/Tablet/SecondWave.png'
-
-import PersonalGoals from 'public/PersonalGoals.svg'
 
 import { Button } from '@/components/atoms'
 import { useTranslations } from 'next-intl'
@@ -56,7 +43,7 @@ const EditionOverlay = ({
                     Saber Mais...
                 </Button>
             </OverlayTrigger>
-            <OverlayContent className='relative' theme='dark'>
+            <OverlayContent theme='dark'>
                 <div className='flex flex-col items-center justify-center relative w-full h-full overflow-visible md:gap-[111px]'>
                     <div className='relative h-full w-full flex justify-center top-0 rounded-t-lg mb-9'>
                         <Image src={islandImage} alt='Local onde os projetos do amazon hacking 2022 foram implementados' className='rounded-t-[30px] md:w-full' />
