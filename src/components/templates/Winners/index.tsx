@@ -1,4 +1,4 @@
-import { Checkbox } from '@/components/atoms'
+import { Checkbox, Select } from '@/components/atoms'
 import Image from 'next/image'
 import { useState } from 'react'
 import { cn } from '@/services/utils/className.utils'
@@ -10,9 +10,11 @@ import WinnersWaveContent from 'public/Waves/WinnerWaves/Mobile/WinnersWaveConte
 import WinnersWaveTablet from 'public/Waves/WinnerWaves/Tablet/WinnersWave.svg'
 
 import WinnersWaveDesktop from 'public/Waves/WinnerWaves/Desktop/WinnerWave.svg'
+import { SelectItem } from '@/components/atoms/Select'
 
 const Winners = () => {
   const [toggle, setToggle] = useState<boolean[]>([false, false])
+  const [course, setCourse] = useState<'eng' | 'sci'>('eng')
 
   const handleToggle1 = () => {
     setToggle((currState) => [!currState[0], currState[1] && !currState[1]])
@@ -36,9 +38,9 @@ const Winners = () => {
   }
 
   return (
-    <section className='relative bg-white flex flex-col items-center justify-center w-full h-full overflow-x-hidden py-32'>
+    <section className='relative bg-white flex flex-col items-center justify-center w-full h-full overflow-hidden py-32 lg:pt-56'>
       <div className='flex flex-col max-w-screen-2xl w-full items-center justify-center gap-[84px] md:gap-[226px] lg:flex-row lg:justify-between lg:gap-0'>
-        <div className='flex flex-col w-full items-center justify-center gap-[22px] px-8 md:px-[62px] md:gap-7 md:items-start lg:px-0 lg:pl-[100px]'>
+        <div className='flex flex-col w-full items-center justify-center gap-[22px] px-8 md:px-[62px] md:gap-7 md:items-start lg:px-0 lg:pl-[100px] text-black'>
           <h1 className='text-black text-center font-bold text-40 leading-[1.1] md:text-start md:text-50'>
             Pódio da imersão
           </h1>
@@ -50,13 +52,30 @@ const Winners = () => {
           <h2 className='text-black font-semibold text-36 text-center tracking-[0.432px] md:text-start'>
             Escolha um ano:
           </h2>
-          <div className='flex items-center justify-center w-full gap-[22px] md:justify-start'>
-            <Checkbox onClick={handleToggle1} checked={toggle[0]}>
-              2023
-            </Checkbox>
-            <Checkbox onClick={handleToggle2} checked={toggle[1]}>
-              2022
-            </Checkbox>
+          <div className='flex flex-col items-center justify-center w-full gap-[22px] md:justify-between md:flex-row md:w-[95%]'>
+            <div className='flex gap-[22px] items-center justify-center'>
+              <Checkbox onClick={handleToggle1} checked={toggle[0]}>
+                2023
+              </Checkbox>
+              <Checkbox onClick={handleToggle2} checked={toggle[1]}>
+                2022
+              </Checkbox>
+            </div>
+            <div
+              className={cn(
+                'flex transition-opacity duration-300 z-50',
+                !toggle[0] && !toggle[1] && 'opacity-0 pointer-events-none'
+              )}
+            >
+              <Select
+                placeholder=''
+                defaultValue='eng'
+                onValueChange={(e: 'eng' | 'sci') => setCourse(e)}
+              >
+                <SelectItem value='eng'>Engenharia de Computação</SelectItem>
+                <SelectItem value='sci'>Ciência de Computação</SelectItem>
+              </Select>
+            </div>
           </div>
         </div>
         <div
@@ -69,8 +88,8 @@ const Winners = () => {
         <div className='relative flex flex-col w-full h-full items-start justify-center lg:items-end'>
           <div
             className={cn(
-              'absolute z-20 opacity-0 transition-opacity duration-500 horizontal-snap w-full flex gap-12 px-[22vw]',
-              (toggle[0] || toggle[1]) && 'opacity-100'
+              'absolute z-20 opacity-0 transition-opacity duration-500 horizontal-snap w-full flex gap-12 px-[35vw] justify-start items-center lg:overflow-hidden lg:flex-wrap-reverse lg:px-0 lg:justify-center pb-32 lg:-mr-[8%] lg:right-0 lg:w-[120%] xl:w-[110%]',
+              course === 'eng' && (toggle[0] || toggle[1]) && 'opacity-100 z-30'
             )}
           >
             {cardsContent.engineering.map((val, idx) => (
@@ -78,6 +97,26 @@ const Winners = () => {
                 key={idx}
                 idx={idx}
                 currentYear={[toggle[0], toggle[1]]}
+                course={course}
+                className={cn(idx === 0 && 'lg:order-3')}
+              >
+                {val}
+              </WinnerCard>
+            ))}
+          </div>
+          <div
+            className={cn(
+              'absolute z-20 opacity-0 transition-opacity duration-500 horizontal-snap w-full flex gap-12 px-[35vw] justify-start items-center lg:overflow-hidden lg:flex-wrap-reverse lg:px-0 lg:justify-center pb-32 lg:-mr-[8%] lg:right-0 lg:w-[120%] xl:w-[110%]',
+              course === 'sci' && (toggle[0] || toggle[1]) && 'opacity-100 z-30'
+            )}
+          >
+            {cardsContent.science.map((val, idx) => (
+              <WinnerCard
+                key={idx}
+                idx={idx}
+                currentYear={[toggle[0], toggle[1]]}
+                course={course}
+                className={cn(idx === 0 && 'lg:order-3')}
               >
                 {val}
               </WinnerCard>
@@ -122,7 +161,10 @@ const Winners = () => {
             <Image
               src={WinnersWaveContent}
               alt='Winners Wave Content'
-              className='absolute z-10 max-w-[462px] max-h-[462px] w-full h-full'
+              className={cn(
+                'absolute z-10 max-w-[462px] max-h-[462px] w-full h-full transition-opacity duration-300',
+                (toggle[0] || toggle[1]) && 'opacity-0'
+              )}
             />
           </div>
         </div>

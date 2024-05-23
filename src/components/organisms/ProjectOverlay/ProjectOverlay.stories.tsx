@@ -21,11 +21,6 @@ const childrenData: ProjectOverlayChildrenProps = {
     'André Sidrim',
     'Lucas Gabriel',
   ],
-  overlayTrigger: (
-    <div className='flex w-full h-full justify-center'>
-      <Button>Teste</Button>
-    </div>
-  ),
 }
 
 const meta: Meta<ProjectOverlayProps> = {
@@ -49,6 +44,11 @@ export const Current: Story = {
         whatsapp='https://web.whatsapp.com/'
         instagram='https://www.instagram.com/'
         facebook='https://www.facebook.com/'
+        overlayTrigger={
+          <div className='flex w-full h-full justify-center'>
+            <Button>Teste</Button>
+          </div>
+        }
       >
         {childrenData}
       </ProjectOverlay>
@@ -67,6 +67,11 @@ export const Past: Story = {
         whatsapp='https://web.whatsapp.com/'
         instagram='https://www.instagram.com/'
         facebook='https://www.facebook.com/'
+        overlayTrigger={
+          <div className='flex w-full h-full justify-center'>
+            <Button>Teste</Button>
+          </div>
+        }
       >
         {childrenData}
       </ProjectOverlay>
