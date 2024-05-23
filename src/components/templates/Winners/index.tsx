@@ -53,7 +53,7 @@ const Winners = () => {
             Escolha um ano:
           </h2>
           <div className='flex flex-col items-center justify-center w-full gap-[22px] md:justify-between md:flex-row md:w-[95%]'>
-            <div className='flex gap-[22px] items-center justify-center'>
+            <div className='flex gap-[22px] items-center justify-center z-50'>
               <Checkbox onClick={handleToggle1} checked={toggle[0]}>
                 2023
               </Checkbox>
@@ -63,8 +63,8 @@ const Winners = () => {
             </div>
             <div
               className={cn(
-                'flex transition-opacity duration-300 z-50',
-                !toggle[0] && !toggle[1] && 'opacity-0 pointer-events-none'
+                'flex transition-all duration-300 z-40 ',
+                !toggle[0] && !toggle[1] && 'opacity-0 pointer-events-none -mt-20'
               )}
             >
               <Select
@@ -89,7 +89,8 @@ const Winners = () => {
           <div
             className={cn(
               'absolute z-20 opacity-0 transition-opacity duration-500 horizontal-snap w-full flex gap-12 px-[35vw] justify-start items-center lg:overflow-hidden lg:flex-wrap-reverse lg:px-0 lg:justify-center pb-32 lg:-mr-[8%] lg:right-0 lg:w-[120%] xl:w-[110%]',
-              course === 'eng' && (toggle[0] || toggle[1]) && 'opacity-100 z-30'
+              course === 'eng' && (toggle[0] || toggle[1]) && 'opacity-100 z-30',
+              (course !== 'eng' || !toggle[0] && !toggle[1]) && 'pointer-events-none'
             )}
           >
             {cardsContent.engineering.map((val, idx) => (
@@ -107,7 +108,8 @@ const Winners = () => {
           <div
             className={cn(
               'absolute z-20 opacity-0 transition-opacity duration-500 horizontal-snap w-full flex gap-12 px-[35vw] justify-start items-center lg:overflow-hidden lg:flex-wrap-reverse lg:px-0 lg:justify-center pb-32 lg:-mr-[8%] lg:right-0 lg:w-[120%] xl:w-[110%]',
-              course === 'sci' && (toggle[0] || toggle[1]) && 'opacity-100 z-30'
+              course === 'sci' && (toggle[0] || toggle[1]) && 'opacity-100 z-30',
+              (course !== 'sci' || !toggle[0] && !toggle[1]) && 'pointer-events-none'
             )}
           >
             {cardsContent.science.map((val, idx) => (
