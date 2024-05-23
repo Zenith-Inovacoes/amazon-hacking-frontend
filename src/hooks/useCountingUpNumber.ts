@@ -84,6 +84,7 @@ export default function useCountingUpNumber(endNumber: number, options?: Countin
                 }, options?.interval ?? INTERVAL)
             }
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [number, paused])
 
     return {

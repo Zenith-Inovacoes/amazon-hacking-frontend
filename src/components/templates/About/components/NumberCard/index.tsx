@@ -1,3 +1,5 @@
+"use client"
+
 import { NumberCardProps } from "./types"
 import { forwardRef, Ref, useEffect, useRef } from "react"
 import { cn } from "@/services/utils/className.utils"

@@ -21,7 +21,7 @@ import WaveDesktop from 'public/ZenithWaves/ZenithOverlay/Desktop/Wave.svg'
 const ZenithOverlay = ({ overlayTrigger, className }: ZenithOverlayProps) => {
   return (
     <Overlay>
-      <OverlayTrigger className={cn(className)}>
+      <OverlayTrigger className={cn(className)} asChild>
         {overlayTrigger}
       </OverlayTrigger>
       <OverlayContent theme='light' className='text-white'>

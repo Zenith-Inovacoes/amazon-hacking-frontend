@@ -29,5 +29,47 @@
         "challenger": "Desafios Encontrados",
         "challengerText": "O Movimento das Mulheres das Ilhas de Belém (MMIB) é uma organização que representa interesses e lutas específicas das mulheres que vivem nas diversas ilhas próximas a Belém do Pará. A associação apontou diversos desafios, desde questões sociais e econômicas que afetam essas comunidades insulares, até seu isolamento geográfico e às limitações de acesso a serviços básicos como educação, saúde e transporte."
       }
+    },
+  "Home": {
+    "Partners": {
+      "title": "Nossos parceiros",
+      "subtitle": "Agradecemos aos nossos parceiros! Com o apoio deles, tornamos este evento possível. Confira quem são esses parceiros incríveis!",
+      "masterTitle": "Master",
+      "manteneursTitle": "Mantenedores",
+      "partnersTitle": "Madrinhas",
+      "footerTitle": "Venha fazer parte dessa equipe!",
+      "footerDescription": "Torne-se um patrocinador! Junte-se a nós para fazer deste evento um sucesso. Saiba como sua empresa pode contribuir e se destacar!",
+      "footerButtonText": "Entre em contato"
+    },
+    "About": {
+      "title": "O Programa",
+      "description": "O Amazon Hacking é um programa de formação para alunos da Escola de Negócios, Tecnologia e Inovação do CESUPA - ARGO, que visa conectar empresas comprometidas com a sustentabilidade amazônica, a comunidade local e seu conhecimento tradicional, junto ao conhecimento científico e tecnológico em prol do  desenvolvimento bioeconômico da região olhando para uma perspectiva global.",
+      "buttonText": "Saiba mais",
+      "goalsTitle": "O que buscamos?",
+      "goalsDescription": "Os universitários irão elaborar projetos de impacto para resolução de problemas complexos a partir dos desafios pontuados pelos próprios moradores locais.",
+      "GoalCards": {
+        "imersion": {
+          "title": "Imersão Educacional",
+          "description": "Criar <colored>experiências imersivas</colored> em ilhas e comunidades para os alunos."
+        },
+        "iteration": {
+          "title": "Interação com Mercado",
+          "description": "Inter-relacionamento entre <colored>alunos</colored> e <colored>empresas</colored> de tecnologia do mercado."
+        },
+        "innovation": {
+          "title": "Inovação Amazônica",
+          "description": "Fomentar <colored>soluções tecnológicas</colored> e <colored>empreendedoras</colored> na região amazônica."
+        },
+        "network": {
+          "title": "Rede Inovadora",
+          "description": "Fortalecer o <colored>ecossistema de inovação</colored> e <colored>networking</colored>."
+        }
+      },
+      "NumberCards": {
+        "students": "Alunos",
+        "teams": "Equipes",
+        "mentors": "Mentores"
+      }
     }
+  }
 }

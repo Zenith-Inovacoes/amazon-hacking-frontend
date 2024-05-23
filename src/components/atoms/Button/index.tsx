@@ -16,7 +16,7 @@ const Button = forwardRef((props: ButtonProps, ref: Ref<HTMLButtonElement>) => {
         {
           'rounded-lg p-4 hover:bg-primary-300 text-white font-bold text-base leading-4 bg-primary-100 active:bg-primary-400 ':
             variant === 'primary',
-          'rounded-lg p-4 text-black bg-neutrals-100 font-bold leading-4 hover:bg-neutrals-300 active:bg-neutrals-400':
+          'rounded-lg p-4 text-black bg-neutrals-100 font-bold text-base leading-4 hover:bg-neutrals-300 active:bg-neutrals-400':
             variant === 'secondary',
           'text-white p-4 font-normal text-base leading-4 hover:text-primary-100 active:text-primary-400 rounded-3xl':
             variant === 'link',
