@@ -18,6 +18,7 @@ const Link = forwardRef(
           'group w-fit h-8 inline-flex gap-x-1 justify-center cursor-pointer focus-visible:outline-none text-20',
           className
         )}
+        target={target}
         {...props}
       >
         <span className='group-hover:underline text-inherit group-focus-visible:underline tracking-[0.216px]'>

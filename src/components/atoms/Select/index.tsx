@@ -1,5 +1,3 @@
-'use client'
-
 import * as SelectPrimitive from '@radix-ui/react-select'
 import { Ref, forwardRef } from 'react'
 import SelectProps, { SelectItemProps } from './types'
@@ -8,14 +6,17 @@ import { IoIosArrowDown } from 'react-icons/io'
 
 const Select = forwardRef(
   (
-    { placeholder, children, ...props }: SelectProps,
+    { placeholder, children, className, ...props }: SelectProps,
     ref: Ref<HTMLButtonElement>
   ) => {
     return (
       <SelectPrimitive.Root {...props}>
         <SelectPrimitive.Trigger
           ref={ref}
-          className='flex w-full justify-between gap-4 px-4 py-3 items-center hover:bg-neutrals-300 hover:rounded-[10px] transition-all group border-b border-black text-black font-bold text-base leading-4 focus-visible:outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-primary-100 data-[state=open]:bg-primary-100 data-[state=open]:rounded-[10px] data-[state=open]:border-transparent data-[state=open]:text-white'
+          className={cn(
+            'flex w-full justify-between gap-4 px-4 py-3 items-center hover:bg-neutrals-300 hover:rounded-[10px] transition-all group border-b border-black text-black font-bold text-base leading-4 focus-visible:outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-primary-100 data-[state=open]:bg-primary-100 data-[state=open]:rounded-[10px] data-[state=open]:border-transparent data-[state=open]:text-white z-10',
+            className
+          )}
         >
           <SelectPrimitive.Value placeholder={placeholder} />
           <SelectPrimitive.Icon
@@ -27,7 +28,7 @@ const Select = forwardRef(
         </SelectPrimitive.Trigger>
         <SelectPrimitive.Portal>
           <SelectPrimitive.Content
-            className='bg-white w-[var(--radix-select-trigger-width)] relative border rounded-bl-lg rounded-br-lg border-black border-t-0 has-[:hover]:border-neutrals-300 has-[:active]:border-neutrals-400 transition-colors before:h-3 before:bg-white before:border before:border-black before:border-b-0 before:absolute before:w-[calc(var(--radix-select-trigger-width)-.5px)] before:top-0 before:left-0 before:-translate-y-full z-[-1] has-[:hover]:before:bg-neutrals-300 before:transition-colors before:-translate-x-[.5px] has-[:hover]:before:border-neutrals-300 has-[:active]:before:bg-neutrals-400 has-[:active]:before:border-neutrals-400 has-[:focus-visible]:before:bg-neutrals-300 has-[:focus-visible]:border-neutrals-300 has-[:focus-visible]:before:border-neutrals-300'
+            className='bg-white w-[var(--radix-select-trigger-width)] relative border rounded-bl-lg rounded-br-lg border-black border-t-0 has-[:hover]:border-neutrals-300 has-[:active]:border-neutrals-400 transition-colors before:h-3 before:bg-white before:border before:border-black before:border-b-0 before:absolute before:w-[calc(var(--radix-select-trigger-width)-.5px)] before:top-0 before:left-0 before:-translate-y-full has-[:hover]:before:bg-neutrals-300 before:transition-colors before:-translate-x-[.5px] has-[:hover]:before:border-neutrals-300 has-[:active]:before:bg-neutrals-400 has-[:active]:before:border-neutrals-400 has-[:focus-visible]:before:bg-neutrals-300 has-[:focus-visible]:border-neutrals-300 has-[:focus-visible]:before:border-neutrals-300 z-0'
             position='popper'
           >
             <SelectPrimitive.Viewport className='overflow-hidden rounded-bl-lg rounded-br-lg'>

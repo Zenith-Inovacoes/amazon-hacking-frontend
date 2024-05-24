@@ -1,5 +1,47 @@
 {
-    "Index": {
-      "title": "Soon"
+  "Home": {
+    "Partners": {
+      "title": "Our Partners",
+      "subtitle": "We thank our partners! With their support, we made this event possible. Check out these amazing partners!",
+      "masterTitle": "Master",
+      "manteneursTitle": "Maintainers",
+      "partnersTitle": "Patrons",
+      "footerTitle": "Come be a part of this team!",
+      "footerDescription": "Become a sponsor! Join us in making this event a success. Learn how your company can contribute and stand out!",
+      "footerButtonText": "Contact us"
+    },
+    "About": {
+      "title": "The Program",
+      "description": "The Amazon Hacking program is a training initiative for students at CESUPA's School of Business, Technology, and Innovation - ARGO. It aims to connect companies committed to Amazonian sustainability, the local community and its traditional knowledge, with scientific and technological knowledge. The goal is to promote the bioeconomic development of the region from a global perspective.",
+      "buttonText": "Learn more",
+      "goalsTitle": "What are we looking for?",
+      "goalsDescription": "University students will develop impactful projects to solve complex problems based on challenges identified by the local residents themselves.",
+      "GoalCards": {
+        "imersion": {
+          "title": "Educational Immersion",
+          "description": "Create <colored>immersive experiences</colored> on islands and within communities for the students."
+        },
+        "iteration": {
+          "title": "Market Interaction",
+          "description": "Interrelationship between <colored>students</colored> and <colored>technology</colored> companies in the market."
+        },
+        "innovation": {
+          "title": "Amazonian Innovation",
+          "description": "Foster <colored>technological</colored> and <colored>entrepreneurial solutions</colored> in the Amazon region."
+        },
+        "network": {
+          "title": "Innovative Network",
+          "description": "Strengthen the <colored>innovation</colored> and <colored>networking ecosystem.</colored>"
+        }
+      },
+      "NumberCards": {
+        "students": "Students",
+        "teams": "Teams",
+        "mentors": "Mentors"
+      }
     }
+  },
+  "Loading": {
+    "title": "Loading..."
   }
+}
