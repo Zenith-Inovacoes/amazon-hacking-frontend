@@ -17,7 +17,7 @@ export default function WinnerCard(props: WinnerCardProps) {
     }
 
     return (
-        <div className="px-5 py-5 w-full rounded-[36px] bg-white flex justify-center items-center gap-4 md:max-w-[540px] md:py-14 lg:max-w-[600px] shadow-[0px_183px_51px_0px_rgba(0,0,0,0.00),0px_117px_47px_0px_rgba(0,0,0,0.04),0px_66px_39px_0px_rgba(0,0,0,0.13),0px_29px_29px_0px_rgba(0,0,0,0.21),0px_7px_16px_0px_rgba(0,0,0,0.25)]">
+        <div className="px-5 py-5 w-full rounded-[36px] bg-white flex justify-center items-center gap-4 md:max-w-[540px] md:py-14 lg:max-w-[600px] shadow-[0px_183px_51px_0px_rgba(0,0,0,0.00),0px_117px_47px_0px_rgba(0,0,0,0.04),0px_66px_39px_0px_rgba(0,0,0,0.13),0px_29px_29px_0px_rgba(0,0,0,0.21),0px_7px_16px_0px_rgba(0,0,0,0.25)] flex-col xs:flex-row">
             <div className="relative h-20 w-20 md:h-32 md:w-32">
                 <Image src={PublicPrizeTrophy} alt="Troféu" fill />
             </div>

@@ -45,7 +45,7 @@ export default function PublicPrize() {
     }
 
     return (
-        <section className="bg-white">
+        <section className="relative bg-white before:absolute before:bg-white before:w-full before:h-4 before:-translate-y-1">
             <div className="lg:flex justify-center items-center relative max-w-screen-2xl mx-auto">
                 <div className="flex flex-col gap-5 z-10 flex-1 lg:z-0">
                     <div className="flex flex-col gap-5 px-8">
@@ -72,7 +72,7 @@ export default function PublicPrize() {
                                     </Checkbox>
                                 </div>
                             </div>
-                            <div className="self-end lg:self-center lg:flex-1 lg:pl-10">
+                            <div className="self-end lg:self-center lg:flex-1 lg:pl-10 pb-10 md:pb-0">
                                 <Select variant="light" onValueChange={(value) => setSelectedCourse(value as CourseEnum)} defaultValue={CourseEnum.ECOMP} placeholder="Selecione um curso">
                                     <SelectItem value={CourseEnum.ECOMP}>
                                         Engenharia da Computação
