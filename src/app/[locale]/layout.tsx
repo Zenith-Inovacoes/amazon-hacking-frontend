@@ -4,6 +4,8 @@ import { gilroy } from "@/services/utils/fonts.utils";
 import Favicon from "@/components/Favicon";
 import Providers from "./providers";
 import FloatingOptions from "@/components/molecules/FloatingOptions";
+import { Suspense } from "react";
+import Loading from "@/components/templates/Loading";
 
 export const metadata: Metadata = {
   title: "Amazon Hacking",
@@ -21,10 +23,12 @@ export default function RootLayout({
     <html lang={locale}>
       <Favicon />
       <body className={gilroy.className}>
-        <Providers>
-          {children}
-          <FloatingOptions />
-        </Providers>
+        <Suspense fallback={<Loading />}>
+          <Providers>
+            {children}
+            <FloatingOptions />
+          </Providers>
+        </Suspense>
       </body>
     </html>
   );
