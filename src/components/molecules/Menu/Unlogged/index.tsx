@@ -9,20 +9,23 @@ import { useMenu } from '@/contexts/menu'
 
 import * as Dialog from '@radix-ui/react-dialog'
 import { cn } from '@/services/utils/className.utils'
+import { useEffect } from 'react'
 
 const Unlogged = () => {
   const { open, handleOpenChange } = useMenu()
 
+  useEffect(() => console.log(open), [open])
+
   return (
     <Dialog.Root open={open} onOpenChange={handleOpenChange}>
-      <Dialog.Trigger className='absolute w-fit h-fit right-0 top-0 z-50 transition-opacity duraiton-200 ease-linear data-[state=open]:opacity-0 mr-4 xs:mr-[42px] md:mr-[62px] mt-9'>
+      <Dialog.Trigger className='fixed w-fit h-fit right-0 top-0 z-50 transition-opacity duraiton-200 ease-linear data-[state=open]:opacity-0 mr-4 xs:mr-[42px] md:mr-[62px] mt-9 lg:hidden'>
         <IoMenu size={46} />
       </Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className='fixed w-full h-full top-0 flex justify-end bg-black bg-opacity-40 data-[state=open]:animate-menuOverlayShow data-[state=closed]:animate-menuOverlayHide overflow-y-auto'>
+        <Dialog.Overlay className='fixed w-full h-full top-0 flex justify-end bg-black bg-opacity-40 data-[state=open]:animate-menuOverlayShow data-[state=closed]:animate-menuOverlayHide overflow-y-auto lg:hidden z-50'>
           <Dialog.Close
             className={cn(
-              'absolute w-fit h-fit inset-0 top-0 left-[100%] z-10 opacity-0 transition-all duration-200 ease-linear -translate-x-full pr-[42px] md:pr-[62px] mt-9',
+              'fixed w-fit h-fit inset-0 top-0 left-[100%] z-10 opacity-0 transition-all duration-200 ease-linear -translate-x-full pr-[42px] md:pr-[62px] mt-9',
               open && 'z-50 pointer-events-auto opacity-100'
             )}
           >
@@ -32,7 +35,7 @@ const Unlogged = () => {
             className='relative data-[state=open]:animate-menuOpen data-[state=closed]:animate-menuClose'
             onOpenAutoFocus={(e) => e.preventDefault()}
           >
-            <div className='flex flex-col items-start justify-start bg-black w-[min(364px,100vw)] md:w-[405px] h-fit rounded-l-[30px] py-20 px-14 min-h-screen md:min-h-[806px] gap-10'>
+            <div className='flex flex-col items-start justify-start bg-black w-[min(364px,100vw)] md:w-[405px] h-fit rounded-l-[30px] py-20 px-14 min-h-screen md:min-h-[806px] gap-10 z-50'>
               <button>
                 <Image src={AmazonHackingLogo} alt='Amazon Hacking Logo' />
               </button>
