@@ -11,7 +11,7 @@ import Separator from '@/components/atoms/Separator'
 
 const Waves = () => {
   return (
-    <div className='relative after:bg-primary-100 after:w-full after:h-2 after:absolute after:-bottom-1'>
+    <div className='relative after:bg-primary-100 after:w-full bg-white after:h-2 after:absolute after:-bottom-1'>
       <svg
         id='footer-wave-second-shadow'
         className='rotate-0 duration-300 absolute bottom-8'
@@ -165,7 +165,7 @@ export default function Footer() {
   return (
     <>
       <Waves />
-      <footer className='bg-primary-100'>
+      <footer className='bg-primary-100 relative z-10'>
         <div className='flex flex-col justify-center items-center gap-9 max-w-72 mx-auto md:max-w-[548px] relative z-10 md:gap-14 lg:max-w-screen-2xl lg:flex-row lg:px-8 lg:justify-between lg:gap-4 xl:gap-10'>
           <div className='flex flex-col justify-center items-center gap-8 md:gap-10 lg:items-start lg:order-3'>
             <span className='text-white text-24 leading-7 font-bold md:text-28'>
@@ -239,7 +239,7 @@ export default function Footer() {
         </div>
         <Wave2 />
         <div className='bg-black py-8 relative z-10 md:pb-14 lg:pt-0'>
-          <div className='flex flex-col gap-9 max-w-screen-2xl lg:flex-row-reverse lg:mx-auto lg:justify-between lg:px-8'>
+          <div className='flex flex-col gap-9 max-w-screen-2xl lg:flex-row-reverse lg:items-center lg:mx-auto lg:justify-between lg:px-8'>
             <div className='h-4 flex items-center justify-center gap-4 md:gap-12 lg:gap-6'>
               <Link
                 className='text-xs md:text-16'

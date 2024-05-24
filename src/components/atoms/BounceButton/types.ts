@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from "react";
+import { AnchorHTMLAttributes } from "react";
 
-export default interface BounceButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export default interface BounceButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 }

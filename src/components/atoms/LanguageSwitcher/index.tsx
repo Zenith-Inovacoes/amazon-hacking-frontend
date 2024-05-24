@@ -19,11 +19,6 @@ const locales = [
         label: "English",
         flag: <US title="English" className="w-6 h-4 inline" />
     },
-    {
-        locale: "es",
-        label: "Español",
-        flag: <ES title="Español" className="w-6 h-4 inline" />
-    }
 ]
 
 const LanguageSwitcher = forwardRef(({ className, ...props }: LanguageSwitcherProps, ref: Ref<HTMLButtonElement>) => {

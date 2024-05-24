@@ -3,6 +3,18 @@
       "title": "Em Breve"
     },
   "Home": {
+    "Header": {
+      "program": "O PROGRAMA",
+      "editions": "EDIÇÕES",
+      "winners": "VENCEDORES",
+      "partners": "PATROCINADORES"
+    },
+    "Hero": {
+      "title": "TECNOLOGIA E TRADIÇÃO EM HARMONIA",
+      "date": "05 À 07 DE JUNHO",
+      "subtitle": "Uma celebração de inovação e criatividade, abrindo caminhos para futuras gerações.",
+      "buttonText": "Explorar mais"
+    },
     "Partners": {
       "title": "Nossos parceiros",
       "subtitle": "Agradecemos aos nossos parceiros! Com o apoio deles, tornamos este evento possível. Confira quem são esses parceiros incríveis!",

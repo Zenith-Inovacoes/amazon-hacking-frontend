@@ -1,3 +1,5 @@
+"use client"
+
 import { Checkbox, Select } from '@/components/atoms'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -38,7 +40,7 @@ const Winners = () => {
   }
 
   return (
-    <section className='relative bg-white flex flex-col items-center justify-center w-full h-full overflow-hidden py-32 lg:pt-56'>
+    <section className='relative z-20 bg-white flex flex-col items-center justify-center w-full h-full overflow-hidden pt-16 pb-32 lg:pb-52'>
       <div className='flex flex-col max-w-screen-2xl w-full items-center justify-center gap-[84px] md:gap-[226px] lg:flex-row lg:justify-between lg:gap-0'>
         <div className='flex flex-col w-full items-center justify-center gap-[22px] px-8 md:px-[62px] md:gap-7 md:items-start lg:px-0 lg:pl-[100px] text-black'>
           <h1 className='text-black text-center font-bold text-40 leading-[1.1] md:text-start md:text-50'>

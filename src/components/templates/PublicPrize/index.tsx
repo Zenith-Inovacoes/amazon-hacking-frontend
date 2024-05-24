@@ -33,10 +33,11 @@ export default function PublicPrize() {
   }
 
   return (
-    <section className='relative bg-white before:absolute before:bg-white before:w-full before:h-4 before:-translate-y-1'>
+    <section className='relative bg-white pb-14 before:absolute lg:overflow-y-visible z-20 before:bg-white before:w-full before:h-4 before:-translate-y-1'>
+      <div className="w-full h-16 opacity-40 z-0 bg-[url('/images/symbol.png')] bg-repeat bg-contain absolute top-40 lg:bottom-12 lg:top-auto" />
       <div className='lg:flex justify-center items-center relative max-w-screen-2xl mx-auto'>
         <div className='flex flex-col gap-5 z-10 flex-1 lg:z-0'>
-          <div className='flex flex-col gap-5 px-8'>
+          <div className='flex flex-col gap-5 px-8 mb-28'>
             <h3 className='text-black font-bold text-40 leading-10 md:text-50 md:leading-44'>
               Estrela do público
             </h3>
@@ -47,13 +48,12 @@ export default function PublicPrize() {
               <PublicPrizeOverlay />
             </p>
           </div>
-          <div className="w-full h-16 opacity-30 z-0 bg-[url('/images/symbol.png')] bg-repeat bg-contain lg:absolute lg:bottom-0 lg:w-[300vw] lg:-translate-x-[100vw]" />
         </div>
         <div className='py-20 relative px-8 flex justify-center items-center md:w-[100vw] md:mx-auto md:py-10 md:pt-32 lg:py-0 lg:pt-20 lg:flex-1 xl:pt-32'>
           <Image
             src={WavePublicPrize}
             alt='Sasdas'
-            className='absolute top-0 h-[calc(100%+200px)] w-[200vw] object-cover object-top overflow-visible z-0 lg:object-left lg:hidden'
+            className='absolute top-0 h-[calc(100%+50px)] w-[200vw] object-cover object-top overflow-visible z-0 lg:object-left lg:hidden'
           />
           <Image
             src={WavePublicPrizeDesktop}

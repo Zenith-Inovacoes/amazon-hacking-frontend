@@ -7,8 +7,7 @@ import {
 } from '@/components/atoms/Overlay'
 import { EditionOverlayProps } from './types'
 import Image from 'next/image'
-import { useBreakpoint } from '@/services/utils/useBreackpoint'
-
+import { useBreakpoint } from '@/hooks/useBreakpoint'
 import { Button } from '@/components/atoms'
 import { useTranslations } from 'next-intl'
 import challenger from 'public/EditionOverlayFlatArt.svg'
@@ -16,15 +15,13 @@ import waveMobile from 'public/WaveMobileEditionOverlay.svg'
 import waveTablet from 'public/WaveTabletEditionsOverlay.svg'
 import OnçasIsland from 'public/OnçasIslandMB.svg'
 import OnçasIslandMD from 'public/OnçasIslandMD.svg'
-import Cotijuba from 'public/CotijubaMB.svg'
-import CotijubaMD from 'public/CotijubaMD.svg'
 
 
 const EditionOverlay = ({
     edition,
     image,
 }: EditionOverlayProps) => {
-    const t = useTranslations("EditionsOverlay");
+    const t = useTranslations("Home.EditionsOverlay");
     const breakpoint = useBreakpoint()
 
     let waveImageSrc = waveMobile

@@ -38,13 +38,14 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   scroll-behavior: smooth;
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-  scroll-behavior: smooth;
+  background-color: white;
   @apply overflow-x-hidden
 }
 

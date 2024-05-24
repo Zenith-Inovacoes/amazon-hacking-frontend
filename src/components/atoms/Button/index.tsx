@@ -1,6 +1,6 @@
 import { Slot } from '@radix-ui/react-slot'
 import { forwardRef, Ref } from 'react'
-import { ButtonProps, ButtonVariants } from './types'
+import { ButtonProps } from './types'
 import { cn } from '@/services/utils/className.utils'
 
 const Button = forwardRef((props: ButtonProps, ref: Ref<HTMLButtonElement>) => {

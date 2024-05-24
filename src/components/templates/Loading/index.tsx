@@ -6,7 +6,7 @@ export default function Loading() {
     const t = useTranslations('Loading')
 
     return (
-        <div className='h-screen w-screen bg-black/50 grid place-items-center z-50 fixed top-0'>
+        <div className='h-screen w-screen bg-black/50 grid place-items-center z-[999] fixed top-0'>
             <div className='flex flex-col gap-6 items-center justify-center'>
                 <div className='relative w-24 h-24 animate-spin'>
                     <Image src={LoadingImage} alt='Imagem de plantas' fill />

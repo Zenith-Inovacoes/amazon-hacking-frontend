@@ -4,7 +4,7 @@ import Button from '@/components/atoms/Button'
 
 export default function NotFound() {
   return (
-    <div className='flex bg-white min-h-screen w-full flex-col items-center justify-center'>
+    <div className='flex bg-white min-h-screen w-full flex-col items-center justify-center py-4'>
       <div className='max-[370px]:px-5 px-11 md:px-20 max-w-5xl flex flex-col items-center gap-y-9 h-fit'>
         <h2 className='text-black text-center font-bold text-40 leading-10 md:text-50 lg:text-60'>
           A Página não foi encontrada

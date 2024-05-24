@@ -9,7 +9,6 @@ export default function WinnerCard(props: WinnerCardProps) {
     const { name, description, links: { youtube: { en, pt } }, logoUrl, team } = props
     const childrenData: ProjectOverlayChildrenProps = {
         altLogo: "Imagem de um troféu",
-        overlayTrigger: <Button>Conheça o projeto</Button>,
         solutionDescription: description,
         solutionName: name,
         teamLogo: logoUrl as string,
@@ -23,7 +22,7 @@ export default function WinnerCard(props: WinnerCardProps) {
             </div>
             <div className="flex flex-col justify-center items-center gap-4 md:gap-5">
                 <span className="text-black text-36 font-bold leading-9 text-center max-w-[12ch]">{name}</span>
-                <ProjectOverlay variant="past" videoURL={pt}>
+                <ProjectOverlay variant="past" videoURL={pt} overlayTrigger={<Button>Conheça o projeto</Button>}>
                     {childrenData}
                 </ProjectOverlay>
             </div>
