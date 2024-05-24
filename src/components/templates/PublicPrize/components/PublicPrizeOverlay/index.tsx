@@ -1,6 +1,11 @@
+"use client"
+
 import { Overlay, OverlayTrigger, OverlayContent } from '@/components/atoms'
 import Image from 'next/image'
 import PublicPrizeOverlayImage from 'public/images/Public-Prize-Overlay.svg'
+import { usePathname } from 'next/navigation'
+import { locales } from '@/services/utils/locale.utils'
+import { useState } from 'react'
 
 const Wave = () => {
   return (
@@ -60,28 +65,40 @@ const Wave = () => {
 }
 
 export default function PublicPrizeOverlay() {
+  const pathname = usePathname()
+  const [locale, setLocale] = useState<string>(
+    locales.find((locale) => pathname?.includes(locale.locale))?.locale || 'en'
+  );
+  const copy = [
+    {
+      locale: "en",
+      triggerText: "Learn more about...",
+      title: "Conceição Rangel Fiúza de Melo Award: Legacy and Innovation at CESUPA",
+      description: "The Conceição Rangel Fiúza de Melo Award honors the legacy of Professor Conceição, a pioneer in founding the technology courses at CESUPA. From the implementation of the first course in 1990 to her long tenure in the Field of Exact and Technological Sciences, her strategic leadership and firm decisions were crucial to our growth. The award is determined by public voting during the institution's biggest technological celebration, Computação Amostra."
+    },
+    {
+      locale: "pt",
+      triggerText: "Saiba mais sobre...",
+      title: "Prêmio Conceição Rangel Fiúza de Melo: Legado e Inovação no CESUPA",
+      description: "O Prêmio Conceição Rangel Fiúza de Melo é uma homenagem ao legado da Professora Conceição, pioneira na fundação dos cursos de Tecnologia no CESUPA. Desde a implementação do primeiro curso em 1990, até sua longa gestão na Área de Ciências Exatas e Tecnologia, sua liderança estratégica e decisões firmes foram cruciais para o nosso crescimento. O prêmio é determinado pela votação pública, durante a maior celebração tecnológica da instituição, a Computação Amostra."
+    },
+  ]
+
   return (
     <Overlay>
       <OverlayTrigger asChild>
         <button className='inline font-bold underline pl-1'>
-          Saiba mais sobre...
+          {locale === "en" ? copy[0].triggerText : copy[1].triggerText}
         </button>
       </OverlayTrigger>
       <OverlayContent className='pb-20'>
         <div className='bg-primary-200 rounded-t-[48px] pt-20 px-12 flex flex-col gap-14 items-center lg:px-16 xl:flex-row xl:justify-between relative'>
           <div className='flex flex-col justify-center items-center gap-6 md:gap-7 lg:gap-6 xl:flex-1'>
             <span className='text-white font-bold text-24 leading-6 text-left md:text-50 md:leading-[54px] lg:text-60 lg:leading-62'>
-              Prêmio Conceição Rangel Fiúza de Melo: Legado e Inovação no CESUPA
+              {locale === "en" ? copy[0].title : copy[1].title}
             </span>
             <p className='text-white font-normal text-16 leading-6 md:text-18 lg:text-20'>
-              O Prêmio Conceição Rangel Fiúza de Melo é uma homenagem ao legado
-              da Professora Conceição, pioneira na fundação dos cursos de
-              Tecnologia no CESUPA. Desde a implementação do primeiro curso em
-              1990, até sua longa gestão na Área de Ciências Exatas e
-              Tecnologia, sua liderança estratégica e decisões firmes foram
-              cruciais para o nosso crescimento. O prêmio é determinado pela
-              votação pública, durante a maior celebração tecnológica da
-              instituição, a Computação Amostra.
+              {locale === "en" ? copy[0].description : copy[1].description}
             </p>
           </div>
           <div className='relative w-full h-[254px] md:h-[320px] xl:w-[442px] xl:flex-1'>

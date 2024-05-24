@@ -67,6 +67,15 @@
         "buttonText": "Explore more"
       }
     },
+    "PublicPrize": {
+      "title": "Audience Star",
+      "subtitle": "The Conceição Rangel Fiúza de Melo Award celebrates the audience's choice through direct voting, highlighting the solution that won the hearts of hundreds of people.",
+      "Overlay": {
+        "title": "Conceição Rangel Fiúza de Melo Award: Legacy and Innovation at CESUPA",
+        "description": "The Conceição Rangel Fiúza de Melo Award honors the legacy of Professor Conceição, a pioneer in founding the technology courses at CESUPA. From the implementation of the first course in 1990 to her long tenure in the Field of Exact and Technological Sciences, her strategic leadership and firm decisions were crucial to our growth. The award is determined by public voting during the institution's biggest technological celebration, Computação Amostra.",
+        "triggerText": "Learn more about..."
+      }
+    },
     "CommunityPrize": {
       "title": "Community Highlight",
       "subtitle": "A solution selected by community leaders for its significant impact on the local population, generating progress and helping to build a better future for the inhabitants of our region.",

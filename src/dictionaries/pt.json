@@ -98,6 +98,15 @@
         "buttonText": "Explorar mais"
       }
     },
+    "PublicPrize": {
+      "title": "Estrela do público",
+      "subtitle": "O prêmio Conceição Rangel Fiúza de Melo celebra a escolha do público através de uma votação direta, destacando a solução que conquistou o coração de centenas de pessoas.",
+      "Overlay": {
+        "title": "Prêmio Conceição Rangel Fiúza de Melo: Legado e Inovação no CESUPA",
+        "description": "O Prêmio Conceição Rangel Fiúza de Melo é uma homenagem ao legado da Professora Conceição, pioneira na fundação dos cursos de Tecnologia no CESUPA. Desde a implementação do primeiro curso em 1990, até sua longa gestão na Área de Ciências Exatas e Tecnologia, sua liderança estratégica e decisões firmes foram cruciais para o nosso crescimento. O prêmio é determinado pela votação pública, durante a maior celebração tecnológica da instituição, a Computação Amostra.",
+        "triggerText": "Saiba mais sobre..."
+      }
+    },
     "CommunityPrize": {
       "title": "Destaque da comunidade",
       "subtitle": "Solução selecionada pelos lideres de comunidades por seu impacto significativo para a população local, gerando avanço e auxiliando na construção de um futuro melhor para os habitantes da nossa região.",
