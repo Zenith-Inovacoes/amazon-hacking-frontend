@@ -30,7 +30,7 @@ const config: Config = {
       },
       backgroundImage: {
         'editionsMobileWave': "url('/waveMobileEditions.svg')",
-        'editionsTabletWave': "url('/waveTabletEditions.svg')",
+        'editionsTabletWave': "url('/WaveTabletEditions.svg')",
         'tribalDecorator': "url('/symbol.svg')",
         'OverlayEditionsMobileWave': "url('/WaveMobileEditionOverlay.svg')",
         '404Decorator': "url('/404Decorator.svg')",
