@@ -1,4 +1,5 @@
 import { User, getServerSession } from "next-auth"
+import { putGenerateSession } from "../apis/put-generate-session"
 
 export const session = async ({ session, token }: any) => {
     session.user.id = token.id
@@ -8,11 +9,18 @@ export const session = async ({ session, token }: any) => {
 export const getUserSession = async (): Promise<User> => {
     const authUserSession = await getServerSession({
         callbacks: {
-            session
-        }
+            session,
+        },
     })
 
     // if (!authUserSession) throw new Error("Unauthorized")
 
-    return authUserSession?.user
+    // await putGenerateSession({
+    //     email: authUserSession.user.email,
+    //     name: authUserSession.user.name,
+    // }).catch((error) => {
+    //     throw new Error(error.response.data.message)
+    // })
+
+    return authUserSession.user
 }
