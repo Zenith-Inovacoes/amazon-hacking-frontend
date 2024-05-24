@@ -20,8 +20,8 @@ const Wave = () => {
             y1='1'
             y2='0'
           >
-            <stop stop-color='rgba(0, 81, 148, 1)' offset='0%'></stop>
-            <stop stop-color='rgba(0, 81, 148, 1)' offset='100%'></stop>
+            <stop stopColor='rgba(0, 81, 148, 1)' offset='0%'></stop>
+            <stop stopColor='rgba(0, 81, 148, 1)' offset='100%'></stop>
           </linearGradient>
         </defs>
         <path
@@ -45,8 +45,8 @@ const Wave = () => {
             y1='1'
             y2='0'
           >
-            <stop stop-color='rgba(0,0,0,.3)' offset='0%'></stop>
-            <stop stop-color='rgba(0,0,0,.3)' offset='100%'></stop>
+            <stop stopColor='rgba(0,0,0,.3)' offset='0%'></stop>
+            <stop stopColor='rgba(0,0,0,.3)' offset='100%'></stop>
           </linearGradient>
         </defs>
         <path

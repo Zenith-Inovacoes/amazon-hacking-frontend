@@ -27,8 +27,8 @@ const Waves = () => {
             y1="1"
             y2="0"
           >
-            <stop stop-color="#000" offset="0%"></stop>
-            <stop stop-color="#000" offset="100%"></stop>
+            <stop stopColor="#000" offset="0%"></stop>
+            <stop stopColor="#000" offset="100%"></stop>
           </linearGradient>
         </defs>
         <path
@@ -52,8 +52,8 @@ const Waves = () => {
             y1="1"
             y2="0"
           >
-            <stop stop-color="#005194" offset="0%"></stop>
-            <stop stop-color="#005194" offset="100%"></stop>
+            <stop stopColor="#005194" offset="0%"></stop>
+            <stop stopColor="#005194" offset="100%"></stop>
           </linearGradient>
         </defs>
         <path
@@ -71,8 +71,8 @@ const Waves = () => {
       >
         <defs>
           <linearGradient id="footer-wave-gradient" x1="0" x2="0" y1="1" y2="0">
-            <stop stop-color="rgba(1, 101, 183, 1)" offset="0%"></stop>
-            <stop stop-color="rgba(1, 101, 183, 1)" offset="100%"></stop>
+            <stop stopColor="rgba(1, 101, 183, 1)" offset="0%"></stop>
+            <stop stopColor="rgba(1, 101, 183, 1)" offset="100%"></stop>
           </linearGradient>
         </defs>
         <path
@@ -103,8 +103,8 @@ const Wave2 = () => {
             y1="1"
             y2="0"
           >
-            <stop stop-color="rgba(0, 0, 0, .25)" offset="0%"></stop>
-            <stop stop-color="rgba(0, 0, 0, .25)" offset="100%"></stop>
+            <stop stopColor="rgba(0, 0, 0, .25)" offset="0%"></stop>
+            <stop stopColor="rgba(0, 0, 0, .25)" offset="100%"></stop>
           </linearGradient>
         </defs>
         <path
@@ -128,8 +128,8 @@ const Wave2 = () => {
             y1="1"
             y2="0"
           >
-            <stop stop-color="rgba(0, 0, 0, 1)" offset="0%"></stop>
-            <stop stop-color="rgba(0, 0, 0, 1)" offset="100%"></stop>
+            <stop stopColor="rgba(0, 0, 0, 1)" offset="0%"></stop>
+            <stop stopColor="rgba(0, 0, 0, 1)" offset="100%"></stop>
           </linearGradient>
         </defs>
         <path
