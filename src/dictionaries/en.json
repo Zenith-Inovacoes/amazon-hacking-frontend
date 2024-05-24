@@ -40,5 +40,8 @@
         "mentors": "Mentors"
       }
     }
+  },
+  "Loading": {
+    "title": "Loading..."
   }
 }

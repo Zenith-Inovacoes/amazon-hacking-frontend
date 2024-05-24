@@ -12,8 +12,16 @@ const Link = forwardRef(
     const hasTargetBlank = target === '_blank'
 
     return (
-      <a ref={ref} className={cn("group w-fit inline-flex gap-x-1 justify-center  focus-visible:outline-none text-20", className)} {...props}>
-        <span className="group-hover:underline text-inherit group-focus-visible:underline border-white">
+      <a
+        ref={ref}
+        className={cn(
+          'group w-fit h-8 inline-flex gap-x-1 justify-center cursor-pointer focus-visible:outline-none text-20',
+          className
+        )}
+        target={target}
+        {...props}
+      >
+        <span className='group-hover:underline text-inherit group-focus-visible:underline tracking-[0.216px]'>
           {children}
         </span>
         <IoOpenOutline size={27} className={cn("my-auto", hasTargetBlank ? "" : "hidden")} />

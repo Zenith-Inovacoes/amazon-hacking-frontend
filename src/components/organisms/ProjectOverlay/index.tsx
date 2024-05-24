@@ -34,12 +34,13 @@ const ProjectOverlay = ({
   instagram,
   facebook,
   variant = 'current',
+  overlayTrigger,
 }: ProjectOverlayProps) => {
   return (
     <Overlay>
-      <OverlayTrigger asChild>{children.overlayTrigger}</OverlayTrigger>
+      <OverlayTrigger asChild>{overlayTrigger}</OverlayTrigger>
       <OverlayContent theme='dark'>
-        <div className='flex flex-col items-center justify-center gap-[108px] w-full h-full pb-36 overflow-visible md:gap-[111px]'>
+        <div className='flex flex-col items-center justify-center gap-[108px] w-full h-full pb-36 md:gap-[111px] pt-[100px] md:pt-[145px] lg:pt-[135px] overflow-hidden'>
           <div className='flex flex-col w-full h-full items-center gap-[108px] px-6 pt-5 md:px-[65px] md:gap-[111px] lg:px-[102px]'>
             <div className='flex flex-col items-center justify-center gap-[22px] w-full h-fit md:gap-[28px]'>
               <h1 className='text-start text-black font-bold leading-[1.1] text-40 md:w-full md:text-50 lg:text-60'>
