@@ -9,8 +9,38 @@ import Loading from "@/components/templates/Loading";
 import { NextIntlClientProvider } from 'next-intl'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://amazonhacking.com.br'),
   title: 'Amazon Hacking',
-  description: 'Amazon Hacking',
+  description: 'O Amazon Hacking é um programa de formação para alunos da Escola de Negócios, Tecnologia e Inovação do CESUPA - ARGO, que visa conectar empresas comprometidas com a sustentabilidade amazônica, a comunidade local e seu conhecimento tradicional, junto ao conhecimento científico e tecnológico em prol do  desenvolvimento bioeconômico da região olhando para uma perspectiva global.',
+  category: 'Institucional',
+  keywords: [
+    'projetos',
+    'startups',
+    'inovação',
+    'cesupa',
+    'computação amostra',
+    'amazon hacking',
+    'google for startups'
+  ],
+  generator: 'Amazon Hacking',
+  applicationName: 'Amazon Hacking',
+  alternates: {
+    canonical: 'https://amazonhacking.com.br',
+  },
+  openGraph: {
+    title: 'Amazon Hacking',
+    description: 'O Amazon Hacking é um programa de formação para alunos da Escola de Negócios, Tecnologia e Inovação do CESUPA - ARGO, que visa conectar empresas comprometidas com a sustentabilidade amazônica, a comunidade local e seu conhecimento tradicional, junto ao conhecimento científico e tecnológico em prol do  desenvolvimento bioeconômico da região olhando para uma perspectiva global.',
+    locale: 'pt_BR',
+    url: 'https://amazonhacking.com.br',
+    type: 'website',
+    siteName: 'Amazon Hacking',
+  },
+  twitter: {
+    title: 'Amazon Hacking',
+    description: 'O Amazon Hacking é um programa de formação para alunos da Escola de Negócios, Tecnologia e Inovação do CESUPA - ARGO, que visa conectar empresas comprometidas com a sustentabilidade amazônica, a comunidade local e seu conhecimento tradicional, junto ao conhecimento científico e tecnológico em prol do  desenvolvimento bioeconômico da região olhando para uma perspectiva global.',
+    creator: '@cesupaonline',
+    card: 'summary_large_image',
+  },
 }
 
 export default function RootLayout({
