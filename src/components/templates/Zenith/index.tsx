@@ -20,10 +20,11 @@ import BottomWaveShadow from 'public/ZenithWaves/Mobile/BottomWaveShadow.svg'
 import WhatsappIcon from 'public/icons/whatsapp.svg'
 import InstagramIcon from 'public/icons/instagram.svg'
 import LinkedInIcon from 'public/icons/linkedin.svg'
+import { sections } from '@/constants/sections'
 
 const Zenith = () => {
   return (
-    <div className='relative flex w-full h-full justify-center flex-col bg-white'>
+    <section id={sections.zenith} className='relative flex w-full h-full justify-center flex-col bg-white'>
       <Image
         src={TopWaveShadow}
         alt='First Wave Top Shadow'
@@ -123,7 +124,7 @@ const Zenith = () => {
         alt='Zenith Bottom Wave'
         className='-mt-[7.5vw] w-full h-full scale-y-[1.01] min-w-[100vw]'
       />
-    </div>
+    </section>
   )
 }
 

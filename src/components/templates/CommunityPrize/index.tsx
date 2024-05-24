@@ -15,6 +15,7 @@ import CommunityPrize2TabletShadow from 'public/images/CommunityPrizeTablet2Shad
 
 import AranduLogo from 'public/images/AranduLogo.svg'
 import { ProjectOverlayChildrenProps } from '@/components/organisms/ProjectOverlay/types'
+import { sections } from '@/constants/sections'
 
 const CommunityPrize = () => {
   const overlayData: ProjectOverlayChildrenProps = {
@@ -27,7 +28,7 @@ const CommunityPrize = () => {
   }
 
   return (
-    <section className='relative bg-white flex flex-col items-center justify-center'>
+    <section id={sections.publicPrize} className='relative bg-white flex flex-col items-center justify-center'>
       <div className='flex flex-col w-full h-full max-w-screen-2xl pt-32 pb-11 gap-[42px] px-6'>
         <div className='flex flex-col w-full items-center justify-center gap-[22px] px-2 md:gap-7'>
           <h1 className='text-black font-bold text-40 leading-[1.1] text-center md:text-50 lg:max-w-[11ch] lg:text-60'>

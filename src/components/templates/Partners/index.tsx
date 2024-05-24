@@ -23,12 +23,13 @@ import { emailAddress } from "@/constants/contacts"
 import { MotionDiv, MotionH3, MotionP, MotionH4, MotionSpan } from "@/components/Motion"
 
 import {useTranslations} from "next-intl"
+import { sections } from "@/constants/sections"
 
 export default function Partners() {
     const t = useTranslations("Home.Partners")
 
     return (
-        <div className="w-full bg-white relative h-auto z-10 pt-12 lg:pt-20">
+        <div id={sections.partners} className="w-full bg-white relative h-auto z-10 pt-12 lg:pt-20">
             <MotionDiv initial="hidden" whileInView="show" viewport={{
                 once: true,
                 amount: .25,

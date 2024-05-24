@@ -10,6 +10,7 @@ import WavePublicPrize from 'public/images/Wave-Public-Prize.svg'
 import WavePublicPrizeDesktop from 'public/images/Public-Prize-Wave-Dk.svg'
 import Image from 'next/image'
 import PublicPrizeOverlay from './components/PublicPrizeOverlay'
+import { sections } from '@/constants/sections'
 
 export default function PublicPrize() {
   const [selectedYear, setSelectedYear] = useState<number | null>(2023)
@@ -33,7 +34,7 @@ export default function PublicPrize() {
   }
 
   return (
-    <section className='relative bg-white pb-14 before:absolute lg:overflow-y-visible z-20 before:bg-white before:w-full before:h-4 before:-translate-y-1'>
+    <section id={sections.publicPrize} className='relative bg-white pb-14 before:absolute lg:overflow-y-visible z-20 before:bg-white before:w-full before:h-4 before:-translate-y-1'>
       <div className="w-full h-16 opacity-40 z-0 bg-[url('/images/symbol.png')] bg-repeat bg-contain absolute top-40 lg:bottom-12 lg:top-auto" />
       <div className='lg:flex justify-center items-center relative max-w-screen-2xl mx-auto'>
         <div className='flex flex-col gap-5 z-10 flex-1 lg:z-0'>

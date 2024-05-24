@@ -15,6 +15,7 @@ import waveTablet from 'public/WaveTabletEditions.svg'
 import waveDesktop from 'public/WaveDesktopEditions.svg'
 
 import restrospect from 'public/challengerFlatArt.svg'
+import { sections } from "@/constants/sections"
 
 const FirstWave = () => {
     return (
@@ -62,7 +63,7 @@ export default function Editions() {
     return (
         <section>
             <FirstWave />
-            <section className="bg-white relative z-10 mx-auto flex flex-col gap-9 md:gap-20 h-full items-center justify-center">
+            <section id={sections.editions} className="bg-white relative z-10 mx-auto flex flex-col gap-9 md:gap-20 h-full items-center justify-center">
                 <div className="w-full flex flex-col items-center justify-center px-5 mb-5 md:mb-0 md:flex-row lg:justify-around max-w-screen-2xl">
                     <motion.div viewport={{
                         once: true,

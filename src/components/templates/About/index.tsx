@@ -18,6 +18,7 @@ import AboutNumber2 from "public/images/About-Number-2.png"
 import AboutNumber3 from "public/images/About-Number-3.png"
 import AboutNumberImage from "public/images/About-Numbers-Image.svg"
 import AboutNumberPlant from "public/images/About-Number-Plant.png"
+import { sections } from "@/constants/sections"
 
 const FirstWave = () => {
     return (
@@ -70,7 +71,7 @@ export default function About() {
         <>
             <FirstWave />
             {/* About */}
-            <div id="about" className="h-fit relative bg-white pt-24 before:w-full before:h-1 before:bg-white before:top-[-2px] before:left-0 before:absolute lg:pb-32 2xl:pt-0">
+            <div id={sections.about} className="h-fit relative bg-white pt-24 before:w-full before:h-1 before:bg-white before:top-[-2px] before:left-0 before:absolute lg:pb-32 2xl:pt-0">
                 <div className="w-full h-24 opacity-30 z-0 bg-[url('/images/symbol.png')] bg-repeat bg-contain absolute bottom-[35%] lg:bottom-[0%]" />
                 <div className="flex flex-col gap-9 justify-between items-center max-w-screen-2xl mx-auto lg:flex-row">
                     <MotionDiv viewport={{

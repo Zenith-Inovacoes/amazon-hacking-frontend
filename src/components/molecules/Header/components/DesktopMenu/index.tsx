@@ -14,8 +14,6 @@ const DesktopMenu = ({ email, image, name }: DesktopMenuProps) => {
 
   const { open, handleOpenChange } = useMenu()
 
-  const [teste, setTeste] = useState<boolean>(false)
-
   return (
     <Dialog.Root open={open} onOpenChange={handleOpenChange}>
       <Dialog.Trigger className='relative w-fit xl:w-full h-fit right-0 top-0 z-50 transition-opacity duraiton-200 ease-linear hidden lg:flex xl:justify-end xl:flex xl:items-center xl:gap-2'>
@@ -61,8 +59,8 @@ const DesktopMenu = ({ email, image, name }: DesktopMenuProps) => {
                 className={cn(
                   'absolute font-medium tracking-[0.2px] text-xs truncate w-full max-w-[22ch] text-white z-50 mt-[70px] right-0 mr-[230px] translate-x-full',
                   open
-                    ? 'animate-overlayShow xl:animate-none'
-                    : 'animate-overlayHide opacity-0 xl:xl:animate-none'
+                    ? 'animate-overlayShow'
+                    : 'animate-overlayHide opacity-0'
                 )}
               >
                 {email}

@@ -8,6 +8,7 @@ import InstagramFillIcon from 'public/icons/instagram-fill.svg'
 import FacebookFillIcon from 'public/icons/facebook.svg'
 import YoutubeFillIcon from 'public/icons/youtube.svg'
 import Separator from '@/components/atoms/Separator'
+import { sections } from '@/constants/sections'
 
 const Waves = () => {
   return (
@@ -165,7 +166,7 @@ export default function Footer() {
   return (
     <>
       <Waves />
-      <footer className='bg-primary-100 relative z-10'>
+      <footer id={sections.footer} className='bg-primary-100 relative z-10'>
         <div className='flex flex-col justify-center items-center gap-9 max-w-72 mx-auto md:max-w-[548px] relative z-10 md:gap-14 lg:max-w-screen-2xl lg:flex-row lg:px-8 lg:justify-between lg:gap-4 xl:gap-10'>
           <div className='flex flex-col justify-center items-center gap-8 md:gap-10 lg:items-start lg:order-3'>
             <span className='text-white text-24 leading-7 font-bold md:text-28'>
