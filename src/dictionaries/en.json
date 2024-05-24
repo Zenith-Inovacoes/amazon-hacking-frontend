@@ -78,6 +78,13 @@
       "socialMedia": "Social medias:",
       "rights": "2024 © CESUPA. All rights reserved.",
       "developedBy": "Developed by <link>Zenith Inova</link>"
+    },
+    "Winners": {
+      "title": "Immersion Podium",
+      "description": "The winners implemented innovative sustainable projects in the Amazon, respecting local knowledge. Check out the outstanding impactful solutions.",
+      "year": "Select an year:",
+      "eng": "Computer Engineering",
+      "sci": "Computer Science"
     }
   },
   "Loading": {

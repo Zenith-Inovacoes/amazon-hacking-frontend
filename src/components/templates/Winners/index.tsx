@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { Checkbox, Select } from '@/components/atoms'
 import Image from 'next/image'
@@ -14,6 +14,7 @@ import WinnersWaveTablet from 'public/Waves/WinnerWaves/Tablet/WinnersWave.svg'
 import WinnersWaveDesktop from 'public/Waves/WinnerWaves/Desktop/WinnerWave.svg'
 import { SelectItem } from '@/components/atoms/Select'
 import { sections } from '@/constants/sections'
+import { useTranslations } from 'next-intl'
 
 const Winners = () => {
   const [toggle, setToggle] = useState<boolean[]>([false, false])
@@ -26,6 +27,8 @@ const Winners = () => {
   const handleToggle2 = () => {
     setToggle((currState) => [currState[0] && !currState[0], !currState[1]])
   }
+
+  const t = useTranslations('Home.Winners')
 
   const cardsContent = {
     engineering: [
@@ -41,19 +44,20 @@ const Winners = () => {
   }
 
   return (
-    <section id={sections.winners} className='relative z-20 bg-white flex flex-col items-center justify-center w-full h-full overflow-hidden pt-16 pb-32 lg:pb-52'>
+    <section
+      id={sections.winners}
+      className='relative z-20 bg-white flex flex-col items-center justify-center w-full h-full overflow-hidden pt-16 pb-32 lg:pb-52'
+    >
       <div className='flex flex-col max-w-screen-2xl w-full items-center justify-center gap-[84px] md:gap-[226px] lg:flex-row lg:justify-between lg:gap-0'>
         <div className='flex flex-col w-full items-center justify-center gap-[22px] px-8 md:px-[62px] md:gap-7 md:items-start lg:px-0 lg:pl-[100px] text-black'>
           <h1 className='text-black text-center font-bold text-40 leading-[1.1] md:text-start md:text-50'>
-            Pódio da imersão
+            {t('title')}
           </h1>
           <p className='text-black text-center text-base tracking-[0.192px] md:text-start md:mb-[22px] md:text-18 md:tracking-[0.216px]'>
-            Os vencedores implementaram projetos inovadores e sustentáveis na
-            Amazônia, respeitando o conhecimento local. Confira as soluções
-            impactantes de destaque.
+            {t('description')}
           </p>
           <h2 className='text-black font-semibold text-36 text-center tracking-[0.432px] md:text-start'>
-            Escolha um ano:
+            {t('year')}
           </h2>
           <div className='flex flex-col items-center justify-center w-full gap-[22px] md:justify-between md:flex-row md:w-[95%]'>
             <div className='flex gap-[22px] items-center justify-center z-50'>
@@ -67,7 +71,9 @@ const Winners = () => {
             <div
               className={cn(
                 'flex transition-all duration-300 z-40 ',
-                !toggle[0] && !toggle[1] && 'opacity-0 pointer-events-none -mt-20'
+                !toggle[0] &&
+                  !toggle[1] &&
+                  'opacity-0 pointer-events-none -mt-20'
               )}
             >
               <Select
@@ -75,8 +81,8 @@ const Winners = () => {
                 defaultValue='eng'
                 onValueChange={(e: 'eng' | 'sci') => setCourse(e)}
               >
-                <SelectItem value='eng'>Engenharia de Computação</SelectItem>
-                <SelectItem value='sci'>Ciência de Computação</SelectItem>
+                <SelectItem value='eng'>{t('eng')}</SelectItem>
+                <SelectItem value='sci'>{t('sci')}</SelectItem>
               </Select>
             </div>
           </div>
@@ -92,8 +98,11 @@ const Winners = () => {
           <div
             className={cn(
               'absolute z-20 opacity-0 transition-opacity duration-500 horizontal-snap w-full flex gap-12 px-[35vw] justify-start items-center lg:overflow-hidden lg:flex-wrap-reverse lg:px-0 lg:justify-center pb-32 lg:-mr-[8%] lg:right-0 lg:w-[120%] xl:w-[110%]',
-              course === 'eng' && (toggle[0] || toggle[1]) && 'opacity-100 z-30',
-              (course !== 'eng' || !toggle[0] && !toggle[1]) && 'pointer-events-none'
+              course === 'eng' &&
+                (toggle[0] || toggle[1]) &&
+                'opacity-100 z-30',
+              (course !== 'eng' || (!toggle[0] && !toggle[1])) &&
+                'pointer-events-none'
             )}
           >
             {cardsContent.engineering.map((val, idx) => (
@@ -111,8 +120,11 @@ const Winners = () => {
           <div
             className={cn(
               'absolute z-20 opacity-0 transition-opacity duration-500 horizontal-snap w-full flex gap-12 px-[35vw] justify-start items-center lg:overflow-hidden lg:flex-wrap-reverse lg:px-0 lg:justify-center pb-32 lg:-mr-[8%] lg:right-0 lg:w-[120%] xl:w-[110%]',
-              course === 'sci' && (toggle[0] || toggle[1]) && 'opacity-100 z-30',
-              (course !== 'sci' || !toggle[0] && !toggle[1]) && 'pointer-events-none'
+              course === 'sci' &&
+                (toggle[0] || toggle[1]) &&
+                'opacity-100 z-30',
+              (course !== 'sci' || (!toggle[0] && !toggle[1])) &&
+                'pointer-events-none'
             )}
           >
             {cardsContent.science.map((val, idx) => (
