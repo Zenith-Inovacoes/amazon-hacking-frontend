@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useBreakpoint } from '@/hooks/useBreakpoint'
 import editionsFlatArt from 'public/EditionsFlatArt.svg'
-import { useTranslations } from 'next-intl'
+
 import { motion } from 'framer-motion'
 import EditionOverlay from './components/EditionOverlay'
 
@@ -16,6 +16,7 @@ import waveDesktop from 'public/WaveDesktopEditions.svg'
 
 import restrospect from 'public/challengerFlatArt.svg'
 import { sections } from '@/constants/sections'
+import { EditionProps } from './types'
 
 const FirstWave = () => {
   return (
@@ -49,10 +50,15 @@ const FirstWave = () => {
   )
 }
 
-export default function Editions() {
+export default function Editions({
+  label,
+  mainText1,
+  mainText2,
+  retrospective,
+  retrospectiveText,
+  subtitle,
+}: EditionProps) {
   const breakpoint = useBreakpoint()
-  // const t = useTranslations("Home.Editions");
-
   let waveImageSrc = waveMobile
 
   if (breakpoint === 'md') {
@@ -133,31 +139,16 @@ export default function Editions() {
             }}
             className='flex flex-col w-full md:w-1/2 gap-y-5'
           >
-            <h2 className='text-black text-40 font-bold lg:text-60'>
-              3° Edição
-              {/* {t("label")} */}
-            </h2>
+            <h2 className='text-black text-40 font-bold lg:text-60'>{label}</h2>
             <p className='text-neutral-600 text-24 mb-7 font-semibold leading-7 lg:text-28'>
-              Saberes do Combú: Desenvolvendo uma bioeconomia inclusiva na
-              Amazônia.
-              {/* {t("subtitle")} */}
+              {subtitle}
             </p>
             <div className='flex flex-col gap-y-7'>
               <p className='text-neutral-500 font-medium text-16 leading-4 lg:text-20 lg:leading-6'>
-                A Ilha do Combu é uma ilha fluvial situada no Rio Guamá, bem
-                próxima de Belém do Pará. Sendo lar para aproximadamente 2.200
-                habitantes. sua economia é impulsionada principalmente pelo
-                extrativismo de produtos como açaí, cacau e cupuaçu.
-                {/* {t("mainText1")} */}
+                {mainText1}
               </p>
               <p className='text-neutral-500 font-medium text-16 leading-4 lg:text-20 lg:leading-6'>
-                A ilha foi designada como Área de Proteção Ambiental para
-                preservar sua rica biodiversidade e enfrenta desafios de
-                crescimento turístico e infraestrutura, especialmente em
-                saneamento e gestão de resíduos. Estes problemas exigem soluções
-                cuidadosas para manter um equilíbrio entre desenvolvimento
-                econômico e sustentabilidade ambiental.
-                {/* {t("mainText2")} */}
+                {mainText2}
               </p>
             </div>
           </motion.div>
@@ -191,15 +182,10 @@ export default function Editions() {
                 className='w-full my-12 flex flex-col gap-y-7 justify-center items-center px-5 md:my-20 md:w-1/2 md:items-start md:translate-y-10 lg:mb-24 lg:mt-56'
               >
                 <h4 className='text-40 font-semibold md:text-50 md:text-left text-white'>
-                  Retrospectiva
-                  {/* {t("retrospective")} */}
+                  {retrospective}
                 </h4>
                 <p className='text-16 text-center md:text-18 md:text-left md:leading-6 lg:text-20 text-white'>
-                  Cada edição do Amazon Hacking contribuiu para o crescimento
-                  contínuo do programa e o impacto positivo na biodiversidade da
-                  Amazônia e suas comunidades. Descubra as realizações e
-                  desafios que marcaram nosso legado.
-                  {/* {t("retrospectiveText")} */}
+                  {retrospectiveText}
                 </p>
               </motion.div>
               <motion.div
