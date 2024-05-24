@@ -1,3 +1,5 @@
+"use client"
+
 import Image from 'next/image'
 import { Button } from '@/components/atoms'
 import ProjectOverlay from '@/components/organisms/ProjectOverlay'
@@ -81,10 +83,6 @@ const CommunityPrize = () => {
                 className='w-full h-fit md:max-w-[230px]'
               />
               <ProjectOverlay
-                facebook='/'
-                twitter='/'
-                instagram='/'
-                whatsapp='/'
                 videoURL='https://www.youtube-nocookie.com/embed/djD7vOYDc9w'
                 variant='past'
                 overlayTrigger={

@@ -17,13 +17,8 @@ export default {
         },
         placeholder: {
             description: "Default text when no value is selected."
-        }
-    }
-} as Meta<SelectProps>
-
-type Story = StoryObj<SelectProps>
-
-export const Default: Story = {
+        },
+    },
     args: {
         placeholder: "Selecione um item",
         children: 
@@ -31,5 +26,16 @@ export const Default: Story = {
                 <SelectItem value="teste1">Teste 1</SelectItem>
                 <SelectItem value="teste2">Teste 2</SelectItem>
             </>
+    }
+} as Meta<SelectProps>
+
+type Story = StoryObj<SelectProps>
+
+export const Default: Story = {
+}
+
+export const Light: Story = {
+    args: {
+        variant: "light"
     }
 }

@@ -1,20 +1,31 @@
+import { Header } from '@/components/molecules'
+import Hero from '@/components/templates/Hero'
 import About from '@/components/templates/About'
+import Editions from '@/components/templates/Editions'
 import Zenith from '@/components/templates/Zenith'
+import Winners from '@/components/templates/Winners'
+import PublicPrize from '@/components/templates/PublicPrize'
+import CommunityPrize from '@/components/templates/CommunityPrize'
 import Partners from '@/components/templates/Partners'
+import Footer from '@/components/templates/Footer'
 
 import { useTranslations } from 'next-intl'
-import { Header } from '@/components/molecules'
 
 export default function Home() {
-  const t = useTranslations()
+  const t = useTranslations('Home')
 
   return (
-    <main className='relative flex min-h-screen flex-col items-center justify-center text-60 font-bold'>
+    <main className='scroll-smooth'>
       <Header />
+      <Hero />
       <About />
-      <div className='h-screen bg-white w-full z-10' />
+      <Editions />
       <Zenith />
+      <Winners />
+      <PublicPrize />
+      <CommunityPrize />
       <Partners />
+      <Footer />
     </main>
   )
 }

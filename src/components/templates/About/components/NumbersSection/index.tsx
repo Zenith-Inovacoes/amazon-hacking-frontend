@@ -43,7 +43,7 @@ export default function NumbersSection({ children }: { children: ReactNode }) {
     }, [aboutNumbersRef])
 
     return (
-        <div ref={aboutNumbersRef} className="bg-primary-100 sticky top-0 w-full pt-8 2xl:pt-0 after:absolute after:w-full after:h-1 after:bg-black after:bottom-[-2px] before:absolute before:w-full before:h-1 before:bg-primary-100 before:top-[-2px]">
+        <div id="about-numbers" ref={aboutNumbersRef} className="bg-primary-100 sticky top-0 w-full pt-8 2xl:pt-0 after:absolute after:w-full after:h-1 after:bg-black after:bottom-[-2px] before:absolute before:w-full before:h-1 before:bg-primary-100 before:top-[-2px]">
             {children}
         </div>
     )

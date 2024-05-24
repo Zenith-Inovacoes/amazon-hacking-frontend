@@ -1,5 +1,20 @@
 {
+    "Index": {
+      "title": "Em Breve"
+    },
   "Home": {
+    "Header": {
+      "program": "O PROGRAMA",
+      "editions": "EDIÇÕES",
+      "winners": "VENCEDORES",
+      "partners": "PATROCINADORES"
+    },
+    "Hero": {
+      "title": "TECNOLOGIA E TRADIÇÃO EM HARMONIA",
+      "date": "05 À 07 DE JUNHO",
+      "subtitle": "Uma celebração de inovação e criatividade, abrindo caminhos para futuras gerações.",
+      "buttonText": "Explorar mais"
+    },
     "Partners": {
       "title": "Nossos parceiros",
       "subtitle": "Agradecemos aos nossos parceiros! Com o apoio deles, tornamos este evento possível. Confira quem são esses parceiros incríveis!",
@@ -38,6 +53,34 @@
         "students": "Alunos",
         "teams": "Equipes",
         "mentors": "Mentores"
+      }
+    },
+    "Editions": {
+      "label": "3° Edição",
+      "subtitle": "Saberes do Combú: Desenvolvendo uma bioeconomia inclusiva na Amazônia.",
+      "mainText1": "A Ilha do Combu é uma ilha fluvial situada no Rio Guamá, bem próxima de Belém do Pará. Sendo lar para aproximadamente 2.200 habitantes. sua economia é impulsionada principalmente pelo extrativismo de produtos como açaí, cacau e cupuaçu.",
+      "mainText2": "A ilha foi designada como Área de Proteção Ambiental para preservar sua rica biodiversidade e enfrenta desafios de crescimento turístico e infraestrutura, especialmente em saneamento e gestão de resíduos. Estes problemas exigem soluções cuidadosas para manter um equilíbrio entre desenvolvimento econômico e sustentabilidade ambiental.",
+      "retrospective": "Retrospectiva",
+      "retrospectiveText": "Cada edição do Amazon Hacking contribuiu para o crescimento contínuo do programa e o impacto positivo na biodiversidade da Amazônia e suas comunidades. Descubra as realizações e desafios que marcaram nosso legado."
+    },
+    "EditionsOverlay": {
+      "2022": {
+        "year": "2022",
+        "edition": "1º Edição",
+        "location": "Ilha das Onças",
+        "label": "Natureza Intocada",
+        "mainText": "A Ilha das Onças é uma das maiores ilhas fluviais do arquipélago do Rio Guamá, localizado próximo a Belém. É conhecida por sua rica biodiversidade, com vastas áreas de florestas preservadas que são habitat de diversas espécies de fauna e flora. Além da importância ecológica, a ilha possui uma comunidade ribeirinha que mantém um modo de vida tradicional, com atividades como pesca, pequena agricultura e, em alguns casos, turismo de base comunitária.",
+        "challenger": "Desafios Encontrados",
+        "challengerText": "A gestão de recursos naturais, preservação ambiental e conectividade móvel são desafios constantes para os habitantes da comunidade da Usina Vitória, que enfrentam pressões como o desmatamento e a urbanização provenientes de Belém e áreas circunvizinhas."
+      },
+      "2023": {
+        "year": "2023",
+        "edition": "2º Edição",
+        "location": "Ilha de Cotijuba",
+        "label": "Onde o Rio Encontra Paz",
+        "mainText": "Com cerca de 15 quilômetros de extensão e 4 quilômetros de largura, Cotijuba é conhecida por suas belas praias de água doce e areias brancas, que são um convite para turistas e moradores locais em busca de lazer e contato com a natureza. A ilha destaca-se por sua atmosfera tranquila e pela preservação de seu ambiente natural. É coberta por uma vegetação densa típica da região Amazônica e possui uma fauna rica. Entre as praias mais famosas estão a Praia do Vai Quem Quer, a Praia da Saudade e a Praia das Pedrinhas, cada uma com características próprias que atraem diferentes tipos de visitantes.",
+        "challenger": "Desafios Encontrados",
+        "challengerText": "O Movimento das Mulheres das Ilhas de Belém (MMIB) é uma organização que representa interesses e lutas específicas das mulheres que vivem nas diversas ilhas próximas a Belém do Pará. A associação apontou diversos desafios, desde questões sociais e econômicas que afetam essas comunidades insulares, até seu isolamento geográfico e às limitações de acesso a serviços básicos como educação, saúde e transporte."
       }
     }
   },

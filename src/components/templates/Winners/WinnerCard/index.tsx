@@ -266,10 +266,6 @@ const WinnerCard = ({
             (currentYear[0] ? idx : idx + 3) + (course === 'sci' ? 6 : 0)
           ]
         }
-        twitter='https://twitter.com/'
-        whatsapp='https://web.whatsapp.com/'
-        instagram='https://www.instagram.com/'
-        facebook='https://www.facebook.com/'
         overlayTrigger={<Button className='z-10'>Conheça a Solução</Button>}
       >
         {

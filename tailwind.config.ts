@@ -25,11 +25,15 @@ const config: Config = {
       fontFamily: light.fontFamilies,
       fontSize: light.fontSizes,
       lineHeight: light.lineHeights,
-      backgroundImage: {
-        '404Decorator': "url('/404Decorator.svg')",
-      },
       transitionProperty: {
         maxWidth: 'max-width',
+      },
+      backgroundImage: {
+        'editionsMobileWave': "url('/waveMobileEditions.svg')",
+        'editionsTabletWave': "url('/waveTabletEditions.svg')",
+        'tribalDecorator': "url('/symbol.svg')",
+        'OverlayEditionsMobileWave': "url('/WaveMobileEditionOverlay.svg')",
+        '404Decorator': "url('/404Decorator.svg')",
       },
       boxShadow: {
         languageSwitcher:

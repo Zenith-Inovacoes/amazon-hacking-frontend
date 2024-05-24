@@ -1,5 +1,17 @@
 {
   "Home": {
+    "Header": {
+      "program": "THE PROGRAM",
+      "editions": "EDITIONS",
+      "winners": "WINNERS",
+      "partners": "PARTNERS"
+    },
+    "Hero": {
+      "title": "TECHNOLOGY AND TRADITION IN HARMONY",
+      "date": "JUNE 5TH TO 7TH",
+      "subtitle": "A celebration of innovation and creativity, paving the way for future generations.",
+      "buttonText": "Explore more"
+    },
     "Partners": {
       "title": "Our Partners",
       "subtitle": "We thank our partners! With their support, we made this event possible. Check out these amazing partners!",

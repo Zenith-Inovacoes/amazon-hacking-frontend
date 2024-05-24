@@ -29,10 +29,6 @@ const ProjectOverlay = ({
   children,
   videoURL,
   videoTitle,
-  twitter,
-  whatsapp,
-  instagram,
-  facebook,
   variant = 'current',
   overlayTrigger,
 }: ProjectOverlayProps) => {
@@ -50,6 +46,8 @@ const ProjectOverlay = ({
                 <Image
                   src={children.teamLogo}
                   alt={children.altLogo}
+                  width={0}
+                  height={0}
                   className='w-full h-fit max-w-[204px] md:max-w-[325px]'
                 />
               </div>
@@ -179,16 +177,16 @@ const ProjectOverlay = ({
                 Compartilhar
               </h1>
               <div className='flex gap-5 items-center justify-center'>
-                <SocialMediaButton href={twitter}>
+                <SocialMediaButton href={"#"}>
                   <Image src={XIcon} alt='X Icon' className='min-h-10' />
                 </SocialMediaButton>
-                <SocialMediaButton href={instagram}>
+                <SocialMediaButton href={"#"}>
                   <Image src={WhatsappIcon} alt='Whatsapp Icon' />
                 </SocialMediaButton>
-                <SocialMediaButton href={whatsapp}>
+                <SocialMediaButton href={"#"}>
                   <Image src={InstagramIcon} alt='Instagram Icon' />
                 </SocialMediaButton>
-                <SocialMediaButton href={facebook}>
+                <SocialMediaButton href={"#"}>
                   <PiFacebookLogoBold size={46} />
                 </SocialMediaButton>
               </div>
