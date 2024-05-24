@@ -82,6 +82,33 @@
         "challenger": "Desafios Encontrados",
         "challengerText": "O Movimento das Mulheres das Ilhas de Belém (MMIB) é uma organização que representa interesses e lutas específicas das mulheres que vivem nas diversas ilhas próximas a Belém do Pará. A associação apontou diversos desafios, desde questões sociais e econômicas que afetam essas comunidades insulares, até seu isolamento geográfico e às limitações de acesso a serviços básicos como educação, saúde e transporte."
       }
+    },
+    "Zenith": {
+      "title": "O ápice da inovação surgiu daqui.",
+      "subtitle": "Nossa trajetória começou no Amazon Hacking, em 2022. Desde então, nunca mais paramos.",
+      "buttonText": "Saiba mais",
+      "linkText": "Explore mais o universo da Zenith",
+      "Overlay": {
+        "title": "Explore mais o universo da Zenith",
+        "subtitle": "Um projeto que evoluiu para uma startup. A Zenith Inova trabalha incansavelmente com foco no desenvolvimento da Amazônia.",
+        "secondTitle": "Conectar e cultivar o futuro",
+        "secondSubtitle": "Nossa missão é solucionar problemas pertinentes na região amazônica, buscando alcançar os mais altos níveis de satisfação de quem realmente importa: <bold>Você</bold>.",
+        "thirdTitle": "Guiados pela  paixão da  inovação",
+        "thirdSubtitle": "Descubra como a Zenith Inova está transformando nossa região com tecnologia e sustentabilidade.",
+        "buttonText": "Explorar mais"
+      }
+    },
+    "Footer": {
+      "menu": "Menu",
+      "Nav": {
+        "program": "O programa",
+        "editions": "Edições",
+        "winners": "Vencedores",
+        "partners": "Patrocinadores"
+      },
+      "socialMedia": "Redes sociais:",
+      "rights": "2024 © CESUPA. Todos direitos reservados.",
+      "developedBy": "Desenvolvido por <link>Zenith Inova</link>"
     }
   },
   "Loading": {

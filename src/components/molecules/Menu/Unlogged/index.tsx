@@ -9,12 +9,18 @@ import { useMenu } from '@/contexts/menu'
 
 import * as Dialog from '@radix-ui/react-dialog'
 import { cn } from '@/services/utils/className.utils'
-import { useEffect } from 'react'
+import { useState } from 'react'
+import { scrollTo } from '@/services/utils/scrollTo'
+import { usePathname } from 'next/navigation'
+import { locales } from '@/services/utils/locale.utils'
 
 const Unlogged = () => {
-  const { open, handleOpenChange } = useMenu()
+  const pathname = usePathname()
+  const [locale, setLocale] = useState<string>(
+    locales.find((locale) => pathname?.includes(locale.locale))?.locale || 'en'
+  )
 
-  useEffect(() => console.log(open), [open])
+  const { open, handleOpenChange, setOpen } = useMenu()
 
   return (
     <Dialog.Root open={open} onOpenChange={handleOpenChange}>
@@ -36,32 +42,63 @@ const Unlogged = () => {
             onOpenAutoFocus={(e) => e.preventDefault()}
           >
             <div className='flex flex-col items-start justify-start bg-black w-[min(364px,100vw)] md:w-[405px] h-fit rounded-l-[30px] py-20 px-14 min-h-screen md:min-h-[806px] gap-10 z-50'>
-              <button>
+              <button
+                onClick={() => {
+                  scrollTo('hero')
+                  setOpen(false)
+                }}
+              >
                 <Image src={AmazonHackingLogo} alt='Amazon Hacking Logo' />
               </button>
               <div className='flex flex-col items-start justify-start gap-[18px]'>
                 <h2 className='text-[#979797] font-medium text-sm tracking-[0.168px]'>
                   Menu
                 </h2>
-                <Link className='font-medium text-20 tracking-[0.24px] text-white'>
-                  O Programa
+                <Link
+                  onClick={() => {
+                    scrollTo('about')
+                    setOpen(false)
+                  }}
+                  className='text-base *:tracking-[0.192px]'
+                >
+                  {locale === 'en' ? 'The Program' : 'O Programa'}
                 </Link>
-                <Link className='font-medium text-20 tracking-[0.24px] text-white'>
-                  Edições
+                <Link
+                  onClick={() => {
+                    scrollTo('editions')
+                    setOpen(false)
+                  }}
+                  className='text-base *:tracking-[0.192px]'
+                >
+                  {locale === 'en' ? 'Editions' : 'Edições'}
                 </Link>
-                <Link className='font-medium text-20 tracking-[0.24px] text-white'>
-                  Vencedores
+                <Link
+                  onClick={() => {
+                    scrollTo('winners')
+                    setOpen(false)
+                  }}
+                  className='text-base *:tracking-[0.192px]'
+                >
+                  {locale === 'en' ? 'Winners' : 'Vencedores'}
                 </Link>
-                <Link className='font-medium text-20 tracking-[0.24px] text-white'>
-                  Patrocinadores
+                <Link
+                  onClick={() => {
+                    scrollTo('partners')
+                    setOpen(false)
+                  }}
+                  className='text-base *:tracking-[0.192px]'
+                >
+                  {locale === 'en' ? 'Partners' : 'Patrocinadores'}
                 </Link>
               </div>
 
               <div className='flex flex-col items-start justify-start gap-[18px]'>
                 <h2 className='text-[#979797] font-medium text-sm tracking-[0.168px]'>
-                  Projetos
+                  {locale === 'en' ? 'Projects' : 'Projetos'}
                 </h2>
-                <Button>Ver Soluções</Button>
+                <Button>
+                  {locale === 'en' ? 'See Solutions' : 'Ver Soluções'}
+                </Button>
               </div>
 
               <div className='flex flex-col items-start justify-start gap-[18px]'>
