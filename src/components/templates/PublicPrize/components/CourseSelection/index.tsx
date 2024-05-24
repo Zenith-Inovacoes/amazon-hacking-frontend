@@ -35,16 +35,16 @@ export default function CourseSelection() {
         },
     ]
 
-    const [selectedYear, setSelectedYear] = useState<number | null>(2023)
+    const [selectedYear, setSelectedYear] = useState<number>(2023)
     const [selectedCourse, setSelectedCourse] = useState<CourseEnum>(
         CourseEnum.ECOMP
     )
 
     function onCheckboxClick(year: number) {
         if (year === selectedYear) {
-            setSelectedYear(null)
+            return
         } else {
-            setSelectedYear(year)
+            setSelectedYear(() => year)
         }
     }
 
