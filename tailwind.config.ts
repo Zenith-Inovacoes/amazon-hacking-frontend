@@ -17,7 +17,10 @@ const config: Config = {
     },
 
     extend: {
-      screens: { xs: '23.376rem' },
+      screens: {
+        xs: '375px',
+        ...screens,
+      },
       colors: light.colors,
       fontFamily: light.fontFamilies,
       fontSize: light.fontSizes,
