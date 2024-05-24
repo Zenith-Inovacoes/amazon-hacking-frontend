@@ -70,13 +70,13 @@ export default function PublicPrize() {
                 <div className='flex self-end gap-6'>
                   <Checkbox
                     checked={selectedYear === 2023}
-                    onClick={() => onCheckboxClick(2023)}
+                    onChange={() => onCheckboxClick(2023)}
                   >
                     2023
                   </Checkbox>
                   <Checkbox
                     checked={selectedYear === 2022}
-                    onClick={() => onCheckboxClick(2022)}
+                    onChange={() => onCheckboxClick(2022)}
                   >
                     2022
                   </Checkbox>

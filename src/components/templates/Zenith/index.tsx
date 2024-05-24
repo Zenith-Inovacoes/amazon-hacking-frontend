@@ -24,7 +24,10 @@ import { sections } from '@/constants/sections'
 
 const Zenith = () => {
   return (
-    <section id={sections.zenith} className='relative flex w-full h-full justify-center flex-col bg-white'>
+    <section
+      id={sections.zenith}
+      className='relative flex w-full h-full justify-center flex-col bg-white z-[25]'
+    >
       <Image
         src={TopWaveShadow}
         alt='First Wave Top Shadow'
@@ -77,7 +80,7 @@ const Zenith = () => {
           </div>
           <div className='flex w-fit justify-center items-center md:mt-0 mt-[10px] order-6 lg:col-start-1 lg:mt-4'>
             <Link
-              href='https://zenithinova.com.br'
+              href='https://linktr.ee/zenithinova'
               className='h-fit *:text-base *:font-semibold *:tracking-[0.192px] md:*:text-18 md:*:tracking-[0.216px] text-nowrap'
               target='_blank'
             >

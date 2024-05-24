@@ -36,7 +36,7 @@ const LogoButton = forwardRef(
           />
           <path
             fillRule='evenodd'
-            clip-rule='evenodd'
+            clipRule='evenodd'
             d='M84.1738 53.9355H109.104L96.5504 26.3535L84.1738 53.9355ZM89.6364 50.3994H103.609L96.5732 34.9402L89.6364 50.3994Z'
             fill='white'
           />
