@@ -16,6 +16,8 @@ import waveMobile from 'public/WaveMobileEditionOverlay.svg'
 import waveTablet from 'public/WaveTabletEditionsOverlay.svg'
 import OnçasIsland from 'public/OnçasIslandMB.svg'
 import OnçasIslandMD from 'public/OnçasIslandMD.svg'
+import Cotijuba from 'public/CotijubaMB.svg'
+import CotijubaMD from 'public/CotijubaMD.svg'
 
 
 const EditionOverlay = ({

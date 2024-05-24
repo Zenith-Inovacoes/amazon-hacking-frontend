@@ -17,7 +17,7 @@ import restrospect from 'public/challengerFlatArt.svg'
 
 export default function Editions() {
     const breakpoint = useBreakpoint() 
-    const t = useTranslations("Editions");
+    const t = useTranslations("Home.Editions");
 
     let waveImageSrc = waveMobile
 
@@ -46,10 +46,43 @@ export default function Editions() {
     return (
         <section className="bg-white mx-auto flex flex-col gap-9 md:gap-20 h-full">
             <div className="w-full flex flex-col items-center justify-center px-5 mb-5 md:mb-0 md:flex-row lg:justify-around max-w-screen-2xl">
-                <div className="relative w-[279px] h-[247px] md:w-[310px] md:h-[310px] lg:w-[427px] lg:h-[427px]">
+                <motion.div viewport={{
+                    once: true,
+                    amount: .5,
+                }} initial="hidden" whileInView="show" variants={{
+                    hidden: {
+                        opacity: 0,
+                    },
+                    show: {
+                        opacity: 1,
+                        transition: {
+                            staggerChildren: .5,
+                            duration: .5,
+                            ease: "easeIn",
+                        },
+                    }
+                }} className="relative w-[279px] h-[247px] md:w-[310px] md:h-[310px] lg:w-[427px] lg:h-[427px]">
                     <Image src={editionsFlatArt} alt='Flat Art de uma ilha' fill />
-                </div>
-                <div className="flex flex-col w-full md:w-1/2 gap-y-5">
+                </motion.div>
+                <motion.div viewport={{
+                    once: true,
+                    amount: .5,
+                }} initial="hidden" whileInView="show" variants={{
+                    hidden: {
+                        opacity: 0,
+                        y: "-50px"
+                    },
+                    show: {
+                        opacity: 1,
+                        y: "0px",
+                        transition: {
+                            staggerChildren: .5,
+                            duration: 1,
+                            ease: "easeIn",
+                        },
+                    }
+                }}
+                className="flex flex-col w-full md:w-1/2 gap-y-5">
                     <h2 className="text-black text-40 font-bold lg:text-60">
                         3° Edição
                         {/* {t("label")} */}
@@ -68,11 +101,28 @@ export default function Editions() {
                             {/* {t("mainText2")} */}
                         </p>
                     </div>
-                </div>
+                </motion.div>
             </div>
             <div className="relative w-[100vw]">
                 <div className="absolute bg-cover bg-editionsMobileWave md:bg-editionsTabletWave md:justify-center md:items-center md:flex md:flex-row w-full pb-8">
-                    <div className="w-full my-12 flex flex-col gap-y-7 justify-center items-center px-5 md:my-20 md:w-1/2 md:items-start md:translate-y-10 lg:my-36">
+                    <motion.div viewport={{
+                        once: true,
+                        amount: .5,
+                    }} initial="hidden" whileInView="show" variants={{
+                        hidden: {
+                            opacity: 0,
+                            x: "-50px"
+                        },
+                        show: {
+                            opacity: 1,
+                            x: "0px",
+                            transition: {
+                                staggerChildren: .5,
+                                duration: .5,
+                                ease: "easeIn",
+                            },
+                        }
+                    }} className="w-full my-12 flex flex-col gap-y-7 justify-center items-center px-5 md:my-20 md:w-1/2 md:items-start md:translate-y-10 lg:mb-24 lg:mt-56">
                         <h4 className="text-40 font-semibold md:text-50 md:text-left">
                             Retrospectiva
                             {/* {t("retrospective")} */}
@@ -81,10 +131,27 @@ export default function Editions() {
                             Cada edição do Amazon Hacking contribuiu para o crescimento contínuo do programa e o impacto positivo na biodiversidade da Amazônia e suas comunidades. Descubra as realizações e desafios que marcaram nosso legado.
                             {/* {t("retrospectiveText")} */}
                         </p>
-                    </div>
-                    <div className="hidden relative w-[221px] h-[271px] lg:w-[360px] lg:h-[360px] md:block md:translate-y-10">
+                    </motion.div>
+                    <motion.div viewport={{
+                        once: true,
+                        amount: .5,
+                    }} initial="hidden" whileInView="show" variants={{
+                        hidden: {
+                            opacity: 0,
+                            x: "-50px"
+                        },
+                        show: {
+                            opacity: 1,
+                            x: "0px",
+                            transition: {
+                                staggerChildren: .5,
+                                duration: .5,
+                                ease: "easeIn",
+                            },
+                        }
+                    }} className="hidden relative w-[221px] h-[271px] lg:w-[360px] lg:h-[360px] md:block md:translate-y-10">
                         <Image src={restrospect} alt="flat art" fill />
-                    </div>
+                    </motion.div>
                 </div>
                 <div className="flex flex-col w-full h-96" />
                 <div className="relative z-10 max-w-[100vw] w-full mx-auto -translate-y-40 md:-translate-y-12 lg:translate-y-12">
