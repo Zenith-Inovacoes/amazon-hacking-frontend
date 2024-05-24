@@ -14,9 +14,20 @@ import WinnersWaveTablet from 'public/Waves/WinnerWaves/Tablet/WinnersWave.svg'
 import WinnersWaveDesktop from 'public/Waves/WinnerWaves/Desktop/WinnerWave.svg'
 import { SelectItem } from '@/components/atoms/Select'
 import { sections } from '@/constants/sections'
-import { useTranslations } from 'next-intl'
 
-const Winners = () => {
+const Winners = ({
+  title,
+  description,
+  year,
+  eng,
+  sci,
+}: {
+  title: string
+  description: string
+  year: string
+  eng: string
+  sci: string
+}) => {
   const [toggle, setToggle] = useState<boolean[]>([false, false])
   const [course, setCourse] = useState<'eng' | 'sci'>('eng')
 
@@ -27,8 +38,6 @@ const Winners = () => {
   const handleToggle2 = () => {
     setToggle((currState) => [currState[0] && !currState[0], !currState[1]])
   }
-
-  const t = useTranslations('Home.Winners')
 
   const cardsContent = {
     engineering: [
@@ -51,13 +60,13 @@ const Winners = () => {
       <div className='flex flex-col max-w-screen-2xl w-full items-center justify-center gap-[84px] md:gap-[226px] lg:flex-row lg:justify-between lg:gap-0'>
         <div className='flex flex-col w-full items-center justify-center gap-[22px] px-8 md:px-[62px] md:gap-7 md:items-start lg:px-0 lg:pl-[100px] text-black'>
           <h1 className='text-black text-center font-bold text-40 leading-[1.1] md:text-start md:text-50'>
-            {t('title')}
+            {title}
           </h1>
           <p className='text-black text-center text-base tracking-[0.192px] md:text-start md:mb-[22px] md:text-18 md:tracking-[0.216px]'>
-            {t('description')}
+            {description}
           </p>
           <h2 className='text-black font-semibold text-36 text-center tracking-[0.432px] md:text-start'>
-            {t('year')}
+            {year}
           </h2>
           <div className='flex flex-col items-center justify-center w-full gap-[22px] md:justify-between md:flex-row md:w-[95%]'>
             <div className='flex gap-[22px] items-center justify-center z-50'>
@@ -81,8 +90,8 @@ const Winners = () => {
                 defaultValue='eng'
                 onValueChange={(e: 'eng' | 'sci') => setCourse(e)}
               >
-                <SelectItem value='eng'>{t('eng')}</SelectItem>
-                <SelectItem value='sci'>{t('sci')}</SelectItem>
+                <SelectItem value='eng'>{eng}</SelectItem>
+                <SelectItem value='sci'>{sci}</SelectItem>
               </Select>
             </div>
           </div>
