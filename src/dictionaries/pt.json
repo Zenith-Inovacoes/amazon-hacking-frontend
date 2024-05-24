@@ -124,6 +124,13 @@
       "socialMedia": "Redes sociais:",
       "rights": "2024 © CESUPA. Todos direitos reservados.",
       "developedBy": "Desenvolvido por <link>Zenith Inova</link>"
+    },
+    "Winners": {
+      "title": "Pódio da imersão",
+      "description": "Os vencedores implementaram projetos inovadores sustentáveis na Amazônia, respeitando o conhecimento local. Confira as soluções impactantes de destaque.",
+      "year": "Escolha um ano:",
+      "eng": "Engenharia da Computação",
+      "sci": "Ciência da Computação"
     }
   },
   "Loading": {

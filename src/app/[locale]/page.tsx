@@ -8,8 +8,10 @@ import PublicPrize from '@/components/templates/PublicPrize'
 import CommunityPrize from '@/components/templates/CommunityPrize'
 import Partners from '@/components/templates/Partners'
 import Footer from '@/components/templates/Footer'
+import WinnerContainer from '@/components/templates/Winners/WinnerContainer'
 
 import { useTranslations } from 'next-intl'
+import EditionsContainer from '@/components/templates/Editions/EditionsContainer'
 
 export default function Home() {
   const t = useTranslations('Home')
@@ -19,9 +21,9 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
-      <Editions />
+      <EditionsContainer />
       <Zenith />
-      <Winners />
+      <WinnerContainer />
       <PublicPrize />
       <CommunityPrize />
       <Partners />

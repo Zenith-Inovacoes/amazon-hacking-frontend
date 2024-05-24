@@ -93,6 +93,21 @@
       "socialMedia": "Social medias:",
       "rights": "2024 © CESUPA. All rights reserved.",
       "developedBy": "Developed by <link>Zenith Inova</link>"
+    },
+    "Winners": {
+      "title": "Immersion Podium",
+      "description": "The winners implemented innovative sustainable projects in the Amazon, respecting local knowledge. Check out the outstanding impactful solutions.",
+      "year": "Select an year:",
+      "eng": "Computer Engineering",
+      "sci": "Computer Science"
+    },
+    "Editions": {
+      "label": "3rd Edition",
+      "subtitle": "Combú Knowledge: Developing an inclusive bioeconomy in the Amazon.",
+      "mainText1": "Ilha do Combu is a river island located on the Guamá River, very close to Belém do Pará. It is home to approximately 2,200 inhabitants. Its economy is driven mainly by the extraction of products such as açaí, cocoa and cupuaçu.",
+      "mainText2": "The island has been designated an Environmental Protection Area to preserve its rich biodiversity and faces challenges in tourism and infrastructure growth, especially in sanitation and waste management. These problems require careful solutions to maintain a balance between economic development and environmental sustainability.",
+      "retrospective": "Retrospective",
+      "retrospectiveText": "Each edition of Amazon Hacking has contributed to the program's continued growth and positive impact on the biodiversity of the Amazon and its communities. Discover the achievements and challenges that marked our legacy."
     }
   },
   "Loading": {
