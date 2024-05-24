@@ -22,6 +22,6 @@ export default {
   },
 } as Meta;
 
-const Template = () => <Editions />;
+const Template = () => <Editions label='' mainText1='' mainText2='' retrospective='' retrospectiveText='' subtitle=''/>;
 
 export const Default = Template.bind({});
