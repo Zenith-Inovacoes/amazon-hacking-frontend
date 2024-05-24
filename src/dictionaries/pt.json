@@ -98,6 +98,12 @@
         "buttonText": "Explorar mais"
       }
     },
+    "CommunityPrize": {
+      "title": "Destaque da comunidade",
+      "subtitle": "Solução selecionada pelos lideres de comunidades por seu impacto significativo para a população local, gerando avanço e auxiliando na construção de um futuro melhor para os habitantes da nossa região.",
+      "winnerTitle": "Campeão Premio MMIB",
+      "winnerButtonText": "Conheça o Projeto"
+    },
     "Footer": {
       "menu": "Menu",
       "Nav": {
