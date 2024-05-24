@@ -9,6 +9,7 @@ type menuProviderProps = {
 type menuContextData = {
   open: boolean
   handleOpenChange: () => void
+  setOpen: (state: boolean) => void
 }
 
 export const MenuContext = createContext({} as menuContextData)
@@ -21,7 +22,7 @@ const MenuProvider = ({ children }: menuProviderProps) => {
   }
 
   return (
-    <MenuContext.Provider value={{ open, handleOpenChange }}>
+    <MenuContext.Provider value={{ open, handleOpenChange, setOpen }}>
       {children}
     </MenuContext.Provider>
   )

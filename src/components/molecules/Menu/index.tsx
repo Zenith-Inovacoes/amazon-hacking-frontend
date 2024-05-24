@@ -1,21 +1,23 @@
-'use client'
+'use client';
 
-import Logged from './Logged'
-import Unlogged from './Unlogged'
-import { useSession } from 'next-auth/react'
+import { Session } from 'next-auth';
+import Logged from './Logged';
+import Unlogged from './Unlogged';
 
-const Menu = () => {
-  const { data } = useSession()
+const Menu = ({
+  name,
+  email,
+  image,
+  data,
+}: {
+  name?: string | null;
+  email?: string | null;
+  image?: string | null;
+  data: Session | null;
+}) => {
+  if (!data) return <Unlogged />;
 
-  if (!data) return <Unlogged />
+  return <Logged name={name} email={email} image={image} />;
+};
 
-  return (
-    <Logged
-      name={data.user?.name}
-      email={data.user?.email}
-      image={data.user?.image}
-    />
-  )
-}
-
-export default Menu
+export default Menu;
