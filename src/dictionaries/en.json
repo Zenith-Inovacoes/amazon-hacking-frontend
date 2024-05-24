@@ -51,6 +51,33 @@
         "teams": "Teams",
         "mentors": "Mentors"
       }
+    },
+    "Zenith": {
+      "title": "The pinnacle of innovation originated here.",
+      "subtitle": "Our journey began at Amazon Hacking in 2022. Since then, we haven't stopped.",
+      "buttonText": "Learn more",
+      "linkText": "Explore more of the Zenith universe",
+      "Overlay": {
+        "title": "There are no limits to innovation",
+        "subtitle": "A project that evolved into a startup. Zenith Inova works tirelessly with a focus on the development of the Amazon.",
+        "secondTitle": "Connecting and nurturing the future",
+        "secondSubtitle": "Our mission is to solve relevant problems in the Amazon region, striving to achieve the highest levels of satisfaction for those who truly matter: <bold>You</bold>.",
+        "thirdTitle": "Guided by the passion for innovation",
+        "thirdSubtitle": "Discover how Zenith Inova is transforming our region with technology and sustainability.",
+        "buttonText": "Explore more"
+      }
+    },
+    "Footer": {
+      "menu": "Menu",
+      "Nav": {
+        "program": "The program",
+        "editions": "Editions",
+        "winners": "Winners",
+        "partners": "Partners"
+      },
+      "socialMedia": "Social medias:",
+      "rights": "2024 © CESUPA. All rights reserved.",
+      "developedBy": "Developed by <link>Zenith Inova</link>"
     }
   },
   "Loading": {

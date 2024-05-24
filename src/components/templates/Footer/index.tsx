@@ -8,6 +8,8 @@ import InstagramFillIcon from 'public/icons/instagram-fill.svg';
 import FacebookFillIcon from 'public/icons/facebook.svg';
 import YoutubeFillIcon from 'public/icons/youtube.svg';
 import Separator from '@/components/atoms/Separator';
+import Terms from './components/Terms';
+import { useTranslations } from 'next-intl';
 
 const Waves = () => {
   return (
@@ -143,6 +145,8 @@ const Wave2 = () => {
 };
 
 export default function Footer() {
+  const t = useTranslations("Home.Footer")
+
   const links = [
     {
       title: 'O programa',
@@ -169,16 +173,29 @@ export default function Footer() {
         <div className="flex flex-col justify-center items-center gap-9 max-w-72 mx-auto md:max-w-[548px] relative z-10 md:gap-14 lg:max-w-screen-2xl lg:flex-row lg:px-8 lg:justify-between lg:gap-4 xl:gap-10">
           <div className="flex flex-col justify-center items-center gap-8 md:gap-10 lg:items-start lg:order-3">
             <span className="text-white text-24 leading-7 font-bold md:text-28">
-              Menu
+              {t("menu")}
             </span>
             <ul className="flex flex-col gap-7 items-center justify-center lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:place-items-start lg:gap-x-6 xl:gap-x-10 lg:gap-y-7 lg:text-left">
-              {links.map((link, index) => (
-                <li key={index}>
+                <li>
                   <FooterButton className="p-0" asChild>
-                    <a href={link.href}>{link.title}</a>
+                    <a href="#program">{t("Nav.program")}</a>
                   </FooterButton>
                 </li>
-              ))}
+                <li>
+                  <FooterButton className="p-0" asChild>
+                    <a href="#editions">{t("Nav.editions")}</a>
+                  </FooterButton>
+                </li>
+                <li>
+                  <FooterButton className="p-0" asChild>
+                    <a href="#winners">{t("Nav.winners")}</a>
+                  </FooterButton>
+                </li>
+                <li>
+                  <FooterButton className="p-0" asChild>
+                    <a href="#partners">{t("Nav.partners")}</a>
+                  </FooterButton>
+                </li>
             </ul>
           </div>
           <Separator orientation="horizontal" className="lg:hidden" />
@@ -200,7 +217,7 @@ export default function Footer() {
           <div className="flex flex-col items-center justify-center gap-9 py-4 md:gap-16 lg:items-start lg:order-5 lg:py-0">
             <div className="flex flex-col gap-6 items-center justify-center">
               <span className="hidden text-white text-24 font-bold leading-24 md:block">
-                Redes sociais:
+                {t("socialMedia")}
               </span>
               <div className="flex gap-6">
                 <SocialMediaButton
@@ -240,31 +257,13 @@ export default function Footer() {
         <Wave2 />
         <div className="bg-black py-8 relative z-10 md:pb-14 lg:pt-0">
           <div className="flex flex-col gap-9 max-w-screen-2xl lg:flex-row-reverse lg:items-center lg:mx-auto lg:justify-between lg:px-8">
-            <div className="h-4 flex items-center justify-center gap-4 md:gap-12 lg:gap-6">
-              <Link
-                className="text-xs md:text-16"
-                href="https://zenithinova.com.br"
-              >
-                Termos e condições
-              </Link>
-              <Separator orientation="vertical" />
-              <Link
-                className="text-xs md:text-16"
-                href="https://zenithinova.com.br"
-              >
-                Políticas de privacidade
-              </Link>
-            </div>
+            <Terms />
             <div className="flex flex-col text-xs text-white font-normal items-center justify-center md:text-16 md:flex-row md:gap-2">
-              <span>2024 © CESUPA. Todos direitos reservados.</span>
+              <span>{t("rights")}</span>
               <span>
-                Desenvolvido por{' '}
-                <Link
-                  className="text-xs md:text-16 font-bold"
-                  href="https://zenithinova.com.br"
-                >
-                  Zenith Inova
-                </Link>
+                {t.rich("developedBy", {
+                  link: (text) => <Link className="text-xs md:text-16 font-bold" href="https://zenithinova.com.br">{text}</Link>
+                })}
               </span>
             </div>
           </div>

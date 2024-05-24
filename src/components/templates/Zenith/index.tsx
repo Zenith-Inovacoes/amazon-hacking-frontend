@@ -21,7 +21,11 @@ import WhatsappIcon from 'public/icons/whatsapp.svg';
 import InstagramIcon from 'public/icons/instagram.svg';
 import LinkedInIcon from 'public/icons/linkedin.svg';
 
+import { useTranslations } from 'next-intl';
+
 const Zenith = () => {
+  const t = useTranslations("Home.Zenith")
+
   return (
     <div className="relative flex w-full h-full z-[25] justify-center flex-col bg-white">
       <Image
@@ -59,17 +63,16 @@ const Zenith = () => {
       <div className="flex w-full h-full items-center justify-center pt-20 pb-32 bg-secondary-400 sm:pt-32 md:py-[200px] lg:py-[21vw]">
         <div className="flex flex-col max-w-screen-2xl pt-[70px] w-full h-full items-center justify-center px-8 gap-5 lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:place-items-center lg:justify-items-stretch lg:px-[100px]">
           <h1 className="font-bold text-40 leading-[1.1] text-white w-fit md:text-50 lg:text-60 mb-10 order-1 md:mb-0 lg:max-w-[15ch] lg:col-start-1">
-            O ápice da inovação surgiu daqui.
+            {t("title")}
           </h1>
           <p className="text-center text-base tracking-[0.192px] text-white max-w-[50ch] md:text-18 md:max-w-full md:pr-12 md:text-start lg:text-20 lg:tracking-[0.24px] mb-5 order-3 md:order-2 md:mb-[52px] lg:col-start-1 lg:mb-0 lg:self-end">
-            Nossa trajetória começou no Amazon Hacking, em 2022. Desde então,
-            nunca mais paramos.
+            {t("subtitle")}
           </p>
           <div className="order-4 md:order-5 lg:col-start-1">
             <ZenithOverlay
               overlayTrigger={
                 <Button variant="secondary" className="px-10">
-                  Saiba Mais
+                  {t("buttonText")}
                 </Button>
               }
             />
@@ -80,7 +83,7 @@ const Zenith = () => {
               className="h-fit *:text-base *:font-semibold *:tracking-[0.192px] md:*:text-18 md:*:tracking-[0.216px] text-nowrap"
               target="_blank"
             >
-              Explore mais o universo da Zenith
+              {t("linkText")}
             </Link>
           </div>
           <Image

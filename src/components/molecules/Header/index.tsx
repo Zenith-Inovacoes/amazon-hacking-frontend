@@ -2,6 +2,7 @@
 
 import { Button, Link, LogoButton } from '@/components/atoms'
 import Menu from '../Menu'
+import NextLink from "next/link"
 import { cn } from '@/services/utils/className.utils'
 import { useMenu } from '@/contexts/menu'
 import LoginButton from '../Menu/Unlogged/LoginButton'
@@ -72,7 +73,11 @@ const Header = () => {
             data && 'max-w-[215px] xl:max-w-[380px]'
           )}
         >
-          <Button variant='primary'>Ver Soluções</Button>
+          <Button asChild variant='primary'>
+            <NextLink href={`/${locale}/solutions`}>
+            {locale === 'en' ? 'SOLUTIONS' : 'VER SOLUÇÕES'}
+            </NextLink>
+          </Button>
           {!data ? (
             <LoginButton />
           ) : (
