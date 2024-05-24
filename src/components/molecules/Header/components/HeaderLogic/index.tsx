@@ -31,7 +31,7 @@ const HeaderLogic = ({children}: {children: ReactNode}) => {
   return (
     <header
       className={cn(
-        'fixed w-full h-fit top-0 flex justify-center items-start transition-colors duration-500 rounded-b-[30px] overflow-hidden z-30',
+        'fixed w-full h-fit top-0 flex justify-center items-start transition-colors duration-500 rounded-b-[30px] overflow-hidden z-40',
         isDown && 'bg-black'
       )}
     >
