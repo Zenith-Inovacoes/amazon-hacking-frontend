@@ -82,7 +82,7 @@ export default function Editions() {
       <FirstWave />
       <section
         id={sections.editions}
-        className='bg-white relative z-10 mx-auto flex flex-col gap-9 md:gap-20 h-full items-center justify-center'
+        className='bg-white relative z-[26] mx-auto flex flex-col gap-9 md:gap-20 h-full items-center justify-center'
       >
         <div className='w-full flex flex-col items-center justify-center px-5 mb-5 md:mb-0 md:flex-row lg:justify-around max-w-screen-2xl'>
           <motion.div
