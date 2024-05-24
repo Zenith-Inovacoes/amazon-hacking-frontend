@@ -67,6 +67,12 @@
         "buttonText": "Explore more"
       }
     },
+    "CommunityPrize": {
+      "title": "Community Highlight",
+      "subtitle": "A solution selected by community leaders for its significant impact on the local population, generating progress and helping to build a better future for the inhabitants of our region.",
+      "winnerTitle": "MMIB Award Champion",
+      "winnerButtonText": "Learn more"
+    },
     "Footer": {
       "menu": "Menu",
       "Nav": {

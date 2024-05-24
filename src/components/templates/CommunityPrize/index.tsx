@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 import { Button } from '@/components/atoms'
 import ProjectOverlay from '@/components/organisms/ProjectOverlay'
@@ -17,7 +15,11 @@ import AranduLogo from 'public/images/AranduLogo.svg'
 import { ProjectOverlayChildrenProps } from '@/components/organisms/ProjectOverlay/types'
 import { sections } from '@/constants/sections'
 
+import { useTranslations } from 'next-intl'
+import OverlayCommunityPrize from './components/Overlay'
+
 const CommunityPrize = () => {
+  const t = useTranslations("Home.CommunityPrize")
   const overlayData: ProjectOverlayChildrenProps = {
     solutionName: 'Curumin',
     teamLogo: AranduLogo,
@@ -35,12 +37,10 @@ const CommunityPrize = () => {
       <div className='flex flex-col w-full h-full max-w-screen-2xl pt-32 pb-11 gap-[42px] px-6'>
         <div className='flex flex-col w-full items-center justify-center gap-[22px] px-2 md:gap-7'>
           <h1 className='text-black font-bold text-40 leading-[1.1] text-center md:text-50 lg:max-w-[11ch] lg:text-60'>
-            Destaque da comunidade
+            {t("title")}
           </h1>
           <p className='text-base text-black tracking-[0.192px] text-center max-w-[505px] md:text-18 md:tracking-[0.216px] lg:text-20 lg:tracking-[0.24px]'>
-            Solução selecionada pelos lideres de comunidades por seu impacto
-            significativo para a população local, gerando avanço e auxiliando na
-            construção de um futuro melhor para os habitantes da nossa região.
+            {t("subtitle")}
           </p>
           <div className='absolute bg-repeat bg-symbol w-full h-full max-h-[87px] sm:translate-y-[435px] translate-y-[520px] opacity-60 inset-0 md:translate-y-[600px]' />
           <Image
@@ -78,7 +78,7 @@ const CommunityPrize = () => {
           />
           <div className='absolute flex flex-col w-full h-full items-center justify-start gap-[min(25vw,105px)] max-w-[372px] px-8 pt-[min(23.57vw,99px)] md:flex-row md:justify-center md:gap-[26px] md:max-w-[740px] md:py-0 md:pr-[62px] z-20 lg:gap-[71px] md:items-start md:pt-[104px] lg:max-w-[1050px] lg:pt-36'>
             <h1 className='text-white font-bold text-3xl xs:text-40 text-center leading-[1.1] md:w-full md:max-w-[12ch] lg:text-60'>
-              Campeão Premio MMIB
+              {t("winnerTitle")}
             </h1>
             <div className='flex flex-col gap-[min(10vw,42px)] px-4 w-full h-fit items-center justify-center md:gap-[26px] md:px-0 md:h-full md:justify-start md:max-w-[230px]'>
               <Image
@@ -86,15 +86,7 @@ const CommunityPrize = () => {
                 alt='Logo Arandu Technology'
                 className='w-full h-fit md:max-w-[230px]'
               />
-              <ProjectOverlay
-                videoURL='https://www.youtube-nocookie.com/embed/djD7vOYDc9w'
-                variant='past'
-                overlayTrigger={
-                  <Button variant='secondary'>Conheça o projeto</Button>
-                }
-              >
-                {overlayData}
-              </ProjectOverlay>
+              <OverlayCommunityPrize overlayData={overlayData} buttonText={t("winnerButtonText")}/>
             </div>
           </div>
         </div>
