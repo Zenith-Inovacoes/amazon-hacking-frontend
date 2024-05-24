@@ -90,7 +90,7 @@ export default function CourseSelection() {
                             {locale === "en" ? copy[0].courses[0] : copy[1].courses[0]}
                         </SelectItem>
                         <SelectItem value={CourseEnum.BCC}>
-                            {locale === "en" ? copy[0].courses[0] : copy[1].courses[0]}
+                            {locale === "en" ? copy[0].courses[1] : copy[1].courses[1]}
                         </SelectItem>
                     </Select>
                 </div>
