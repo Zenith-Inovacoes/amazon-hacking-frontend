@@ -24,10 +24,7 @@ const Link = forwardRef(
         <span className='group-hover:underline text-inherit group-focus-visible:underline tracking-[0.216px]'>
           {children}
         </span>
-        <IoOpenOutline
-          size={27}
-          className={cn('my-auto', hasTargetBlank ? '' : 'hidden')}
-        />
+        <IoOpenOutline size={27} className={cn("my-auto", hasTargetBlank ? "" : "hidden")} />
       </a>
     )
   }
