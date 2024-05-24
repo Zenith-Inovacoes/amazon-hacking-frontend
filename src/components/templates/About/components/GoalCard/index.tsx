@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { GoalCardProps } from "./types"
 import { cn } from "@/services/utils/className.utils"

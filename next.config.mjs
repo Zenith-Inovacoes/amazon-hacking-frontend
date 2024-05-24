@@ -54,20 +54,12 @@ const nextConfig = {
           },
           {
             key: "Access-Control-Allow-Origin",
-            value: "https://amazon-hacking.com.br"
+            value: "http://localhost:3000"
           }
         ]
       }
     ]
   },
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: "/api/:path*",
-  //       destination: `${env.API_URL}/:path*`,
-  //     },
-  //   ]
-  // }
 };
 
 export default withNextIntl(nextConfig);
