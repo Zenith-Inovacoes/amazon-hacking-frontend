@@ -1,7 +1,7 @@
-import { MotionH1, MotionH2, MotionDiv, MotionP } from "@/components/Motion"
+import { MotionH1, MotionH2, MotionDiv, MotionP, MotionIFrame } from "@/components/Motion"
 import Bounce from "./components/Bounce"
 import { useTranslations } from "next-intl"
-import Video from "./components/Video"
+// import Video from "./components/Video"
 import { sections } from '@/constants/sections'
 
 export default function Hero() {
@@ -56,8 +56,8 @@ export default function Hero() {
                         {t("subtitle")}
                     </MotionH2>
                 </MotionDiv>
-                <Video />
-                {/* <MotionIFrame initial={{opacity: 0, x: -10}} animate={{opacity: 1, x: 0}} transition={{duration: .8, delay: .6}} className="mt-16 aspect-video w-full md:mt-0 md:max-w-[420px] rounded-2xl lg:row-start-1 lg:row-end-3 lg:col-start-2 lg:col-end-3 lg:max-w-[576px]" src="https://www.youtube.com/embed/IKr2TJyrBBY?si=_hCcIo6At9UghqVl" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></MotionIFrame> */}
+                {/* <Video /> */}
+                <MotionIFrame initial={{opacity: 0, x: -10}} animate={{opacity: 1, x: 0}} transition={{duration: .8, delay: .6}} className="mt-16 aspect-video w-full md:mt-0 md:max-w-[420px] rounded-2xl lg:row-start-1 lg:row-end-3 lg:col-start-2 lg:col-end-3 lg:max-w-[576px]" src="https://www.youtube.com/embed/IKr2TJyrBBY?si=_hCcIo6At9UghqVl" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></MotionIFrame>
             </div>
             <Bounce text={t("buttonText")}/>
         </section>
