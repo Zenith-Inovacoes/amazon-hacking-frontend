@@ -1,14 +1,20 @@
+'use client'
+
 import Logged from './Logged'
 import Unlogged from './Unlogged'
-import { getUserSession } from '@/services/libs/session'
+import { useSession } from 'next-auth/react'
 
-const Menu = async () => {
-  const session = await getUserSession()
+const Menu = () => {
+  const { data } = useSession()
 
-  if (!session) return <Unlogged />
+  if (!data) return <Unlogged />
 
   return (
-    <Logged name={session.name} email={session.email} image={session.image} />
+    <Logged
+      name={data.user?.name}
+      email={data.user?.email}
+      image={data.user?.image}
+    />
   )
 }
 

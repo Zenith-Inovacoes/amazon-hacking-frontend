@@ -8,15 +8,15 @@ import { Suspense } from "react";
 import Loading from "@/components/templates/Loading";
 
 export const metadata: Metadata = {
-  title: "Amazon Hacking",
-  description: "Amazon Hacking",
-};
+  title: 'Amazon Hacking',
+  description: 'Amazon Hacking',
+}
 
 export default function RootLayout({
   children,
-  params: { locale }
+  params: { locale },
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
   params: { locale: string }
 }>) {
   return (
@@ -31,5 +31,5 @@ export default function RootLayout({
         </Suspense>
       </body>
     </html>
-  );
+  )
 }
