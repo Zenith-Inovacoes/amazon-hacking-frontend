@@ -1,8 +1,8 @@
-import * as SelectPrimitive from "@radix-ui/react-select"
-import { Ref, forwardRef } from "react"
-import SelectProps, { SelectItemProps } from "./types"
-import { cn } from "@/services/utils/className.utils"
-import { IoIosArrowDown } from "react-icons/io";
+import * as SelectPrimitive from '@radix-ui/react-select'
+import { Ref, forwardRef } from 'react'
+import SelectProps, { SelectItemProps } from './types'
+import { cn } from '@/services/utils/className.utils'
+import { IoIosArrowDown } from 'react-icons/io'
 
 const Select = forwardRef(({ placeholder, children, variant = "dark", ...props }: SelectProps, ref: Ref<HTMLButtonElement>) => {
     return (
@@ -25,9 +25,14 @@ const Select = forwardRef(({ placeholder, children, variant = "dark", ...props }
             </SelectPrimitive.Portal>
         </SelectPrimitive.Root>
     )
-})
+  }
+)
 
-export const SelectItem = forwardRef(({ className, children, ...props }: SelectItemProps, ref: Ref<HTMLDivElement>) => {
+export const SelectItem = forwardRef(
+  (
+    { className, children, ...props }: SelectItemProps,
+    ref: Ref<HTMLDivElement>
+  ) => {
     return (
         <SelectPrimitive.Item ref={ref} className={cn("text-black cursor-default font-bold bg-white leading-4 px-4 py-3 text-base hover:bg-neutrals-300 active:bg-neutrals-400 focus-visible:bg-neutrals-300 focus-visible:outline-none transition-colors data-[state=checked]:hidden data-[state=checked]:absolute data-[state=checked]:opacity-0", className)} {...props}>
             <SelectPrimitive.ItemText>
@@ -35,10 +40,11 @@ export const SelectItem = forwardRef(({ className, children, ...props }: SelectI
             </SelectPrimitive.ItemText>
         </SelectPrimitive.Item>
     )
-})
+  }
+)
 
-SelectItem.displayName = "SelectItem"
+SelectItem.displayName = 'SelectItem'
 
-Select.displayName = "Select"
+Select.displayName = 'Select'
 
 export default Select

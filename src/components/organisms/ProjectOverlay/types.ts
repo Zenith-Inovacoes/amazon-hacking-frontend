@@ -7,7 +7,6 @@ export type ProjectOverlayChildrenProps = {
   altLogo: string
   solutionDescription: string
   teamMembers: string[]
-  overlayTrigger: ReactNode
 }
 
 export type ProjectOverlayProps = {
@@ -15,4 +14,5 @@ export type ProjectOverlayProps = {
   videoURL: string
   videoTitle?: string
   variant?: 'current' | 'past'
+  overlayTrigger: ReactNode
 }

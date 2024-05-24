@@ -21,11 +21,6 @@ const childrenData: ProjectOverlayChildrenProps = {
     'André Sidrim',
     'Lucas Gabriel',
   ],
-  overlayTrigger: (
-    <div className='flex w-full h-full justify-center'>
-      <Button>Teste</Button>
-    </div>
-  ),
 }
 
 const meta: Meta<ProjectOverlayProps> = {
@@ -45,6 +40,11 @@ export const Current: Story = {
       <ProjectOverlay
         videoURL='https://www.youtube.com/embed/fPYSh680ZBY'
         videoTitle='What Your GitHub Says About You | LIVE from Brazil'
+        overlayTrigger={
+          <div className='flex w-full h-full justify-center'>
+            <Button>Teste</Button>
+          </div>
+        }
       >
         {childrenData}
       </ProjectOverlay>
@@ -59,6 +59,11 @@ export const Past: Story = {
         variant='past'
         videoURL='https://www.youtube.com/embed/fPYSh680ZBY'
         videoTitle='What Your GitHub Says About You | LIVE from Brazil'
+        overlayTrigger={
+          <div className='flex w-full h-full justify-center'>
+            <Button>Teste</Button>
+          </div>
+        }
       >
         {childrenData}
       </ProjectOverlay>

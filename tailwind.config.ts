@@ -17,11 +17,17 @@ const config: Config = {
     },
 
     extend: {
-      screens: { xs: '23.376rem' },
+      screens: {
+        xs: '375px',
+        ...screens,
+      },
       colors: light.colors,
       fontFamily: light.fontFamilies,
       fontSize: light.fontSizes,
       lineHeight: light.lineHeights,
+      backgroundImage: {
+        '404Decorator': "url('/404Decorator.svg')",
+      },
       transitionProperty: {
         maxWidth: 'max-width',
       },
@@ -87,5 +93,9 @@ const config: Config = {
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;
+
+
+
+

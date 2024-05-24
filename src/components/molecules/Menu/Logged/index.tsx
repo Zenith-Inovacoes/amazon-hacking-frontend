@@ -19,12 +19,12 @@ const Logged = ({ name, email, image, ...props }: LoggedMenuProps) => {
 
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
-      <Dialog.Trigger className='sticky w-fit h-fit left-[100vw] top-9 z-50 mr-6 transition-opacity duraiton-200 ease-linear data-[state=open]:opacity-0'>
+      <Dialog.Trigger className='sticky w-fit h-fit left-[100vw] top-0 pt-9 z-50 transition-opacity duraiton-200 ease-linear data-[state=open]:opacity-0'>
         <IoMenu size={46} />
       </Dialog.Trigger>
       <Dialog.Close
         className={cn(
-          'sticky w-fit inset-0 h-fit left-[100vw] top-9 z-10 mr-6 opacity-0 transition-all duration-200 ease-linear',
+          'sticky w-fit inset-0 h-fit left-[100vw] top-0 pt-9 z-10 mr-6 opacity-0 transition-all duration-200 ease-linear',
           open && 'z-50 pointer-events-auto opacity-100'
         )}
       >
