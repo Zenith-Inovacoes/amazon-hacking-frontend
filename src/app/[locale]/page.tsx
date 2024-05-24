@@ -9,15 +9,15 @@ import CommunityPrize from '@/components/templates/CommunityPrize'
 import Partners from '@/components/templates/Partners'
 import Footer from '@/components/templates/Footer'
 
-import {useTranslations} from "next-intl"
+import { useTranslations } from 'next-intl'
 
 export default function Home() {
-  const t = useTranslations("Home")
+  const t = useTranslations('Home')
 
   return (
     <main className='scroll-smooth'>
       <Header />
-      <Hero/>
+      <Hero />
       <About />
       <Editions />
       <Zenith />

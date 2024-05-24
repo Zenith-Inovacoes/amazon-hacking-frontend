@@ -11,9 +11,7 @@ export default function Providers({ children }: { children: ReactNode }) {
     <SessionProvider>
       <ReactQueryProvider>
         <GenerateSessionProvider>
-            <MenuProvider>
-              {children}
-            </MenuProvider>
+          <MenuProvider>{children}</MenuProvider>
         </GenerateSessionProvider>
       </ReactQueryProvider>
     </SessionProvider>

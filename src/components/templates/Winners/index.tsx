@@ -56,10 +56,10 @@ const Winners = () => {
           </h2>
           <div className='flex flex-col items-center justify-center w-full gap-[22px] md:justify-between md:flex-row md:w-[95%]'>
             <div className='flex gap-[22px] items-center justify-center z-50'>
-              <Checkbox onClick={handleToggle1} checked={toggle[0]}>
+              <Checkbox onChange={handleToggle1} checked={toggle[0]}>
                 2023
               </Checkbox>
-              <Checkbox onClick={handleToggle2} checked={toggle[1]}>
+              <Checkbox onChange={handleToggle2} checked={toggle[1]}>
                 2022
               </Checkbox>
             </div>

@@ -83,6 +83,54 @@ const config: Config = {
             transform: 'translateX(100%)',
           },
         },
+        desktopMenuOpen: {
+          from: {
+            transform: 'translateY(-100%)',
+          },
+          to: {
+            transform: 'translateY(0)',
+          },
+        },
+        desktopMenuClose: {
+          from: {
+            transform: 'translateY(0)',
+          },
+          to: {
+            transform: 'translateY(-100%)',
+          },
+        },
+        iconOpen: {
+          from: {
+            marginRight: '62px',
+          },
+          to: {
+            marginRight: '247px',
+          },
+        },
+        iconClose: {
+          from: {
+            marginRight: '247px',
+          },
+          to: {
+            marginRight: '62px',
+          },
+        },
+        iconOpenXL: {
+          from: {
+            marginRight: '230px',
+          },
+          to: {
+            marginRight: '247px',
+          },
+        },
+        iconCloseXL: {
+          from: {
+            marginRight: '247px',
+          },
+          to: {
+            marginRight: '230px',
+          },
+        },
       },
       animation: {
         overlayShow: 'overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
@@ -93,13 +141,16 @@ const config: Config = {
         menuClose: 'menuClose 200ms ease-in-out',
         menuOverlayShow: 'overlayShow 200ms ease-in-out',
         menuOverlayHide: 'overlayHide 200ms ease-in-out',
+        desktopMenuOpen: 'desktopMenuOpen 300ms ease-in-out',
+        desktopMenuClose: 'desktopMenuClose 300ms ease-in-out 300ms',
+        iconOpen: 'iconOpen 300ms ease-in-out',
+        iconClose: 'iconClose 300ms ease-in-out',
+        iconOpenXL: 'iconOpenXL 300ms ease-in-out',
+        iconCloseXL: 'iconCloseXL 300ms ease-in-out',
+        desktopMenuOverlayHide: 'overlayHide 300ms ease-in-out 600ms',
       },
     },
   },
   plugins: [],
-};
-export default config;
-
-
-
-
+}
+export default config
