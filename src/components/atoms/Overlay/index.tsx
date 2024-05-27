@@ -107,7 +107,7 @@ export const OverlayContent = forwardRef(
                 ref={closeButtonRef}
                 aria-label='close'
                 asChild
-                className='hidden lg:flex m-10'
+                className='hidden lg:flex m-10 z-[100]'
               >
                 <Button variant='icon' theme={theme}>
                   <IoMdClose size={16} />

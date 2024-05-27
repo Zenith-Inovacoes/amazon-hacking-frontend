@@ -150,7 +150,7 @@ export default function Footer() {
 
   const links = [
     {
-      title: 'O programa',
+      title: 'O Programa',
       href: '#programa',
     },
     {

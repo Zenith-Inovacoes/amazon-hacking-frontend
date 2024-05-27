@@ -17,6 +17,9 @@ import waveDesktop from 'public/WaveDesktopEditions.svg'
 import restrospect from 'public/challengerFlatArt.svg'
 import { sections } from '@/constants/sections'
 import { EditionProps } from './types'
+import { locales } from '@/services/utils/locale.utils'
+import { usePathname } from 'next/navigation'
+import { useState } from 'react'
 
 const FirstWave = () => {
   return (
@@ -58,6 +61,10 @@ export default function Editions({
   retrospectiveText,
   subtitle,
 }: EditionProps) {
+  const pathname = usePathname()
+    const [locale, setLocale] = useState<string>(
+        locales.find((locale) => pathname?.includes(locale.locale))?.locale || 'en'
+    );
   const breakpoint = useBreakpoint()
   let waveImageSrc = waveMobile
 
@@ -236,7 +243,7 @@ export default function Editions({
                   <Image src={island2023} alt='Flat art de uma ilha' fill />
                 </div>
                 <div className='flex flex-col gap-y-3 items-center'>
-                  <p className='text-18 text-black'>2º Edição</p>
+                  <p className='text-18 text-black'>{locale === 'en' ? "2nd Edition" : "2º Edição"}</p>
                   <p className='text-36 font-bold text-black'>2023</p>
                   <p className='text-18 text-neutral-500'>Ilha de Cotijuba</p>
                   <EditionOverlay edition='2023' image={island2023} />
@@ -248,7 +255,7 @@ export default function Editions({
                   <Image src={island2022} alt='Flat art de uma ilha' fill />
                 </div>
                 <div className='flex flex-col gap-y-3 items-center'>
-                  <p className='text-18 text-black'>1º Edição</p>
+                  <p className='text-18 text-black'>{locale === 'en' ? "1st Edition" : "1º Edição"}</p>
                   <p className='text-36 font-bold text-black'>2022</p>
                   <p className='text-18 text-neutral-500'>Ilha das Onças</p>
                   <EditionOverlay edition='2022' image={island2022} />
