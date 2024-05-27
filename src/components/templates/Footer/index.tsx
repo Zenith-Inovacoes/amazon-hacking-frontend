@@ -179,7 +179,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-7 items-center justify-center lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:place-items-start lg:gap-x-6 xl:gap-x-10 lg:gap-y-7 lg:text-left">
                 <li>
                   <FooterButton className="p-0" asChild>
-                    <a className='text-white' href="#program">{t("Nav.program")}</a>
+                    <a className='text-white' href="#about">{t("Nav.program")}</a>
                   </FooterButton>
                 </li>
                 <li>

@@ -3,7 +3,7 @@
 import AmazonHackingLogo from 'public/images/AmazonHackingColoredLogo.svg'
 import Image from 'next/image'
 import { IoCloseOutline, IoMenu } from 'react-icons/io5'
-import { Button, Link } from '@/components/atoms'
+import { Badge, Button, Link } from '@/components/atoms'
 import LoginButton from './LoginButton'
 import { useMenu } from '@/contexts/menu'
 
@@ -13,6 +13,8 @@ import { useState } from 'react'
 import { scrollTo } from '@/services/utils/scrollTo'
 import { usePathname } from 'next/navigation'
 import { locales } from '@/services/utils/locale.utils'
+// import { signOut, useSession } from 'next-auth/react'
+import Session from '../components/Session'
 
 const Unlogged = () => {
   const pathname = usePathname()
@@ -23,8 +25,10 @@ const Unlogged = () => {
   const { open, handleOpenChange, setOpen } = useMenu()
 
   return (
-    <Dialog.Root open={open} onOpenChange={handleOpenChange}>
-      <Dialog.Trigger className='fixed w-fit h-fit right-0 top-0 z-50 transition-opacity duraiton-200 ease-linear data-[state=open]:opacity-0 mr-4 xs:mr-[42px] md:mr-[62px] mt-9 lg:hidden'>
+    <Dialog.Root modal={false} open={open} onOpenChange={handleOpenChange}>
+      <Dialog.Trigger onClick={() => {
+        setTimeout(() => (document.body.style.pointerEvents = ""), 0)
+      }} className='text-white fixed w-fit h-fit right-0 top-0 z-50 transition-opacity duraiton-200 ease-linear data-[state=open]:opacity-0 mr-4 xs:mr-[42px] md:mr-[62px] mt-9 lg:hidden'>
         <IoMenu size={46} />
       </Dialog.Trigger>
       <Dialog.Portal>
@@ -38,8 +42,8 @@ const Unlogged = () => {
             <IoCloseOutline size={46} />
           </Dialog.Close>
           <Dialog.Content
-            className='relative data-[state=open]:animate-menuOpen data-[state=closed]:animate-menuClose'
-            onOpenAutoFocus={(e) => e.preventDefault()}
+            className='data-[state=open]:animate-menuOpen data-[state=closed]:animate-menuClose'
+            style={{pointerEvents: "auto"}}
           >
             <div className='flex flex-col items-start justify-start bg-black w-[min(364px,100vw)] md:w-[405px] h-fit rounded-l-[30px] py-20 px-14 min-h-screen md:min-h-[806px] gap-10 z-50'>
               <button
@@ -100,13 +104,7 @@ const Unlogged = () => {
                   {locale === 'en' ? 'See Solutions' : 'Ver Soluções'}
                 </Button>
               </div>
-
-              <div className='flex flex-col items-start justify-start gap-[18px]'>
-                <h2 className='text-[#979797] font-medium text-sm tracking-[0.168px]'>
-                  Login
-                </h2>
-                <LoginButton />
-              </div>
+              <Session />
             </div>
           </Dialog.Content>
         </Dialog.Overlay>
