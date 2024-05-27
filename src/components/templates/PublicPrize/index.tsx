@@ -11,7 +11,7 @@ export default function PublicPrize() {
 
   return (
     <section id={sections.publicPrize} className='relative bg-white pb-14 before:absolute lg:overflow-y-visible z-30 before:bg-white before:w-full before:h-4 before:-translate-y-1'>
-      <div className="w-full h-16 opacity-40 z-0 bg-[url('/images/symbol.png')] bg-repeat bg-contain absolute top-40 lg:bottom-12 lg:top-auto" />
+      <div className="w-full h-16 opacity-40 z-0 bg-[url('/images/symbol.png')] bg-repeat bg-contain absolute top-[22%] sm:top-[20%] lg:bottom-12 lg:top-auto" />
       <div className='lg:flex justify-center items-center relative max-w-screen-2xl mx-auto'>
         <div className='flex flex-col gap-5 z-10 flex-1 lg:z-0'>
           <div className='flex flex-col gap-5 px-8 mb-28'>

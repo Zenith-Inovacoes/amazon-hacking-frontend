@@ -63,7 +63,7 @@ const Logged = ({ name, email, image, ...props }: LoggedMenuProps) => {
                     scrollTo('about');
                     setOpen(false);
                   }}
-                  className="text-base *:tracking-[0.192px]"
+                  className="text-base *:tracking-[0.192px] text-white"
                 >
                   {locale === 'en' ? 'The Program' : 'O Programa'}
                 </Link>
@@ -72,7 +72,7 @@ const Logged = ({ name, email, image, ...props }: LoggedMenuProps) => {
                     scrollTo('editions');
                     setOpen(false);
                   }}
-                  className="text-base *:tracking-[0.192px]"
+                  className="text-base *:tracking-[0.192px] text-white"
                 >
                   {locale === 'en' ? 'Editions' : 'Edições'}
                 </Link>
@@ -81,7 +81,7 @@ const Logged = ({ name, email, image, ...props }: LoggedMenuProps) => {
                     scrollTo('winners');
                     setOpen(false);
                   }}
-                  className="text-base *:tracking-[0.192px]"
+                  className="text-base *:tracking-[0.192px] text-white"
                 >
                   {locale === 'en' ? 'Winners' : 'Vencedores'}
                 </Link>
@@ -90,7 +90,7 @@ const Logged = ({ name, email, image, ...props }: LoggedMenuProps) => {
                     scrollTo('partners');
                     setOpen(false);
                   }}
-                  className="text-base *:tracking-[0.192px]"
+                  className="text-base *:tracking-[0.192px] text-white"
                 >
                   {locale === 'en' ? 'Partners' : 'Patrocinadores'}
                 </Link>

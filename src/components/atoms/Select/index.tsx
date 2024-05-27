@@ -21,7 +21,7 @@ const Select = forwardRef(
             }
           )}
         >
-          <SelectPrimitive.Value placeholder={placeholder} />
+          <SelectPrimitive.Value placeholder={placeholder}/>
           <SelectPrimitive.Icon
             asChild
             className="group-data-[state=open]:rotate-180 group-data-[state=closed]:rotate-0 transition-transform"
