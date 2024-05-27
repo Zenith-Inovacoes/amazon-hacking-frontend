@@ -35,25 +35,25 @@ const Header = () => {
       <div className="hidden lg:flex w-fit h-fit items-center justify-between flex-1 max-w-[570px] mx-2 gap-2">
         <Link
           onClick={() => scrollTo('about')}
-          className="text-base *:tracking-[0.192px]"
+          className="text-base *:tracking-[0.192px] text-white"
         >
           {locale === 'en' ? 'THE PROGRAM' : 'O PROGRAMA'}
         </Link>
         <Link
           onClick={() => scrollTo('editions')}
-          className="text-base *:tracking-[0.192px]"
+          className="text-base *:tracking-[0.192px] text-white"
         >
           {locale === 'en' ? 'EDITIONS' : 'EDIÇÕES'}
         </Link>
         <Link
           onClick={() => scrollTo('winners')}
-          className="text-base *:tracking-[0.192px]"
+          className="text-base *:tracking-[0.192px] text-white"
         >
           {locale === 'en' ? 'WINNERS' : 'VENCEDORES'}
         </Link>
         <Link
           onClick={() => scrollTo('partners')}
-          className="text-base *:tracking-[0.192px]"
+          className="text-base *:tracking-[0.192px] text-white"
         >
           {locale === 'en' ? 'PARTNERS' : 'PATROCINADORES'}
         </Link>
@@ -66,7 +66,7 @@ const Header = () => {
         )}
       >
         <Button asChild variant="primary">
-          <NextLink href="solutions">
+          <NextLink href={`${locale}/solutions`}>
             {locale === 'en' ? 'See Solutions' : 'Ver Soluções'}
           </NextLink>
         </Button>

@@ -42,7 +42,7 @@ const EditionOverlay = ({
                     Saber Mais...
                 </Button>
             </OverlayTrigger>
-            <OverlayContent theme='dark'>
+            <OverlayContent theme='dark' handlerColor='#FFF'>
                 <div className='flex flex-col items-center justify-center relative w-full h-full overflow-visible md:gap-[111px]'>
                     <div className='relative h-full w-full flex justify-center top-0 rounded-t-lg mb-9'>
                         <Image src={islandImage} alt='Local onde os projetos do amazon hacking 2022 foram implementados' className='rounded-t-[30px] md:w-full' />
@@ -76,8 +76,8 @@ const EditionOverlay = ({
                         <Image src={waveImageSrc} alt='Flat Art de uam pessoa montando um quebra cabeça' className='w-[100vw]' />
                         <div className='z-20 flex absolute flex-col items-center h-full top-0 px-8 gap-y-7 md:gap-7 pt-28 md:px-14 md:flex-row-reverse lg:pt-0  2xl:pt-0 after:absolute after:w-full after:bottom-[-2px] before:absolute'>
                             <div className='flex flex-col items-center gap-y-7 md:items-start'>
-                                <p className='text-40 font-bold w-fit md:text-50 lg:text-60'>Desafios Encontrados</p>
-                                <p className='text-16 md:text-18 lg:text-20'>
+                                <p className='text-40 text-white font-bold w-fit md:text-50 lg:text-60'>Desafios Encontrados</p>
+                                <p className='text-16 text-white md:text-18 lg:text-20'>
                                     {edition === '2022' ?
                                         'A gestão de recursos naturais, preservação ambiental e conectividade móvel são desafios constantes para os habitantes da comunidade da Usina Vitória, que enfrentam pressões como o desmatamento e a urbanização provenientes de Belém e áreas circunvizinhas.' :
                                         'O Movimento das Mulheres das Ilhas de Belém (MMIB) é uma organização que representa interesses e lutas específicas das mulheres que vivem nas diversas ilhas próximas a Belém do Pará. A associação apontou diversos desafios, desde questões sociais e econômicas que afetam essas comunidades insulares, até seu isolamento geográfico e às limitações de acesso a serviços básicos como educação, saúde e transporte.'

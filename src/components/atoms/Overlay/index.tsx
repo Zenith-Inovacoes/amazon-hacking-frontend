@@ -9,7 +9,7 @@ import { OverlayContentProps } from './types'
 import Button from '../Button'
 
 export const OverlayContent = forwardRef(
-  ({ className, theme = 'light', children, ...props }: OverlayContentProps) => {
+  ({ className, theme = 'light', handlerColor, children, ...props }: OverlayContentProps) => {
     const [isDragging, setIsDragging] = useState(false)
     const contentRef = useRef<HTMLDivElement>(null)
     const overlayRef = useRef<HTMLDivElement>(null)
@@ -96,6 +96,9 @@ export const OverlayContent = forwardRef(
                     'mx-auto w-32 h-2 flex-shrink-0 rounded-full bg-white',
                     theme === 'dark' && 'bg-black'
                   )}
+                  style={{
+                    backgroundColor: handlerColor,
+                  }}
                 />
               </div>
             </div>

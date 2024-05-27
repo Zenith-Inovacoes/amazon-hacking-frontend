@@ -54,7 +54,7 @@ const LanguageSwitcher = forwardRef(
         <SelectPrimitive.Trigger
           ref={ref}
           className={cn(
-            'w-fit shadow-languageSwitcher tracking-normal focus-visible:outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-primary-100 min-w-14 overflow-hidden h-14 duration-700 max-w-14 hover:max-w-[200px] data-[state=open]:max-w-[200px] transition-maxWidth flex relative items-center gap-2 py-5 px-4 bg-black leading-4 text-base font-normal rounded-full group data-[state=open]:rounded-bl-none data-[state=open]:rounded-br-none data-[state=open]:rounded-tl-[24px] data-[state=open]:rounded-tr-[24px]',
+            'w-fit text-white shadow-languageSwitcher tracking-normal focus-visible:outline-none focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-primary-100 min-w-14 overflow-hidden h-14 duration-700 max-w-14 hover:max-w-[200px] data-[state=open]:max-w-[200px] transition-maxWidth flex relative items-center gap-2 py-5 px-4 bg-black leading-4 text-base font-normal rounded-full group data-[state=open]:rounded-bl-none data-[state=open]:rounded-br-none data-[state=open]:rounded-tl-[24px] data-[state=open]:rounded-tr-[24px]',
             className
           )}
         >
@@ -87,7 +87,7 @@ const LanguageSwitcher = forwardRef(
                 >
                   <SelectPrimitive.ItemText className="flex items-center">
                     {locale.flag}
-                    <span className="ml-2">{locale.label}</span>
+                    <span className="ml-2 text-white">{locale.label}</span>
                   </SelectPrimitive.ItemText>
                 </SelectPrimitive.Item>
               ))}
