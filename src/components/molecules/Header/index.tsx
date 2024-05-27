@@ -24,12 +24,7 @@ const Header = () => {
   return (
     <HeaderLogic>
       <div className="lg:hidden">
-        <Menu
-          email={data?.user?.email}
-          image={data?.user?.image}
-          name={data?.user?.name}
-          data={data}
-        />
+        <Menu />
       </div>
 
       <div className="hidden lg:flex w-fit h-fit items-center justify-between flex-1 max-w-[570px] mx-2 gap-2">

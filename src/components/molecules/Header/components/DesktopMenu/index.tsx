@@ -1,3 +1,5 @@
+"use client"
+
 import { useMenu } from '@/contexts/menu'
 import { DesktopMenuProps } from './types'
 import Image from 'next/image'
@@ -6,9 +8,15 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { IoCloseOutline } from 'react-icons/io5'
 import { Link, Badge } from '@/components/atoms'
 import { signOut } from 'next-auth/react'
+import { locales } from '@/services/utils/locale.utils'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 const DesktopMenu = ({ email, image, name }: DesktopMenuProps) => {
+  const pathname = usePathname();
+  const [locale, setLocale] = useState<string>(
+    locales.find((locale) => pathname?.includes(locale.locale))?.locale || 'en'
+  );
   const names = name?.split(' ') as string[]
   const uName: string = names[0] + ' ' + names[names.length - 1]
 
@@ -81,32 +89,32 @@ const DesktopMenu = ({ email, image, name }: DesktopMenuProps) => {
               <div className='flex flex-col items-start justify-start bg-black w-[330px] h-fit rounded-b-[30px] py-10 px-8 gap-10'>
                 <div className='flex flex-col items-start justify-start gap-[18px] pt-[88px]'>
                   <div className='flex gap-[10px] items-center justify-center'>
-                    <Link className='font-medium text-20 tracking-[0.24px] text-white pointer-events-none opacity-50'>
-                      Área do aluno
+                    <Link href={`${locale}/students`} className='font-medium text-20 tracking-[0.24px] text-white pointer-events-none opacity-50'>
+                      {locale === "en" ? "Student area" : "Área do aluno"}
                     </Link>
-                    <Badge>Em Breve</Badge>
+                    <Badge>{locale === 'en' ? "Soon" : "Em breve"}</Badge>
                   </div>
                   <Link
-                    href='/'
+                    href={`${locale}/tickets`}
                     className='font-medium text-20 tracking-[0.24px] text-white'
                   >
-                    Ingressos
+                    {locale === 'en' ? "Tickets" : "Ingressos"}
                   </Link>
                   <Link
-                    href='/'
+                    href={`${locale}/schedule`}
                     className='font-medium text-20 tracking-[0.24px] text-white'
                   >
-                    Programação
+                    {locale === 'en' ? "Schedule" : "Programação"}
                   </Link>
                   <Link
-                    href='/'
+                    href={`${locale}/logout`}
                     className='font-medium text-20 tracking-[0.24px] text-white'
                     onClick={(e) => {
                       e.preventDefault()
                       signOut()
                     }}
                   >
-                    Sair
+                    {locale === 'en' ? "Logout" : "Sair"}
                   </Link>
                 </div>
               </div>
