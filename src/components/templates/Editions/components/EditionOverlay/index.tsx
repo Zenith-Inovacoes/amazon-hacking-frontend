@@ -99,7 +99,11 @@ const EditionOverlay = ({ edition, image }: EditionOverlayProps) => {
                     {locale === 'en' ? 'Learn more...' : 'Saiba mais...'}
                 </Button>
             </OverlayTrigger>
-            <OverlayContent theme='dark' handlerColor='#FFF'>
+            <OverlayContent
+                theme='dark'
+                handlerColor='#FFF'
+                className='overflow-hidden'
+            >
                 <div className='flex flex-col items-center justify-center relative w-full h-full md:gap-[111px] overflow-hidden'>
                     <div className='relative h-full w-full flex justify-center top-0 rounded-t-lg mb-9'>
                         <div className='w-full h-72'>
