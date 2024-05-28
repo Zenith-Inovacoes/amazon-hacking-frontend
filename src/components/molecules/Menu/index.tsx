@@ -135,7 +135,7 @@ const Menu = ({ data }: MenuProps) => {
                             <MenuTitle>Login</MenuTitle>
                             <Button
                                 variant='secondary'
-                                onClick={() => signIn()}
+                                onClick={() => signIn('google')}
                             >
                                 {locale === 'en' ? 'Sign In' : 'Fazer Login'}
                             </Button>
