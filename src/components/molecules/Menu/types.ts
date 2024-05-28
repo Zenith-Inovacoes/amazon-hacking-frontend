@@ -1,5 +1,5 @@
 import { Session } from 'next-auth'
 
-export type DesktopMenuProps = {
+export type MenuProps = {
     data: Session | null
 }

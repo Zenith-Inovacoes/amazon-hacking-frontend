@@ -1,116 +1,116 @@
 {
-  "Home": {
-    "Header": {
-      "program": "THE PROGRAM",
-      "editions": "EDITIONS",
-      "winners": "WINNERS",
-      "partners": "PARTNERS"
-    },
-    "Hero": {
-      "title": "TECHNOLOGY AND TRADITION IN HARMONY",
-      "date": "JUNE 5TH TO 7TH",
-      "subtitle": "A celebration of innovation and creativity, paving the way for future generations.",
-      "buttonText": "Explore more"
-    },
-    "Partners": {
-      "title": "Our Partners",
-      "subtitle": "We thank our partners! With their support, we made this event possible. Check out these amazing partners!",
-      "masterTitle": "Master",
-      "manteneursTitle": "Maintainers",
-      "partnersTitle": "Patrons",
-      "footerTitle": "Come be a part of this team!",
-      "footerDescription": "Become a sponsor! Join us in making this event a success. Learn how your company can contribute and stand out!",
-      "footerButtonText": "Contact us"
-    },
-    "About": {
-      "title": "The Program",
-      "description": "The Amazon Hacking program is a training initiative for students at CESUPA's School of Business, Technology, and Innovation - ARGO. It aims to connect companies committed to Amazonian sustainability, the local community and its traditional knowledge, with scientific and technological knowledge. The goal is to promote the bioeconomic development of the region from a global perspective.",
-      "buttonText": "Learn more",
-      "goalsTitle": "What are we looking for?",
-      "goalsDescription": "University students will develop impactful projects to solve complex problems based on challenges identified by the local residents themselves.",
-      "GoalCards": {
-        "imersion": {
-          "title": "Educational Immersion",
-          "description": "Create <colored>immersive experiences</colored> on islands and within communities for the students."
+    "Home": {
+        "Header": {
+            "program": "THE PROGRAM",
+            "editions": "EDITIONS",
+            "winners": "WINNERS",
+            "partners": "PARTNERS"
         },
-        "iteration": {
-          "title": "Market Interaction",
-          "description": "Interrelationship between <colored>students</colored> and <colored>technology</colored> companies in the market."
+        "Hero": {
+            "title": "TECHNOLOGY AND TRADITION IN HARMONY",
+            "date": "JUNE 5TH TO 7TH",
+            "subtitle": "A celebration of innovation and creativity, paving the way for future generations.",
+            "buttonText": "Explore more"
         },
-        "innovation": {
-          "title": "Amazonian Innovation",
-          "description": "Foster <colored>technological</colored> and <colored>entrepreneurial solutions</colored> in the Amazon region."
+        "Partners": {
+            "title": "Our Partners",
+            "subtitle": "We thank our partners! With their support, we made this event possible. Check out these amazing partners!",
+            "masterTitle": "Master",
+            "manteneursTitle": "Maintainers",
+            "partnersTitle": "Patrons",
+            "footerTitle": "Come be a part of this team!",
+            "footerDescription": "Become a sponsor! Join us in making this event a success. Learn how your company can contribute and stand out!",
+            "footerButtonText": "Contact us"
         },
-        "network": {
-          "title": "Innovative Network",
-          "description": "Strengthen the <colored>innovation</colored> and <colored>networking ecosystem.</colored>"
+        "About": {
+            "title": "The Program",
+            "description": "The Amazon Hacking program is a training initiative for students at CESUPA's School of Business, Technology, and Innovation - ARGO. It aims to connect companies committed to Amazonian sustainability, the local community and its traditional knowledge, with scientific and technological knowledge. The goal is to promote the bioeconomic development of the region from a global perspective.",
+            "buttonText": "Learn more",
+            "goalsTitle": "What are we looking for?",
+            "goalsDescription": "University students will develop impactful projects to solve complex problems based on challenges identified by the local residents themselves.",
+            "GoalCards": {
+                "imersion": {
+                    "title": "Educational Immersion",
+                    "description": "Create <colored>immersive experiences</colored> on islands and within communities for the students."
+                },
+                "iteration": {
+                    "title": "Market Interaction",
+                    "description": "Interrelationship between <colored>students</colored> and <colored>technology</colored> companies in the market."
+                },
+                "innovation": {
+                    "title": "Amazonian Innovation",
+                    "description": "Foster <colored>technological</colored> and <colored>entrepreneurial solutions</colored> in the Amazon region."
+                },
+                "network": {
+                    "title": "Innovative Network",
+                    "description": "Strengthen the <colored>innovation</colored> and <colored>networking ecosystem.</colored>"
+                }
+            },
+            "NumberCards": {
+                "students": "Students",
+                "teams": "Teams",
+                "mentors": "Mentors"
+            }
+        },
+        "Zenith": {
+            "title": "The pinnacle of innovation originated here.",
+            "subtitle": "Our journey began at Amazon Hacking in 2022. Since then, we haven't stopped.",
+            "buttonText": "Learn more",
+            "linkText": "Explore more of the Zenith universe",
+            "Overlay": {
+                "title": "There are no limits to innovation",
+                "subtitle": "A project that evolved into a startup. Zenith Inova works tirelessly with a focus on the development of the Amazon.",
+                "secondTitle": "Connecting and nurturing the future",
+                "secondSubtitle": "Our mission is to solve relevant problems in the Amazon region, striving to achieve the highest levels of satisfaction for those who truly matter: <bold>You</bold>.",
+                "thirdTitle": "Guided by the passion for innovation",
+                "thirdSubtitle": "Discover how Zenith Inova is transforming our region with technology and sustainability.",
+                "buttonText": "Explore more"
+            }
+        },
+        "PublicPrize": {
+            "title": "Audience Star",
+            "subtitle": "The Conceição Rangel Fiúza de Melo Award celebrates the audience's choice through direct voting, highlighting the solution that won the hearts of hundreds of people.",
+            "Overlay": {
+                "title": "Conceição Rangel Fiúza de Melo Award: Legacy and Innovation at CESUPA",
+                "description": "The Conceição Rangel Fiúza de Melo Award honors the legacy of Professor Conceição, a pioneer in founding the technology courses at CESUPA. From the implementation of the first course in 1990 to her long tenure in the Field of Exact and Technological Sciences, her strategic leadership and firm decisions were crucial to our growth. The award is determined by public voting during the institution's biggest technological celebration, Computação Amostra.",
+                "triggerText": "Learn more about..."
+            }
+        },
+        "CommunityPrize": {
+            "title": "Community Highlight",
+            "subtitle": "A solution selected by community leaders for its significant impact on the local population, generating progress and helping to build a better future for the inhabitants of our region.",
+            "winnerTitle": "MMIB Award Champion",
+            "winnerButtonText": "Learn more"
+        },
+        "Footer": {
+            "menu": "Menu",
+            "Nav": {
+                "program": "The Program",
+                "editions": "Editions",
+                "winners": "Winners",
+                "partners": "Partners"
+            },
+            "socialMedia": "Social medias:",
+            "rights": "2024 © CESUPA. All rights reserved.",
+            "developedBy": "Developed by <link>Zenith Inova</link>"
+        },
+        "Winners": {
+            "title": "Immersion Podium",
+            "description": "The winners implemented innovative sustainable projects in the Amazon, respecting local knowledge. Check out the outstanding impactful solutions.",
+            "year": "Select an year:",
+            "eng": "Computer Engineering",
+            "sci": "Computer Science"
+        },
+        "Editions": {
+            "label": "3rd Edition",
+            "subtitle": "Combú Knowledge: Developing an inclusive bioeconomy in the Amazon.",
+            "mainText1": "Ilha do Combu is a river island located on the Guamá River, very close to Belém do Pará. It is home to approximately 2,200 inhabitants. Its economy is driven mainly by the extraction of products such as açaí, cocoa and cupuaçu.",
+            "mainText2": "The island has been designated an Environmental Protection Area to preserve its rich biodiversity and faces challenges in tourism and infrastructure growth, especially in sanitation and waste management. These problems require careful solutions to maintain a balance between economic development and environmental sustainability.",
+            "retrospective": "Retrospective",
+            "retrospectiveText": "Each edition of Amazon Hacking has contributed to the program's continued growth and positive impact on the biodiversity of the Amazon and its communities. Discover the achievements and challenges that marked our legacy."
         }
-      },
-      "NumberCards": {
-        "students": "Students",
-        "teams": "Teams",
-        "mentors": "Mentors"
-      }
     },
-    "Zenith": {
-      "title": "The pinnacle of innovation originated here.",
-      "subtitle": "Our journey began at Amazon Hacking in 2022. Since then, we haven't stopped.",
-      "buttonText": "Learn more",
-      "linkText": "Explore more of the Zenith universe",
-      "Overlay": {
-        "title": "There are no limits to innovation",
-        "subtitle": "A project that evolved into a startup. Zenith Inova works tirelessly with a focus on the development of the Amazon.",
-        "secondTitle": "Connecting and nurturing the future",
-        "secondSubtitle": "Our mission is to solve relevant problems in the Amazon region, striving to achieve the highest levels of satisfaction for those who truly matter: <bold>You</bold>.",
-        "thirdTitle": "Guided by the passion for innovation",
-        "thirdSubtitle": "Discover how Zenith Inova is transforming our region with technology and sustainability.",
-        "buttonText": "Explore more"
-      }
-    },
-    "PublicPrize": {
-      "title": "Audience Star",
-      "subtitle": "The Conceição Rangel Fiúza de Melo Award celebrates the audience's choice through direct voting, highlighting the solution that won the hearts of hundreds of people.",
-      "Overlay": {
-        "title": "Conceição Rangel Fiúza de Melo Award: Legacy and Innovation at CESUPA",
-        "description": "The Conceição Rangel Fiúza de Melo Award honors the legacy of Professor Conceição, a pioneer in founding the technology courses at CESUPA. From the implementation of the first course in 1990 to her long tenure in the Field of Exact and Technological Sciences, her strategic leadership and firm decisions were crucial to our growth. The award is determined by public voting during the institution's biggest technological celebration, Computação Amostra.",
-        "triggerText": "Learn more about..."
-      }
-    },
-    "CommunityPrize": {
-      "title": "Community Highlight",
-      "subtitle": "A solution selected by community leaders for its significant impact on the local population, generating progress and helping to build a better future for the inhabitants of our region.",
-      "winnerTitle": "MMIB Award Champion",
-      "winnerButtonText": "Learn more"
-    },
-    "Footer": {
-      "menu": "Menu",
-      "Nav": {
-        "program": "The Program",
-        "editions": "Editions",
-        "winners": "Winners",
-        "partners": "Partners"
-      },
-      "socialMedia": "Social medias:",
-      "rights": "2024 © CESUPA. All rights reserved.",
-      "developedBy": "Developed by <link>Zenith Inova</link>"
-    },
-    "Winners": {
-      "title": "Immersion Podium",
-      "description": "The winners implemented innovative sustainable projects in the Amazon, respecting local knowledge. Check out the outstanding impactful solutions.",
-      "year": "Select an year:",
-      "eng": "Computer Engineering",
-      "sci": "Computer Science"
-    },
-    "Editions": {
-      "label": "3rd Edition",
-      "subtitle": "Combú Knowledge: Developing an inclusive bioeconomy in the Amazon.",
-      "mainText1": "Ilha do Combu is a river island located on the Guamá River, very close to Belém do Pará. It is home to approximately 2,200 inhabitants. Its economy is driven mainly by the extraction of products such as açaí, cocoa and cupuaçu.",
-      "mainText2": "The island has been designated an Environmental Protection Area to preserve its rich biodiversity and faces challenges in tourism and infrastructure growth, especially in sanitation and waste management. These problems require careful solutions to maintain a balance between economic development and environmental sustainability.",
-      "retrospective": "Retrospective",
-      "retrospectiveText": "Each edition of Amazon Hacking has contributed to the program's continued growth and positive impact on the biodiversity of the Amazon and its communities. Discover the achievements and challenges that marked our legacy."
+    "Loading": {
+        "title": "Loading..."
     }
-  },
-  "Loading": {
-    "title": "Loading..."
-  }
 }
