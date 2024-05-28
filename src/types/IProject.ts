@@ -5,9 +5,6 @@ export type IProject = {
     name: string,
     team: string[],
     description: string,
-    votes?: IVote[] | IVote["id"][]
-    totalVotes?: number,
-    uniqueVotes?: number,
     status?: boolean
     links: {
         github: string,
@@ -18,7 +15,8 @@ export type IProject = {
         banner?: string
     },
     course: CourseEnum,
-    logoUrl?: string
+    logoUrl?: string,
+    year?: number
 }
 
 export enum CourseEnum {
