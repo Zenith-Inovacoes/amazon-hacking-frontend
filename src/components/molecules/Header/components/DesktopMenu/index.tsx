@@ -110,7 +110,7 @@ const DesktopMenu = ({ data }: DesktopMenuProps) => {
                         <Badge>{locale === 'en' ? 'Soon' : 'Em breve'}</Badge>
                     </div>
                     <Link
-                        href='https://www.sympla.com.br/evento/computacao-amostra-xx/2470011'
+                        href='https://www.sympla.com.br/eventos?s=computacao-amostra-xx'
                         target='_blank'
                         className='font-medium text-20 tracking-[0.24px] text-white'
                     >

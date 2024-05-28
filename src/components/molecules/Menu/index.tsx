@@ -153,10 +153,16 @@ const Menu = ({ data }: MenuProps) => {
                                         {locale === 'en' ? 'Soon' : 'Em Breve'}
                                     </Badge>
                                 </div>
-                                <Link href='/'>
+                                <Link
+                                    href='https://www.sympla.com.br/eventos?s=computacao-amostra-xx'
+                                    target='_blank'
+                                >
                                     {locale === 'en' ? 'Tickets' : 'Ingressos'}
                                 </Link>
-                                <Link href='/'>
+                                <Link
+                                    href='https://drive.google.com/drive/u/2/folders/1DkP687BP4TZV7zYQr9_l7bVGKr_awJUW'
+                                    target='_blank'
+                                >
                                     {locale === 'en'
                                         ? 'Schedule'
                                         : 'Programação'}
