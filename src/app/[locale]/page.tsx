@@ -14,20 +14,20 @@ import { useTranslations } from 'next-intl'
 import EditionsContainer from '@/components/templates/Editions/EditionsContainer'
 
 export default function Home() {
-  const t = useTranslations('Home')
+    const t = useTranslations('Home')
 
-  return (
-    <main className='scroll-smooth'>
-      <Header />
-      <Hero />
-      <About />
-      <EditionsContainer />
-      <Zenith />
-      <WinnerContainer />
-      <PublicPrize />
-      <CommunityPrize />
-      <Partners />
-      <Footer />
-    </main>
-  )
+    return (
+        <main className='scroll-smooth'>
+            <Header />
+            <Hero />
+            <About />
+            <EditionsContainer />
+            <Zenith />
+            <WinnerContainer />
+            <PublicPrize />
+            <CommunityPrize />
+            <Partners />
+            <Footer />
+        </main>
+    )
 }

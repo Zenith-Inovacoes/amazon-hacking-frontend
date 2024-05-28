@@ -1,39 +1,50 @@
 'use client'
 
-import { createContext, ReactNode, useContext, useState } from 'react'
+import {
+    createContext,
+    ReactNode,
+    useContext,
+    useEffect,
+    useState,
+} from 'react'
 
 type menuProviderProps = {
-  children: ReactNode
+    children: ReactNode
 }
 
 type menuContextData = {
-  open: boolean
-  handleOpenChange: () => void
-  setOpen: (state: boolean) => void
+    open: boolean
+    handleOpenChange: () => void
+    setOpen: (state: boolean | ((state: boolean) => boolean)) => void
 }
 
 export const MenuContext = createContext({} as menuContextData)
 
 const MenuProvider = ({ children }: menuProviderProps) => {
-  const [open, setOpen] = useState<boolean>(false)
+    const [open, setOpen] = useState<boolean>(false)
 
-  const handleOpenChange = () => {
-    setOpen((currState) => !currState)
-  }
+    useEffect(() => {
+        document.body.style.overflowY = open ? 'hidden' : 'unset'
+    }, [open])
 
-  return (
-    <MenuContext.Provider value={{ open, handleOpenChange, setOpen }}>
-      {children}
-    </MenuContext.Provider>
-  )
+    const handleOpenChange = () => {
+        setOpen((currState) => !currState)
+    }
+
+    return (
+        <MenuContext.Provider value={{ open, handleOpenChange, setOpen }}>
+            {children}
+        </MenuContext.Provider>
+    )
 }
 
 export const useMenu = () => {
-  const context = useContext<menuContextData>(MenuContext)
+    const context = useContext<menuContextData>(MenuContext)
 
-  if (!context) throw new Error('useMenu has to be used inside a MenuProvider')
+    if (!context)
+        throw new Error('useMenu has to be used inside a MenuProvider')
 
-  return context
+    return context
 }
 
 export default MenuProvider

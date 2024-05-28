@@ -1,129 +1,142 @@
-"use client"
+'use client'
 
 import { useMenu } from '@/contexts/menu'
 import { DesktopMenuProps } from './types'
 import Image from 'next/image'
 import { cn } from '@/services/utils/className.utils'
-import * as Dialog from '@radix-ui/react-dialog'
 import { IoCloseOutline } from 'react-icons/io5'
-import { Link, Badge } from '@/components/atoms'
+import { Link, Badge, Button } from '@/components/atoms'
 import { signOut } from 'next-auth/react'
 import { locales } from '@/services/utils/locale.utils'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { sections } from '@/constants/sections'
+import { scrollTo } from '@/services/utils/scrollTo'
 
-const DesktopMenu = ({ email, image, name }: DesktopMenuProps) => {
-  const pathname = usePathname();
-  const [locale, setLocale] = useState<string>(
-    locales.find((locale) => pathname?.includes(locale.locale))?.locale || 'en'
-  );
-  const names = name?.split(' ') as string[]
-  const uName: string = names[0] + ' ' + names[names.length - 1]
+const DesktopMenu = ({ data }: DesktopMenuProps) => {
+    const pathname = usePathname()
+    const [locale, setLocale] = useState<string>(
+        locales.find((locale) => pathname?.includes(locale.locale))?.locale ||
+            'en'
+    )
 
-  const { open, handleOpenChange } = useMenu()
+    let uName: string = ''
 
-  return (
-    <Dialog.Root open={open} onOpenChange={handleOpenChange}>
-      <Dialog.Trigger className='relative w-fit xl:w-full h-fit right-0 top-0 z-50 transition-opacity duraiton-200 ease-linear hidden lg:flex xl:justify-end xl:flex xl:items-center xl:gap-2'>
-        <div className='relative w-[48px] h-[48px] bg-gradient-to-bl from-[#005194] via-[#005194] to-[#70BAE9] rounded-full flex items-center justify-center flex-shrink-0'>
-          <div className='relative w-12 h-12 rounded-full overflow-hidden'>
-            <Image src={image || ''} alt='Imagem do perfil do usuário' fill />
-          </div>
-        </div>
-        <span className='font-bold text-base tracking-[0.32px] text-nowrap text-white z-50 hidden xl:block w-[15ch] text-start truncate'>
-          {uName}
-        </span>
-      </Dialog.Trigger>
-      <Dialog.Portal>
-        <Dialog.Overlay className='fixed w-full h-full top-0 lg:flex bg-black bg-opacity-40 data-[state=open]:animate-menuOverlayShow data-[state=closed]:animate-desktopMenuOverlayHide overflow-y-auto hidden z-50 justify-center'>
-          <div className='relative flex items-start justify-end h-fit w-full max-w-screen-2xl'>
-            <div
-              className={cn(
-                'fixed w-[48px] h-[48px] bg-gradient-to-bl from-[#005194] via-[#005194] to-[#70BAE9] rounded-full flex items-center justify-center flex-shrink-0 z-50 mt-11',
-                open
-                  ? 'animate-iconOpen mr-[247px] xl:animate-iconOpenXL'
-                  : 'animate-iconClose mr-[62px] xl:mr-[230px] xl:animate-iconCloseXL'
-              )}
-            >
-              <div className='absolute w-12 h-12 rounded-full overflow-hidden'>
-                <Image
-                  src={image || ''}
-                  alt='Imagem do perfil do usuário'
-                  fill
-                />
-              </div>
-            </div>
-            <div className='absolute flex flex-col'>
-              <span
+    if (data) {
+        const names = (data.user?.name as string).split(' ') as string[]
+        uName = names[0] + ' ' + names[names.length - 1]
+    }
+
+    const { open, handleOpenChange, setOpen } = useMenu()
+    const [block, setBlock] = useState<boolean>(false)
+
+    useEffect(() => {
+        if (open) setBlock(true)
+    }, [open])
+
+    return (
+        <div className='relative flex justify-end items-center w-full h-full max-w-screen-2xl'>
+            <button
                 className={cn(
-                  'relative  mt-11 mr-[230px] right-0 translate-x-full font-bold text-base tracking-[0.32px] text-nowrap text-white z-50',
-                  open ? 'animate-overlayShow' : 'animate-overlayHide opacity-0'
+                    'relative w-fit h-fit z-50 transition-transform duration-300 ease-in-out flex items-center justify-center gap-5',
+                    open &&
+                        '-translate-x-[140px] xl:-translate-x-[75px] translate-y-4 pointer-events-none'
                 )}
-              >
-                {uName}
-              </span>
-              <span
-                title={email as string}
-                className={cn(
-                  'absolute font-medium tracking-[0.2px] text-xs truncate w-full max-w-[22ch] text-white z-50 mt-[70px] right-0 mr-[230px] translate-x-full',
-                  open
-                    ? 'animate-overlayShow'
-                    : 'animate-overlayHide opacity-0'
-                )}
-              >
-                {email}
-              </span>
-            </div>
-            <Dialog.Close
-              className={cn(
-                'absolute w-fit h-fit inset-0 top-0 left-[100%] z-10 opacity-0 transition-all duration-200 ease-linear -translate-x-[calc(100%+20px)] mt-5 hidden lg:block bg-white text-black rounded-full',
-                open && 'z-50 pointer-events-auto opacity-100 '
-              )}
+                onClick={handleOpenChange}
             >
-              <IoCloseOutline size={31} />
-            </Dialog.Close>
-            <Dialog.Content
-              className='relative data-[state=open]:animate-desktopMenuOpen data-[state=closed]:animate-desktopMenuClose'
-              onOpenAutoFocus={(e) => e.preventDefault()}
-            >
-              <div className='flex flex-col items-start justify-start bg-black w-[330px] h-fit rounded-b-[30px] py-10 px-8 gap-10'>
-                <div className='flex flex-col items-start justify-start gap-[18px] pt-[88px]'>
-                  <div className='flex gap-[10px] items-center justify-center'>
-                    <Link href={`${locale}/students`} className='font-medium text-20 tracking-[0.24px] text-white pointer-events-none opacity-50'>
-                      {locale === "en" ? "Student area" : "Área do aluno"}
-                    </Link>
-                    <Badge>{locale === 'en' ? "Soon" : "Em breve"}</Badge>
-                  </div>
-                  <Link
-                    href={`${locale}/tickets`}
-                    className='font-medium text-20 tracking-[0.24px] text-white'
-                  >
-                    {locale === 'en' ? "Tickets" : "Ingressos"}
-                  </Link>
-                  <Link
-                    href={`${locale}/schedule`}
-                    className='font-medium text-20 tracking-[0.24px] text-white'
-                  >
-                    {locale === 'en' ? "Schedule" : "Programação"}
-                  </Link>
-                  <Link
-                    href={`${locale}/logout`}
-                    className='font-medium text-20 tracking-[0.24px] text-white'
-                    onClick={(e) => {
-                      e.preventDefault()
-                      signOut()
-                    }}
-                  >
-                    {locale === 'en' ? "Logout" : "Sair"}
-                  </Link>
+                <div className='w-[52px] h-[52px] bg-gradient-to-bl from-[#005194] via-[#005194] to-[#70BAE9] rounded-full flex items-center justify-center flex-shrink-0'>
+                    <div className='relative w-12 h-12 rounded-full overflow-hidden'>
+                        <Image
+                            src={data?.user?.image || ''}
+                            alt='Imagem do perfil do usuário'
+                            fill
+                        />
+                    </div>
                 </div>
-              </div>
-            </Dialog.Content>
-          </div>
-        </Dialog.Overlay>
-      </Dialog.Portal>
-    </Dialog.Root>
-  )
+                <span
+                    title={uName}
+                    className={cn(
+                        'font-bold text-base tracking-[0.32px] text-nowrap text-white z-50 text-start truncate w-[15ch] pointer-events-none transition-all duration-300 ease-in-out -mr-[calc(15ch+20px)] xl:mr-0 opacity-0 xl:opacity-100 xl:pointer-events-auto',
+                        open &&
+                            '-translate-y-1/2 pointer-events-auto mr-0 opacity-100'
+                    )}
+                >
+                    {uName}
+                </span>
+                <span
+                    title={data?.user?.email as string}
+                    className={cn(
+                        'absolute left-[72px] font-medium tracking-[0.2px] text-xs truncate w-full max-w-[20ch] opacity-0 pointer-events-none transition-all duration-300 ease-in-out',
+                        open &&
+                            'translate-y-1/2 opacity-100 pointer-events-auto'
+                    )}
+                >
+                    {data?.user?.email}
+                </span>
+            </button>
+
+            <div
+                className={cn(
+                    'hidden fixed bg-black w-screen min-h-screen bg-transparent transition-colors duration-300 ease-in-out opacity-40 inset-0',
+                    open && 'bg-black',
+                    block && 'block'
+                )}
+                onClick={() => setOpen((currState) => currState && !currState)}
+                onTransitionEnd={() => setBlock(false)}
+            />
+            <div
+                className={cn(
+                    'fixed top-0 flex bg-black rounded-b-[30px] w-[330px] h-[363px] transition-transform duration-300 ease-in-out transform pb-12 pt-[155px] px-8 right-0 xl:right-auto',
+                    open
+                        ? 'translate-y-0 z-40 translate-x-0'
+                        : '-translate-y-full'
+                )}
+                tabIndex={open ? 0 : -1}
+            >
+                <button
+                    className='absolute w-fit h-fit right-5 top-5 bg-white text-black rounded-full'
+                    onClick={handleOpenChange}
+                >
+                    <IoCloseOutline size={31} />
+                </button>
+                <div className='flex flex-col items-start justify-start gap-[18px]'>
+                    <div className='flex gap-[10px] items-center justify-center'>
+                        <Link
+                            href={`${locale}/students`}
+                            className='font-medium text-20 tracking-[0.24px] text-white pointer-events-none opacity-50'
+                        >
+                            {locale === 'en' ? 'Student area' : 'Área do aluno'}
+                        </Link>
+                        <Badge>{locale === 'en' ? 'Soon' : 'Em breve'}</Badge>
+                    </div>
+                    <Link
+                        href='https://www.sympla.com.br/evento/computacao-amostra-xx/2470011'
+                        target='_blank'
+                        className='font-medium text-20 tracking-[0.24px] text-white'
+                    >
+                        {locale === 'en' ? 'Tickets' : 'Ingressos'}
+                    </Link>
+                    <Link
+                        href='https://drive.google.com/drive/u/2/folders/1DkP687BP4TZV7zYQr9_l7bVGKr_awJUW'
+                        target='_blank'
+                        className='font-medium text-20 tracking-[0.24px] text-white'
+                    >
+                        {locale === 'en' ? 'Schedule' : 'Programação'}
+                    </Link>
+                    <Link
+                        href={`${locale}/logout`}
+                        className='font-medium text-20 tracking-[0.24px] text-white'
+                        onClick={(e) => {
+                            e.preventDefault()
+                            signOut()
+                        }}
+                    >
+                        {locale === 'en' ? 'Logout' : 'Sair'}
+                    </Link>
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default DesktopMenu
