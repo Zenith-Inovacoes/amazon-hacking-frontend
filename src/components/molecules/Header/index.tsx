@@ -66,7 +66,10 @@ const Header = () => {
                     </NextLink>
                 </Button>
                 {!data ? (
-                    <Button variant='secondary' onClick={() => signIn()}>
+                    <Button
+                        variant='secondary'
+                        onClick={() => signIn('google')}
+                    >
                         {locale === 'en' ? 'Sign In' : 'Fazer Login'}
                     </Button>
                 ) : (
