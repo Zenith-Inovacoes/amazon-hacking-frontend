@@ -1,3 +1,3 @@
-import { IProject } from "@/types/IProject"
+import { IProject } from '@/types/IProject'
 
 export type WinnerCardProps = IProject

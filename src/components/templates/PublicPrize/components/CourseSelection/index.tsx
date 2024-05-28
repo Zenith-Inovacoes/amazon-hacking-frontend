@@ -1,37 +1,32 @@
-"use client"
+'use client'
 
-import { Checkbox, Select } from "@/components/atoms"
-import { CourseEnum } from "@/types/IProject"
+import { Checkbox, Select } from '@/components/atoms'
+import { CourseEnum } from '@/types/IProject'
 import { SelectItem } from '@/components/atoms/Select'
-import WinnerCard from "../WinnerCard"
-import { publicWinners } from "@/model/Winners"
-import { useState } from "react"
-import { locales } from "@/services/utils/locale.utils"
-import { usePathname } from "next/navigation"
+import WinnerCard from '../WinnerCard'
+import { publicWinners } from '@/model/Winners'
+import { useState } from 'react'
+import { locales } from '@/services/utils/locale.utils'
+import { usePathname } from 'next/navigation'
 
 export default function CourseSelection() {
     const pathname = usePathname()
     const [locale, setLocale] = useState<string>(
-        locales.find((locale) => pathname?.includes(locale.locale))?.locale || 'en'
-    );
+        locales.find((locale) => pathname?.includes(locale.locale))?.locale ||
+            'en'
+    )
     const copy = [
         {
-            locale: "en",
-            courses: [
-                "Computer Engineering",
-                "Computer Science"
-            ],
-            selectionText: "Choose a year:",
-            buttonText: "Learn more"
+            locale: 'en',
+            courses: ['Computer Engineering', 'Computer Science'],
+            selectionText: 'Choose a year:',
+            buttonText: 'Learn more',
         },
         {
-            locale: "pt",
-            courses: [
-                "Engenharia de Computação",
-                "Ciência de Computação"
-            ],
-            selectionText: "Escolha um ano:",
-            buttonText: "Saiba mais"
+            locale: 'pt',
+            courses: ['Engenharia de Computação', 'Ciência de Computação'],
+            selectionText: 'Escolha um ano:',
+            buttonText: 'Saiba mais',
         },
     ]
 
@@ -60,7 +55,9 @@ export default function CourseSelection() {
             <div className='flex flex-col items-center justify-center gap-8 w-full md:flex-row-reverse md:justify-start md:gap-0 xl:gap-10 px-8 lg:px-0'>
                 <div className='flex flex-col items-center justify-center gap-6 w-full md:w-fit'>
                     <span className='text-white text-36 font-semibold leading-40 text-right self-end z-10'>
-                        {locale === "en" ? copy[0].selectionText : copy[1].selectionText}
+                        {locale === 'en'
+                            ? copy[0].selectionText
+                            : copy[1].selectionText}
                     </span>
                     <div className='flex self-end gap-6'>
                         <Checkbox
@@ -87,10 +84,14 @@ export default function CourseSelection() {
                         placeholder='Selecione um curso'
                     >
                         <SelectItem value={CourseEnum.ECOMP}>
-                            {locale === "en" ? copy[0].courses[0] : copy[1].courses[0]}
+                            {locale === 'en'
+                                ? copy[0].courses[0]
+                                : copy[1].courses[0]}
                         </SelectItem>
                         <SelectItem value={CourseEnum.BCC}>
-                            {locale === "en" ? copy[0].courses[1] : copy[1].courses[1]}
+                            {locale === 'en'
+                                ? copy[0].courses[1]
+                                : copy[1].courses[1]}
                         </SelectItem>
                     </Select>
                 </div>
