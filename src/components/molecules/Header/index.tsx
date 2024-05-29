@@ -65,7 +65,7 @@ const Header = () => {
                         {locale === 'en' ? 'See Solutions' : 'Ver Soluções'}
                     </NextLink>
                 </Button>
-                {!data ? (
+                {/* {!data ? (
                     <Button
                         variant='secondary'
                         onClick={() => signIn('google')}
@@ -74,7 +74,7 @@ const Header = () => {
                     </Button>
                 ) : (
                     <DesktopMenu data={data} />
-                )}
+                )} */}
             </div>
         </HeaderLogic>
     )

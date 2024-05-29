@@ -17,11 +17,57 @@ import { signIn, signOut } from 'next-auth/react'
 import { sections } from '@/constants/sections'
 import { scrollTo } from '@/services/utils/scrollTo'
 
+function DesktopMenu() {
+    const pathname = usePathname()
+    const [locale, setLocale] = useState<string>(
+        locales.find((locale) => pathname?.includes(locale.locale))?.locale ||
+        'en'
+    )
+
+    return (
+        <div className='flex flex-col items-start justify-start gap-[18px]'>
+            <div className='flex gap-[10px] items-center justify-center'>
+                <Link className='font-medium text-20 tracking-[0.24px] text-white pointer-events-none opacity-50'>
+                    {locale === 'en'
+                        ? 'Student Area'
+                        : 'Área do Aluno'}
+                </Link>
+                <Badge>
+                    {locale === 'en' ? 'Soon' : 'Em Breve'}
+                </Badge>
+            </div>
+            <Link
+                href='https://www.sympla.com.br/eventos?s=computacao-amostra-xx'
+                target='_blank'
+            >
+                {locale === 'en' ? 'Tickets' : 'Ingressos'}
+            </Link>
+            <Link
+                href='https://drive.google.com/drive/u/2/folders/1DkP687BP4TZV7zYQr9_l7bVGKr_awJUW'
+                target='_blank'
+            >
+                {locale === 'en'
+                    ? 'Schedule'
+                    : 'Programação'}
+            </Link>
+            {/* <Link
+                href='/'
+                onClick={(e) => {
+                    e.preventDefault()
+                    signOut()
+                }}
+            >
+                {locale === 'en' ? 'Logout' : 'Sair'}
+            </Link> */}
+        </div>
+    )
+}
+
 const Menu = ({ data }: MenuProps) => {
     const pathname = usePathname()
     const [locale, setLocale] = useState<string>(
         locales.find((locale) => pathname?.includes(locale.locale))?.locale ||
-            'en'
+        'en'
     )
 
     const { open, handleOpenChange, setOpen } = useMenu()
@@ -130,7 +176,10 @@ const Menu = ({ data }: MenuProps) => {
                         </Button>
                     </div>
 
-                    {!data ? (
+
+                    <DesktopMenu />
+
+                    {/* {!data ? (
                         <div className='flex flex-col gap-[18px] items-start justify-center w-full h-fit'>
                             <MenuTitle>Login</MenuTitle>
                             <Button
@@ -200,7 +249,7 @@ const Menu = ({ data }: MenuProps) => {
                                 </div>
                             </div>
                         </>
-                    )}
+                    )} */}
                 </div>
             </div>
         </div>
