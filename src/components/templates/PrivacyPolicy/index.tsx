@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import TermsCard from "@/components/molecules/TermsCard"
 
 function StartWave() {
