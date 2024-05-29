@@ -108,7 +108,14 @@
             "mainText2": "The island has been designated an Environmental Protection Area to preserve its rich biodiversity and faces challenges in tourism and infrastructure growth, especially in sanitation and waste management. These problems require careful solutions to maintain a balance between economic development and environmental sustainability.",
             "retrospective": "Retrospective",
             "retrospectiveText": "Each edition of Amazon Hacking has contributed to the program's continued growth and positive impact on the biodiversity of the Amazon and its communities. Discover the achievements and challenges that marked our legacy."
+        },
+
+        "NoticeOverlay": {
+            "title": "Disclaimer",
+            "description": "<zenith>Zenith Inovações e Tecnologias da Amazônia LTDA.</zenith> <italic>volunteered</italic> to develop the <bold>website interface</bold> for CESUPA's Amazon Hacking, adhering to the highest standards of quality and sophistication that are fundamental to our values. We did this with great love and dedication for our academic community because we believe in the potential and determination of all participating students, recognizing the positive impact this will have on their professional journeys.\n\nHowever, due to an act of bad faith by the academic group responsible for the voting system structure, data management, and public vote counting, the envisioned experience for this project could not be completed as planned. We disclaim any responsibility for issues related to this system and deeply regret this situation.\n\nDespite these challenges, Zenith Inova reaffirms its commitment to CESUPA - Centro Universitário do Pará and our community, always striving to provide the best experience for those who matter most: <bold>You</bold>.\n\nWe love you all 💜️",
+            "button": "Got it"
         }
+
     },
     "Loading": {
         "title": "Loading..."

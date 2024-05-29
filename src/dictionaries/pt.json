@@ -131,6 +131,11 @@
             "year": "Escolha um ano:",
             "eng": "Engenharia da Computação",
             "sci": "Ciência da Computação"
+        },
+        "NoticeOverlay": {
+            "title": "Atenção",
+            "description": "<zenith>A Zenith Inovações e Tecnologias da Amazônia LTDA.</zenith> se propôs a desenvolver a <bold>interface do website</bold> do Amazon Hacking do CESUPA <italic>voluntariamente</italic>, seguindo os mais altos padrões de qualidade e sofisticação que são fundamentais aos nossos valores. Tudo isso com muito amor e dedicação para nossa comunidade acadêmica, pois acreditamos no potencial e na determinação de todos os alunos participantes, reconhecendo o impacto positivo que isso terá em suas jornadas profissionais.\n\nDevido a um ato de má fé por parte do grupo acadêmico responsável pela estrutura do sistema de votação, gestão de dados e contabilização do voto público, a experiência idealizada para este projeto não poderá ser concluída conforme planejado. Isentamo-nos de quaisquer problemas relacionados a este sistema e lamentamos muito por esta situação.\n\nA Zenith Inova, mesmo prejudicada, reforça seu compromisso com o CESUPA - Centro Universitário do Pará e nossa comunidade, sempre buscando trazer a melhor experiência para quem mais importa: <bold>Você</bold>.\n\nAmamos vocês 💜️",
+            "button": "Entendi"
         }
     },
     "Loading": {

@@ -100,7 +100,6 @@ export default function Hero() {
                     allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                 ></MotionIFrame>
             </div>
-            <Bounce text={t('buttonText')} />
         </section>
     )
 }
