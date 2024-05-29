@@ -32,11 +32,6 @@ export default {
   title: "Components/Atoms/ProjectCard",
   component: ProjectCard,
   tags: ['autodocs'],
-  argTypes: {
-    target: {
-      description: "Default anchor property. In the case of this component, if the target is equal to `_blank`, it will also display an icon next to the url text.",
-    }
-  }
 } as Meta<ProjectCardProps>
 
 type Story = StoryObj<ProjectCardProps>
