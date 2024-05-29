@@ -163,25 +163,6 @@ const Wave2 = () => {
 export default function Footer() {
     const t = useTranslations('Home.Footer')
 
-    const links = [
-        {
-            title: 'O Programa',
-            href: '#programa',
-        },
-        {
-            title: 'Edições',
-            href: '#edicoes',
-        },
-        {
-            title: 'Vencedores',
-            href: '#vencedores',
-        },
-        {
-            title: 'Patrocinadores',
-            href: '#patrocinadores',
-        },
-    ]
-
     return (
         <>
             <Waves />
@@ -197,28 +178,28 @@ export default function Footer() {
                         <ul className='flex flex-col gap-7 items-center justify-center lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:place-items-start lg:gap-x-6 xl:gap-x-10 lg:gap-y-7 lg:text-left'>
                             <li>
                                 <FooterButton className='p-0' asChild>
-                                    <a className='text-white' href='#about'>
+                                    <a className='text-white' href='/#about'>
                                         {t('Nav.program')}
                                     </a>
                                 </FooterButton>
                             </li>
                             <li>
                                 <FooterButton className='p-0' asChild>
-                                    <a className='text-white' href='#editions'>
+                                    <a className='text-white' href='/#editions'>
                                         {t('Nav.editions')}
                                     </a>
                                 </FooterButton>
                             </li>
                             <li>
                                 <FooterButton className='p-0' asChild>
-                                    <a className='text-white' href='#winners'>
+                                    <a className='text-white' href='/#winners'>
                                         {t('Nav.winners')}
                                     </a>
                                 </FooterButton>
                             </li>
                             <li>
                                 <FooterButton className='p-0' asChild>
-                                    <a className='text-white' href='#partners'>
+                                    <a className='text-white' href='/#partners'>
                                         {t('Nav.partners')}
                                     </a>
                                 </FooterButton>

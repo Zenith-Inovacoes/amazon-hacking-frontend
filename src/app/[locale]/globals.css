@@ -49,6 +49,32 @@ body {
   @apply overflow-x-hidden
 }
 
+::selection {
+  background-color: #014780;
+  color: #FFFFFF;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #05917799;
+  opacity: 0;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #059177FF;
+  opacity: 1;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.0);
+  border-radius: 10px;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
