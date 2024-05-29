@@ -31,7 +31,7 @@ export default function ProjectCard({ ...props }: ProjectCardProps) {
   }
 
   return (
-    <div className='group p-3 gap-x-4 hover:p-6 rounded-xl justify-center items-center bg-white transition-all duration-500 flex xs:p-6 xs:hover:p-8 xs:gap-x-8 md:w-[232px] md:h-[233px] md:flex-col md:items-center md:gap-y-4 lg:w-[270px] lg:h-[300px]'>
+    <div className='group p-3 gap-x-4 hover:p-6 rounded-xl justify-center items-center bg-white transition-all duration-500 flex xs:p-6 xs:hover:p-8 xs:gap-x-8 md:flex-col md:items-center md:gap-y-4'>
       <div className='relative w-[87px] h-[87px]'>
         <Image src={props.logoUrl || LogoDefault} alt={`Logo da equipe ${props.name}`} fill />
       </div>
