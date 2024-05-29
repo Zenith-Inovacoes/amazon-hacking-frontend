@@ -136,7 +136,7 @@ const Winners = ({
                     </div>
                     <div
                         className={cn(
-                            'absolute z-20 opacity-0 transition-opacity duration-500 horizontal-snap w-full flex gap-12 px-[35vw] justify-start items-center lg:overflow-hidden lg:flex-wrap-reverse lg:px-0 lg:justify-center pb-32 lg:-mr-[8%] lg:right-0 lg:w-[120%] xl:w-[110%]',
+                            'absolute z-20 opacity-0 transition-opacity duration-500 horizontal-snap w-full flex gap-12 px-[35vw] justify-start items-center lg:overflow-hidden lg:flex-wrap-reverse lg:px-0 lg:justify-center pb-32 lg:-mr-[8%] lg:pt-10 lg:right-0 lg:w-[120%] xl:w-[110%]',
                             course === 'sci' &&
                                 (toggle[0] || toggle[1]) &&
                                 'opacity-100 z-30',
