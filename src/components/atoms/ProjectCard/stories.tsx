@@ -8,8 +8,8 @@ import { CourseEnum } from "@/types/IProject"
 // Dados de teste
 const teste = {
   id: "123456",
-  name: "Project Alpha",
-  team: ["Alice Smith", "Bob Johnson", "Charlie Davis"],
+  name: "Projeto X",
+  team: ["Lucas Tavares", "Daniel DanDan", "André Sandro", "Gabriel Moço", "Cauã Cadu", "Fernanda Escritório"],
   description: "A comprehensive project aimed at developing an innovative solution for sustainable energy.",
   status: true,
   links: {
@@ -21,6 +21,7 @@ const teste = {
     banner: "https://example.com/banner.png"
   },
   course: CourseEnum.ECOMP,
+  logoUrl: 'https://drive.google.com/file/d/1rkoQi9oxzGpTd4_Q0VHYTd0XL8i0HwnO/view?usp=sharing',
   year: 2024
 }
 
@@ -40,7 +41,7 @@ export default {
 
 type Story = StoryObj<ProjectCardProps>
 
-export const Success: Story = {    
+export const Default: Story = {    
   render: () => {
     return (
       <ProjectCard
@@ -52,6 +53,24 @@ export const Success: Story = {
         links={teste.links}
         course={teste.course}
       
+        year={teste.year}
+      />
+    )
+  },
+}
+
+export const WithLogo: Story = {    
+  render: () => {
+    return (
+      <ProjectCard
+        id={teste.id}
+        name={teste.name}
+        team={teste.team}
+        description={teste.description}
+        status={teste.status}
+        links={teste.links}
+        course={teste.course}
+        logoUrl={teste.logoUrl}
         year={teste.year}
       />
     )

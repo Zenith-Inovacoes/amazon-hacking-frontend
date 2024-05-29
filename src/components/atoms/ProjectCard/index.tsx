@@ -5,6 +5,7 @@ import React from 'react';
 import { cn } from '@/services/utils/className.utils'
 import { useState } from 'react'
 import LogoComputacaoAmostra from "public/icons/logo-computacao-amostra.svg"
+import LogoDefault from 'public/DefaultLogoProjectCard.svg'
 import { locales } from '@/services/utils/locale.utils'
 import { usePathname } from 'next/navigation'
 import Button from '../Button';
@@ -30,15 +31,13 @@ export default function ProjectCard({ ...props }: ProjectCardProps) {
   }
 
   return (
-    <div className='bg-white flex w-[300px] p-6 rounded-xl justify-center gap-x-8 hover:p-8 transition-all duration-500'>
-      <div className='w-[87px] h-[87px] flex justify-center items-center rounded-[50%] bg-black'>
-        <div className='relative w-14 h-14'>
-          <Image src={props.logoUrl || LogoComputacaoAmostra} alt={`Logo da equipe ${props.name}`} fill />
-        </div>
+    <div className='group p-3 gap-x-4 hover:p-6 rounded-xl justify-center items-center bg-white transition-all duration-500 flex xs:p-6 xs:hover:p-8 xs:gap-x-8 md:w-[232px] md:h-[233px] md:flex-col md:items-center md:gap-y-4 lg:w-[270px] lg:h-[300px]'>
+      <div className='relative w-[87px] h-[87px]'>
+        <Image src={props.logoUrl || LogoDefault} alt={`Logo da equipe ${props.name}`} fill />
       </div>
       <div className='flex flex-col gap-y-6 items-center'>
-        <span className='text-black text-16 font-bold'>{props.name}</span>
-        <ProjectOverlay variant='current' videoURL={ytURL} overlayTrigger={<Button variant='primary' className='rounded-3xl px-3 py-2'>Conheça mais...</Button>}>
+        <span className='text-black text-16 font-bold md:text-18 lg:text-24'>{props.name}</span>
+        <ProjectOverlay variant='current' videoURL={ytURL} overlayTrigger={<Button variant='primary' className='rounded-3xl text-nowrap'>Conheça mais...</Button>}>
           {childrenData}
         </ProjectOverlay>
       </div>
