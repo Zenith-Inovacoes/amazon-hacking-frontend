@@ -24,7 +24,8 @@ const MenuProvider = ({ children }: menuProviderProps) => {
     const [open, setOpen] = useState<boolean>(false)
 
     useEffect(() => {
-        document.body.style.overflowY = open ? 'hidden' : 'unset'
+        document.body.style.overflowY = open ? 'hidden' : 'unset' 
+        console.log(document.body.style.overflowY)
     }, [open])
 
     const handleOpenChange = () => {
