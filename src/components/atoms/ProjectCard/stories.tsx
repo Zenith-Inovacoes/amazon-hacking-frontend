@@ -53,21 +53,3 @@ export const Default: Story = {
     )
   },
 }
-
-export const WithLogo: Story = {    
-  render: () => {
-    return (
-      <ProjectCard
-        id={teste.id}
-        name={teste.name}
-        team={teste.team}
-        description={teste.description}
-        status={teste.status}
-        links={teste.links}
-        course={teste.course}
-        logoUrl={teste.logoUrl}
-        year={teste.year}
-      />
-    )
-  },
-}
