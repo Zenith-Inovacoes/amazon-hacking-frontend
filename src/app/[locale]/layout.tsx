@@ -7,6 +7,8 @@ import FloatingOptions from "@/components/molecules/FloatingOptions";
 import { Suspense } from "react";
 import Loading from "@/components/templates/Loading";
 import { NextIntlClientProvider } from 'next-intl'
+import { Header } from "@/components/molecules";
+import Footer from "@/components/templates/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://amazonhacking.com.br'),
@@ -60,7 +62,10 @@ export default function RootLayout({
               {/* This line solves the problem of the radix ui elements hiding the scroll bar, but breaks about section */}
               {/* https://github.com/radix-ui/primitives/issues/346#issuecomment-1121440376 */}
               {/* <div className='fixed w-full top-0 bottom-0 overflow-x-hidden'> */}
-              {children}
+              <main className="scroll-smooth">
+                {children}
+                <Footer />
+              </main>
               {/* </div> */}
             </NextIntlClientProvider>
             <FloatingOptions />

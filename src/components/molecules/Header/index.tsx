@@ -65,13 +65,16 @@ const Header = () => {
                         {locale === 'en' ? 'See Solutions' : 'Ver Soluções'}
                     </NextLink>
                 </Button>
-                {!data ? (
-                    <Button variant='secondary' onClick={() => signIn()}>
+                {/* {!data ? (
+                    <Button
+                        variant='secondary'
+                        onClick={() => signIn('google')}
+                    >
                         {locale === 'en' ? 'Sign In' : 'Fazer Login'}
                     </Button>
                 ) : (
                     <DesktopMenu data={data} />
-                )}
+                )} */}
             </div>
         </HeaderLogic>
     )

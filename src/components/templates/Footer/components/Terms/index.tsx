@@ -16,14 +16,14 @@ export default function Terms() {
         <div className="h-4 flex items-center justify-center gap-4 md:gap-12 lg:gap-6">
             <Link
                 className="text-xs text-white md:text-16"
-                href={`${locale}/terms`}
+                href={`/${locale}/terms`}
             >
                 {locale === "en" ? "Terms and conditions" : "Termos e condições"}
             </Link>
             <Separator orientation="vertical" />
             <Link
                 className="text-xs text-white md:text-16"
-                href={`${locale}/privacy-policy`}
+                href={`/${locale}/privacy-policy`}
             >
                 {locale === "en" ? "Privacy policies" : "Políticas de privacidade"}
             </Link>
