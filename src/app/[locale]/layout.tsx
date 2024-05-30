@@ -58,7 +58,7 @@ export default function RootLayout({
       <Favicon />
       <body className={gilroy.className}>
         <Suspense fallback={<Loading />}>
-        <NoticeOverlay></NoticeOverlay>
+        {/* <NoticeOverlay></NoticeOverlay> */}
           <Providers>
             <NextIntlClientProvider locale={locale}>
               {/* This line solves the problem of the radix ui elements hiding the scroll bar, but breaks about section */}
