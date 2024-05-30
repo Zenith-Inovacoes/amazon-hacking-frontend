@@ -136,6 +136,14 @@ const config: Config = {
                         marginRight: '230px',
                     },
                 },
+                skeleton: {
+                    from: {
+                        opacity: '0.6',
+                    },
+                    to: {
+                        opacity: '0.2',
+                    },
+                },
             },
             animation: {
                 overlayShow: 'overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
@@ -153,6 +161,7 @@ const config: Config = {
                 iconOpenXL: 'iconOpenXL 300ms ease-in-out',
                 iconCloseXL: 'iconCloseXL 300ms ease-in-out',
                 desktopMenuOverlayHide: 'overlayHide 300ms ease-in-out 600ms',
+                skeleton: 'skeleton 1s linear infinite alternate',
             },
         },
     },
