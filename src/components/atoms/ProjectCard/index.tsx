@@ -31,13 +31,13 @@ export default function ProjectCard({ ...props }: ProjectCardProps) {
   }
 
   return (
-    <div className='group p-3 gap-x-4 hover:p-6 rounded-xl justify-center items-center bg-white transition-all duration-500 flex xs:p-6 xs:hover:p-8 xs:gap-x-8 md:flex-col md:items-center md:gap-y-4'>
-      <div className='relative w-[87px] h-[87px] bg-primary-100'>
+    <div className='group p-3 gap-x-4 hover:p-6 rounded-xl justify-center items-center bg-white transition-all duration-500 flex xs:p-6 xs:hover:p-8 xs:gap-x-8 md:flex-col md:w-[232px] md:h-[233px] md:hover:h-[257px] md:items-center md:gap-y-4 lg:w-[270px] lg:h-[300px] lg:hover:h-[324px] lg:hover:w-[292px]'>
+      <div className='relative w-[87px] h-[87px]'>
         <Image src={props.logoUrl || LogoDefault} alt={`Logo da equipe ${props.name}`} fill />
       </div>
       <div className='flex flex-col gap-y-6 items-center'>
         <span className='text-black text-16 font-bold md:text-18 lg:text-24'>{props.name}</span>
-        <ProjectOverlay variant='current' videoURL={ytURL} overlayTrigger={<Button variant='primary' className='rounded-3xl text-nowrap'>Conheça mais...</Button>}>
+        <ProjectOverlay variant='current' videoURL={ytURL} overlayTrigger={<Button variant='primary' className='rounded-3xl text-nowrap'>{locale === 'en' ? 'Learn about' : 'Saiba Mais'} </Button>}>
           {childrenData}
         </ProjectOverlay>
       </div>
