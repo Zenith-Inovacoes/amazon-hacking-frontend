@@ -61,7 +61,7 @@ function EndWave() {
     )
 }
 
-export default function PrivacyPolicy() {
+export default function UseTerms() {
     return (
         <section className='pt-32 lg:pt-40'>
             <div className='flex flex-col justify-center max-w-screen-2xl mx-auto items-center gap-6 px-8 md:px-16'>
