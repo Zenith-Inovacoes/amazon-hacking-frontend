@@ -9,6 +9,7 @@
     scroll-padding: 0 1rem;
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
 
   .horizontal-snap::-webkit-scrollbar {

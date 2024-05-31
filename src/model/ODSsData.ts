@@ -10,60 +10,60 @@ import ODS11 from 'public/ODSs/SDG-11 1.svg'
 import ODS12 from 'public/ODSs/SDG-12 1.svg'
 import ODS17 from 'public/ODSs/SDG-17 1.svg'
 
-export const ODDsData = [
+export const ODSsData = [
     {
         image: ODS1,
         url: 'https://brasil.un.org/pt-br/sdgs/1',
-        odsName: 'ODS1',
+        odsName: '1: Erradicação da Pobreza',
     },
     {
         image: ODS2,
         url: 'https://brasil.un.org/pt-br/sdgs/2',
-        odsName: 'ODS2',
+        odsName: '2: Fome Zero e Agricultura Sustentável',
     },
     {
         image: ODS3,
         url: 'https://brasil.un.org/pt-br/sdgs/3',
-        odsName: 'ODS3',
+        odsName: '3: Saúde e Bem-Estar',
     },
     {
         image: ODS4,
         url: 'https://brasil.un.org/pt-br/sdgs/4',
-        odsName: 'ODS4',
+        odsName: '4: Educação de Qualidade',
     },
     {
         image: ODS5,
         url: 'https://brasil.un.org/pt-br/sdgs/5',
-        odsName: 'ODS5',
+        odsName: '5: Igualdade de Gênero',
     },
     {
         image: ODS6,
         url: 'https://brasil.un.org/pt-br/sdgs/6',
-        odsName: 'ODS6',
+        odsName: '6: Água Potável e Saneamento',
     },
     {
         image: ODS9,
         url: 'https://brasil.un.org/pt-br/sdgs/9',
-        odsName: 'ODS9',
+        odsName: '9: Indústria, Inovação e Infraestrutura',
     },
     {
         image: ODS10,
         url: 'https://brasil.un.org/pt-br/sdgs/10',
-        odsName: 'ODS10',
+        odsName: '10: Redução das Desigualdades',
     },
     {
         image: ODS11,
         url: 'https://brasil.un.org/pt-br/sdgs/11',
-        odsName: 'ODS11',
+        odsName: '11: Cidades e Comunidades Sustentáveis',
     },
     {
         image: ODS12,
         url: 'https://brasil.un.org/pt-br/sdgs/12',
-        odsName: 'ODS12',
+        odsName: '12: Consumo e Produção Responsáveis',
     },
     {
         image: ODS17,
         url: 'https://brasil.un.org/pt-br/sdgs/17',
-        odsName: 'ODS17',
+        odsName: '17: Parcerias e Meios de Implementação',
     },
 ]

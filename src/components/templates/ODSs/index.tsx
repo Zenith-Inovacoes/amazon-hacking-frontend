@@ -1,8 +1,5 @@
-import Image from 'next/image'
-import NotFoundImage from 'public/404Image.svg'
-import Button from '@/components/atoms/Button'
 import { MotionDiv } from '@/components/Motion'
-import { ODDsData } from '@/model/ODSsData'
+import { ODSsData } from '@/model/ODSsData'
 
 import ODSBox from './components'
 
@@ -24,17 +21,18 @@ export default function ODSs() {
     }
 
     return (
-        <section className='flex bg-white min-h-screen w-full flex-col items-center justify-center py-4'>
-            <div className='max-w-screen-2xl'>
-                <div className='flex flex-col gap-y-6 w-full justify-center items-center'>
-                    <h2 className='text-40 font-bold text-black text-center'>Explore soluções inovadoras</h2>
-                    <p className='text-16 text-neutral-500 text-center'>Durante a jornada, equipes multidisciplinares da 3ª Edição do Amazon Hacking desenvolveram projetos que abordam problemas reais e oferecem soluções práticas com impacto positivo.
+        <section className='relative flex bg-white min-h-screen w-full flex-col items-center justify-center py-4'>
+            <div className='w-full '>
+                <div className='flex flex-col gap-y-6 w-full justify-center items-center px-4 xs:px-8 md:mx-auto max-w-screen-2xl'>
+                    <h2 className='text-36 xs:text-40 md:text-50 lg:text-60 font-bold text-black text-center'>Explore soluções inovadoras</h2>
+                    <p className='text-16 md:text-18 lg:text-20 text-neutral-500 text-center'>Durante a jornada, equipes multidisciplinares da 3ª Edição do Amazon Hacking desenvolveram projetos que abordam problemas reais e oferecem soluções práticas com impacto positivo.
 
                     </p>
                 </div>
-                <div className='flex flex-col gap-y-7 w-full'>
-                    <p className='text-20 font-bold'>Objetivos de Desenvolvimento Sustentável</p>
-                    <div className='relative z-10 mx-auto'>
+                <div className="w-[100vw] h-24 opacity-60 z-0 bg-[url('/images/symbol.png')] bg-repeat bg-contain my-8" />
+                <div className='w-full flex justify-center items-center flex-col gap-y-7 mx-auto relative px-4 xs:px-8 max-w-screen-2xl'>
+                    <p className='text-20 md:text-24 lg:text-28 font-bold text-center text-black'>Objetivos de Desenvolvimento Sustentável</p>
+                    <div className='relative z-10 mx-auto max-w-[90vw]'>
                         <MotionDiv
                             viewport={{
                                 once: true,
@@ -43,21 +41,21 @@ export default function ODSs() {
                             initial='hidden'
                             whileInView='show'
                             variants={goalCardVariants}
-                            className='horizontal-snap cursor-grab overflow-hidden lg:cursor-default flex grid-cols-2 gap-5 py-16 pl-16 relative z-10 lg:grid lg:px-8 max-w-screen-2xl lg:mx-auto lg:place-items-center'
+                            className='horizontal-snap cursor-grab flex gap-5 max-w-screen-2xl xs:gap-x-9 py-12 md:grid md:grid-cols-6 md:items-center md:justify-center md:pl-0 relative z-10 w-full lg:mx-auto lg:place-items-center lg:cursor-default'
                         >
-                            {ODDsData.map(({ image, url, odsName }, index) => (
+                            {ODSsData.map(({ image, url, odsName }, index) => (
                                 <ODSBox
                                     key={index}
                                     image={image}
                                     url={url}
                                     odsName={odsName}
+                                    classname="flex-shrink-0"
                                 />
                             ))}
                         </MotionDiv>
                     </div>
                 </div>
             </div>
-            <div className='bg-repeat bg-404Decorator w-full h-[87px]' />
         </section>
     )
 }
