@@ -8,8 +8,7 @@ import { locales } from '@/services/utils/locale.utils'
 import { useState } from 'react'
 import { scrollTo } from '@/services/utils/scrollTo'
 import { cn } from '@/services/utils/className.utils'
-import { signIn, useSession } from 'next-auth/react'
-import DesktopMenu from './components/DesktopMenu'
+import { useSession } from 'next-auth/react'
 import Menu from '../Menu'
 
 const Header = () => {
@@ -30,51 +29,58 @@ const Header = () => {
             <div className='hidden lg:flex w-fit h-fit items-center justify-between flex-1 max-w-[570px] mx-2 gap-2'>
                 <Link
                     onClick={() => scrollTo('about')}
-                    className='text-base *:tracking-[0.192px] text-white'
+                    className={cn(
+                        'text-base *:tracking-[0.192px] text-white',
+                        locale !== 'en' && 'text-xs xl:text-base'
+                    )}
                 >
                     {locale === 'en' ? 'THE PROGRAM' : 'O PROGRAMA'}
                 </Link>
                 <Link
                     onClick={() => scrollTo('editions')}
-                    className='text-base *:tracking-[0.192px] text-white'
+                    className={cn(
+                        'text-base *:tracking-[0.192px] text-white',
+                        locale !== 'en' && 'text-xs xl:text-base'
+                    )}
                 >
                     {locale === 'en' ? 'EDITIONS' : 'EDIÇÕES'}
                 </Link>
                 <Link
                     onClick={() => scrollTo('winners')}
-                    className='text-base *:tracking-[0.192px] text-white'
+                    className={cn(
+                        'text-base *:tracking-[0.192px] text-white',
+                        locale !== 'en' && 'text-xs xl:text-base'
+                    )}
                 >
                     {locale === 'en' ? 'WINNERS' : 'VENCEDORES'}
                 </Link>
                 <Link
                     onClick={() => scrollTo('partners')}
-                    className='text-base *:tracking-[0.192px] text-white'
+                    className={cn(
+                        'text-base *:tracking-[0.192px] text-white',
+                        locale !== 'en' && 'text-xs xl:text-base'
+                    )}
                 >
                     {locale === 'en' ? 'PARTNERS' : 'PATROCINADORES'}
                 </Link>
             </div>
 
-            <div
-                className={cn(
-                    'hidden lg:flex w-full h-fit items-center justify-between mr-[62px] max-w-[min(24.88vw,293.6px)] relative',
-                    data && 'max-w-[215px] xl:max-w-[380px]'
-                )}
-            >
+            <div className='hidden lg:flex w-fit h-fit items-center justify-center mr-[62px] gap-4'>
                 <Button asChild variant='primary'>
                     <NextLink href={`${locale}/solutions`}>
                         {locale === 'en' ? 'See Solutions' : 'Ver Soluções'}
                     </NextLink>
                 </Button>
-                {/* {!data ? (
-                    <Button
-                        variant='secondary'
-                        onClick={() => signIn('google')}
+                <Button asChild variant='secondary'>
+                    <NextLink
+                        href='https://linktr.ee/computacaoamostra'
+                        target='_blank'
                     >
-                        {locale === 'en' ? 'Sign In' : 'Fazer Login'}
-                    </Button>
-                ) : (
-                    <DesktopMenu data={data} />
-                )} */}
+                        {locale === 'en'
+                            ? 'Tickets and Schedule'
+                            : 'Ingressos e Programação'}
+                    </NextLink>
+                </Button>
             </div>
         </HeaderLogic>
     )
