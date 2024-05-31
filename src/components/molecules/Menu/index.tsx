@@ -12,29 +12,25 @@ import AmazonHacking from 'public/images/AmazonHackingColoredLogo.svg'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { locales } from '@/services/utils/locale.utils'
-import { signIn, signOut } from 'next-auth/react'
+// import { signIn, signOut } from 'next-auth/react'
 
-import { sections } from '@/constants/sections'
+// import { sections } from '@/constants/sections'
 import { scrollTo } from '@/services/utils/scrollTo'
 
 function DesktopMenu() {
     const pathname = usePathname()
     const [locale, setLocale] = useState<string>(
         locales.find((locale) => pathname?.includes(locale.locale))?.locale ||
-        'en'
+            'en'
     )
 
     return (
         <div className='flex flex-col items-start justify-start gap-[18px]'>
             <div className='flex gap-[10px] items-center justify-center'>
-                <Link className='font-medium text-20 tracking-[0.24px] text-white pointer-events-none opacity-50'>
-                    {locale === 'en'
-                        ? 'Student Area'
-                        : 'Área do Aluno'}
+                <Link className='pointer-events-none opacity-50'>
+                    {locale === 'en' ? 'Student Area' : 'Área do Aluno'}
                 </Link>
-                <Badge>
-                    {locale === 'en' ? 'Soon' : 'Em Breve'}
-                </Badge>
+                <Badge>{locale === 'en' ? 'Soon' : 'Em Breve'}</Badge>
             </div>
             <Link
                 href='https://www.sympla.com.br/eventos?s=computacao-amostra-xx'
@@ -46,9 +42,7 @@ function DesktopMenu() {
                 href='https://drive.google.com/drive/u/2/folders/1DkP687BP4TZV7zYQr9_l7bVGKr_awJUW'
                 target='_blank'
             >
-                {locale === 'en'
-                    ? 'Schedule'
-                    : 'Programação'}
+                {locale === 'en' ? 'Schedule' : 'Programação'}
             </Link>
             {/* <Link
                 href='/'
@@ -67,7 +61,7 @@ const Menu = ({ data }: MenuProps) => {
     const pathname = usePathname()
     const [locale, setLocale] = useState<string>(
         locales.find((locale) => pathname?.includes(locale.locale))?.locale ||
-        'en'
+            'en'
     )
 
     const { open, handleOpenChange, setOpen } = useMenu()
@@ -77,12 +71,12 @@ const Menu = ({ data }: MenuProps) => {
         if (open) setBlock(true)
     }, [open])
 
-    let uName: string = ''
+    // let uName: string = ''
 
-    if (data) {
-        const names = data.user?.name?.split(' ') as string[]
-        uName = names[0] + ' ' + names[names.length - 1]
-    }
+    // if (data) {
+    //     const names = data.user?.name?.split(' ') as string[]
+    //     uName = names[0] + ' ' + names[names.length - 1]
+    // }
 
     return (
         <div className='absolute flex justify-end items-start w-full h-full inset-0 top-0 right-0'>
@@ -175,7 +169,6 @@ const Menu = ({ data }: MenuProps) => {
                             {locale === 'en' ? 'Solutions' : 'Soluções'}
                         </Button>
                     </div>
-
 
                     <DesktopMenu />
 

@@ -12,8 +12,6 @@ const HeaderLogic = ({ children }: { children: ReactNode }) => {
     const { scrollY } = useScroll()
     const [isDown, setIsDown] = useState<boolean>(false)
 
-    const { setOpen } = useMenu()
-
     useEffect(() => {
         const interval = setInterval(() => {
             const scrollYValue = window.scrollY
