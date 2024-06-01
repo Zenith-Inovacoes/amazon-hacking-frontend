@@ -117,6 +117,14 @@
         }
 
     },
+    "401": {
+        "title": "Unauthorized Access",
+        "description": "We were unable to verify your session. Please log in again or return to the home page to continue browsing.",
+        "button": {
+            "tryAgain": "Try Again",
+            "returnHome": "Return to Home Page"
+        }
+    },
     "Loading": {
         "title": "Loading..."
     }
