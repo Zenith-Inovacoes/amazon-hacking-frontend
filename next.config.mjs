@@ -1,3 +1,5 @@
+// @ts-check
+!process.env.SKIP_ENV_VALIDATION && (await import("./src/services/libs/env.mjs"));
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin('./src/services/libs/i18n.ts')
@@ -48,19 +50,6 @@ const nextConfig = {
       {
         source: "/(.*)",
         headers: securityHeaders
-      },
-      {
-        source: "/api/:path*",
-        headers: [
-          {
-            key: "Access-Control-Allow-Methods",
-            value: "GET,OPTIONS,PATCH,POST,PUT"
-          },
-          {
-            key: "Access-Control-Allow-Origin",
-            value: "http://localhost:3000"
-          }
-        ]
       }
     ]
   },

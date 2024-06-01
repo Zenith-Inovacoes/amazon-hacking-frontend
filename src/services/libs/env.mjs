@@ -1,7 +1,8 @@
 import z from "zod"
 
 const client = z.object({
-    NEXT_PUBLIC_API_URL: z.string().url().min(1),
+    NEXT_PUBLIC_CDN_URL: z.string().url().min(1),
+    // NEXT_PUBLIC_API_URL: z.string().url().min(1),
 })
 
 const server = z.object({
@@ -36,7 +37,7 @@ const processEnv = {
     GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
     API_KEY: process.env.API_KEY,
     API_URL: process.env.API_URL,
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+    NEXT_PUBLIC_CDN_URL: process.env.NEXT_PUBLIC_CDN_URL,
 };
 
 // Don't touch the part below
