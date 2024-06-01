@@ -1,8 +1,8 @@
-import { IUser } from "./IUser"
+import { UserType } from "./user"
 
 export type IVote = {
     id: string,
-    userId: IUser | IUser['id'],
+    userId: UserType | UserType['id'],
     projectId: string,
     createdAt: Date
 }

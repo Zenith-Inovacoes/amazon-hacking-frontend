@@ -1,6 +1,6 @@
 import { IVote } from "./IVote";
 
-export type IUser = {
+export type UserType = {
     id: string,
     email: string,
     name: string,
