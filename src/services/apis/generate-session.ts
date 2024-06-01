@@ -1,17 +1,17 @@
 import { api } from "../libs/axios";
 
-type putGenerateSessionType = {
+type GenerateSessionRequest = {
     email: string,
     name: string
 }
 
-export async function putGenerateSession({
+export async function generateSession({
     email,
     name
-}: putGenerateSessionType) {
-    const { data } = await api.put(
+}: GenerateSessionRequest) {
+    const response = await api.put(
         `users/generate_session?email=${email}&name=${name}`
     )
 
-    return data
+    return response
 }
