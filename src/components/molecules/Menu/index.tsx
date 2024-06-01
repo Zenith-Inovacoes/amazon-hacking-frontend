@@ -12,13 +12,14 @@ import AmazonHacking from 'public/images/AmazonHackingColoredLogo.svg'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { locales } from '@/services/utils/locale.utils'
-import { signIn, signOut } from 'next-auth/react'
+import { signIn, signOut, useSession } from 'next-auth/react'
 
 import { sections } from '@/constants/sections'
 import { scrollTo } from '@/services/utils/scrollTo'
 
 function DesktopMenu() {
     const pathname = usePathname()
+    const session = useSession()
     const [locale, setLocale] = useState<string>(
         locales.find((locale) => pathname?.includes(locale.locale))?.locale ||
         'en'
@@ -50,15 +51,18 @@ function DesktopMenu() {
                     ? 'Schedule'
                     : 'Programação'}
             </Link>
-            {/* <Link
-                href='/'
-                onClick={(e) => {
-                    e.preventDefault()
-                    signOut()
-                }}
-            >
-                {locale === 'en' ? 'Logout' : 'Sair'}
-            </Link> */}
+
+            {session.status === "authenticated" && (
+                <Link
+                    href="/"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        signOut();
+                    }}
+                >
+                    {locale === "en" ? "Logout" : "Sair"}
+                </Link>
+            )}
         </div>
     )
 }
@@ -69,6 +73,7 @@ const Menu = ({ data }: MenuProps) => {
         locales.find((locale) => pathname?.includes(locale.locale))?.locale ||
         'en'
     )
+    const session = useSession()
 
     const { open, handleOpenChange, setOpen } = useMenu()
     const [block, setBlock] = useState<boolean>(false)
@@ -178,6 +183,54 @@ const Menu = ({ data }: MenuProps) => {
 
 
                     <DesktopMenu />
+
+                    {
+                        session.status === "unauthenticated" && (
+                            <div className='flex flex-col gap-[18px] items-start justify-center w-full h-fit'>
+                                <MenuTitle>
+                                    Login
+                                </MenuTitle>
+                                <Button
+                                    variant='secondary'
+                                    onClick={() => signIn('google')}
+                                >
+                                    {locale === 'en' ? 'Log in' : 'Faça Login'}
+                                </Button>
+                            </div>
+                        )
+                    }
+
+                    {session.status === "authenticated" && (
+                        <div className="flex items-center justify-center gap-5 mt-auto self-start">
+                            <div className="w-[52px] h-[52px] bg-gradient-to-bl from-[#005194] via-[#005194] to-[#70BAE9] rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                                    {
+                                        data?.user.image ? (
+                                            <Image
+                                                src={data!.user?.image || ""}
+                                                alt="Imagem do perfil do usuário"
+                                                fill
+                                            />) : (
+                                            <svg className="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                                            </svg>
+                                        )
+                                    }
+                                </div>
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="font-bold text-base tracking-[0.32px]">
+                                    {uName}
+                                </span>
+                                <span
+                                    title={data!.user?.email as string}
+                                    className="font-medium tracking-[0.2px] text-xs truncate w-full max-w-[20ch] sm:max-w-[24ch]"
+                                >
+                                    {data!.user?.email as string}
+                                </span>
+                            </div>
+                        </div>
+                    )}
 
                     {/* {!data ? (
                         <div className='flex flex-col gap-[18px] items-start justify-center w-full h-fit'>
