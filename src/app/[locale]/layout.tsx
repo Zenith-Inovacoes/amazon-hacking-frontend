@@ -10,6 +10,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { Header } from "@/components/molecules";
 import Footer from "@/components/templates/Footer";
 import NoticeOverlay from "@/components/templates/NoticeOverlay";
+import { getMessages } from "next-intl/server";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://amazonhacking.com.br'),
@@ -46,13 +47,15 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params: { locale },
 }: Readonly<{
   children: React.ReactNode
   params: { locale: string }
 }>) {
+  const messages = await getMessages();
+
   return (
     <html lang={locale}>
       <Favicon />
@@ -60,7 +63,7 @@ export default function RootLayout({
         <Suspense fallback={<Loading />}>
         {/* <NoticeOverlay></NoticeOverlay> */}
           <Providers>
-            <NextIntlClientProvider locale={locale}>
+            <NextIntlClientProvider locale={locale} messages={messages}>
               {/* This line solves the problem of the radix ui elements hiding the scroll bar, but breaks about section */}
               {/* https://github.com/radix-ui/primitives/issues/346#issuecomment-1121440376 */}
               {/* <div className='fixed w-full top-0 bottom-0 overflow-x-hidden'> */}

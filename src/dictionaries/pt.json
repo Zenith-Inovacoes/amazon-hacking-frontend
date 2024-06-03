@@ -138,6 +138,14 @@
             "button": "Entendi"
         }
     },
+    "401": {
+        "title": "Acesso Não Autorizado",
+        "description": "Não foi possível verificar a sua sessão. Faça login novamente ou retorne à página principal para continuar navegando.",
+        "button": {
+            "tryAgain": "Tente novamente",
+            "returnHome": "Voltar para a página inicial"
+        }
+    },
     "Loading": {
         "title": "Carregando..."
     }

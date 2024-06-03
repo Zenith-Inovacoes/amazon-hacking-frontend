@@ -14,7 +14,7 @@ export default function FloatingOptions() {
     )
 
     return (
-        <div className='fixed z-50 w-fit bottom-10 right-10 flex flex-col justify-center items-end gap-6'>
+        <div className='fixed z-30 w-fit bottom-10 right-10 flex flex-col justify-center items-end gap-6'>
             <LanguageSwitcher />
             <FloatingButton
                 href='https://linktr.ee/computacaoamostra'
