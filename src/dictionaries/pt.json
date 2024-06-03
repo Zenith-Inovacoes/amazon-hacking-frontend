@@ -140,5 +140,12 @@
     },
     "Loading": {
         "title": "Carregando..."
+    },
+    "Solutions": {
+        "ODSs": {
+            "label": "Explore soluções inovadoras",
+            "subtitle": "Durante a jornada, equipes multidisciplinares da 3ª Edição do Amazon Hacking desenvolveram projetos que abordam problemas reais e oferecem soluções práticas com impacto positivo.",
+            "ODS": "Objetivos de Desenvolvimento Sustentável"
+        }
     }
 }

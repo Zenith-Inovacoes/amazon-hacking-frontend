@@ -17,5 +17,6 @@ export default {
 
 type Story = StoryObj<typeof ODSs>
 
-export const Default: Story = {
-}
+const Template = () => <ODSs label='Explore soluções inovadoras' ODS='Objetivos de Desenvolvimento Sustentável' subtitle='Durante a jornada, equipes multidisciplinares da 3ª Edição do Amazon Hacking desenvolveram projetos que abordam problemas reais e oferecem soluções práticas com impacto positivo.'/>;
+
+export const Default = Template.bind({});

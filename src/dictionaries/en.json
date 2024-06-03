@@ -119,5 +119,12 @@
     },
     "Loading": {
         "title": "Loading..."
+    },
+    "Solutions": {
+        "ODSs": {
+            "label": "Explore innovative solutions",
+            "subtitle": "During the journey, multidisciplinary teams from the 3rd Edition of Amazon Hacking developed projects that address real problems and offer practical solutions with a positive impact.",
+            "ODS": "Sustainable Development Goals"
+        }
     }
 }
