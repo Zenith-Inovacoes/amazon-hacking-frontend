@@ -34,6 +34,7 @@ import { voteSolution } from "@/app/[locale]/solutions/actions";
 import { NormalizeTextToSlug } from "@/services/utils/normalize-text-to-slug";
 import { LuFacebook } from "react-icons/lu";
 import { toast } from "sonner";
+import { Image } from "next/image";
 
 const ProjectOverlay = ({
   children,
@@ -101,12 +102,7 @@ const ProjectOverlay = ({
               </h1>
               <div className="bg-black w-full max-w-[400px] h-fit py-6 px-4 rounded-[20px] flex justify-center md:order-2 md:py-36 md:max-w-[412px] md:px-11">
                 <div className="relative w-40 h-40">
-                  <img
-                    src={children.teamLogo as string}
-                    alt={children.altLogo}
-                    // fill
-                    className='w-full h-fit max-w-[204px] md:max-w-[325px]'
-                  />
+                  <Image src={children.teamLogo} alt={children.altLogo} fill className="max-w-[204px] md:max-w-[325px]"/>
                 </div>
               </div>
               <p className="text-base tracking-[0.192px] leading-[20px] text-black px-3 md:px-0 md:mb-8 md:text-18 md:tracking-[0.216px] lg:text-20 lg:tracking-[0.24px]">
