@@ -9,8 +9,6 @@ import Bounce from './components/Bounce'
 import { useTranslations } from 'next-intl'
 // import Video from "./components/Video"
 import { sections } from '@/constants/sections'
-import HeroBG from "public/images/Hero-Bg.png"
-import Image from 'next/image'
 
 export default function Hero() {
     const t = useTranslations('Home.Hero')
@@ -18,9 +16,8 @@ export default function Hero() {
     return (
         <section
             id={sections.hero}
-            className="relative pt-48 pb-64 lg:pb-72 xl:pb-80 2xl:pb-[410px] h-[calc(100%+200px)]"
+            className="bg-[url('/images/Hero-Bg.png')] bg-cover bg-center bg-no-repeat relative pt-48 pb-64 lg:pb-72 xl:pb-80 2xl:pb-[410px] md:bg-left lg:bg-center h-[calc(100%+200px)]"
         >
-            <Image src={HeroBG} alt='Imagem de Background da seção Hero' fill className='object-cover object-center md:object-left lg:object-center' priority quality={100}/>
             <div className='absolute inset-0 bg-primary-100 mix-blend-soft-light' />
             <div className="w-full h-16 opacity-30 z-0 bg-[url('/images/symbol.png')] bg-repeat bg-contain absolute bottom-[12%] xl:bottom-[20%] 2xl:bottom-[25%]" />
             <div className='flex flex-col text-left max-w-screen-2xl mx-auto gap-10 relative z-10 items-center justify-center px-8 md:grid md:grid-cols-2 md:grid-rows-[auto_1fr] md:place-items-center md:gap-y-12 lg:px-16 lg:gap-y-8 xl:gap-y-12 xl:gap-x-20'>
