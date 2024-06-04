@@ -81,7 +81,7 @@ const ProjectOverlay = ({
   }
 
   const nameForSlug = NormalizeTextToSlug(children.solutionName);
-  const shareUrl = `${env.NEXT_PUBLIC_APP_URL}/solutions/${nameForSlug}`;
+  const shareUrl = `${env.NEXT_PUBLIC_APP_URL}/pt/solutions/${nameForSlug}`;
   const shareMessage = encodeURIComponent(
     `Vote em ${children.solutionName} como o melhor solução da Amazon Hacking!\n\n${shareUrl}`
   );
