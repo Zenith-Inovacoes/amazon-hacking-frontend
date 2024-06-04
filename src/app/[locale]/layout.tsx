@@ -9,7 +9,6 @@ import Loading from "@/components/templates/Loading";
 import { NextIntlClientProvider } from 'next-intl'
 import { Header } from "@/components/molecules";
 import Footer from "@/components/templates/Footer";
-import NoticeOverlay from "@/components/templates/NoticeOverlay";
 import { getMessages } from "next-intl/server";
 import { Toaster } from 'sonner'
 
@@ -62,7 +61,6 @@ export default async function RootLayout({
       <Favicon />
       <body className={gilroy.className}>
         <Suspense fallback={<Loading />}>
-        {/* <NoticeOverlay></NoticeOverlay> */}
           <Providers>
             <NextIntlClientProvider locale={locale} messages={messages}>
               {/* This line solves the problem of the radix ui elements hiding the scroll bar, but breaks about section */}
