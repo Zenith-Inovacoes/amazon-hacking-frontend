@@ -19,7 +19,7 @@ const Header = () => {
             'en'
     )
 
-    const { data } = useSession()
+    const { data, status } = useSession()
 
     return (
         <HeaderLogic>
@@ -65,7 +65,7 @@ const Header = () => {
                         {locale === 'en' ? 'See Solutions' : 'Ver Soluções'}
                     </NextLink>
                 </Button>
-                {/* {!data ? (
+                {/* {status !== "authenticated" ? (
                     <Button
                         variant='secondary'
                         onClick={() => signIn('google')}

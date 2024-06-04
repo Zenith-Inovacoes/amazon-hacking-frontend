@@ -11,6 +11,7 @@ import Separator from '@/components/atoms/Separator'
 import Terms from './components/Terms'
 import { useTranslations } from 'next-intl'
 import { sections } from '@/constants/sections'
+import { scrollTo } from '@/services/utils/scrollTo'
 
 const Waves = () => {
     return (
@@ -178,28 +179,28 @@ export default function Footer() {
                         <ul className='flex flex-col gap-7 items-center justify-center lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:place-items-start lg:gap-x-6 xl:gap-x-10 lg:gap-y-7 lg:text-left'>
                             <li>
                                 <FooterButton className='p-0' asChild>
-                                    <a className='text-white' href='/#about'>
+                                    <a className='text-white' href='#about'>
                                         {t('Nav.program')}
                                     </a>
                                 </FooterButton>
                             </li>
                             <li>
                                 <FooterButton className='p-0' asChild>
-                                    <a className='text-white' href='/#editions'>
+                                    <a className='text-white' href='#editions'>
                                         {t('Nav.editions')}
                                     </a>
                                 </FooterButton>
                             </li>
                             <li>
                                 <FooterButton className='p-0' asChild>
-                                    <a className='text-white' href='/#winners'>
+                                    <a className='text-white' href='#winners'>
                                         {t('Nav.winners')}
                                     </a>
                                 </FooterButton>
                             </li>
                             <li>
                                 <FooterButton className='p-0' asChild>
-                                    <a className='text-white' href='/#partners'>
+                                    <a className='text-white' href='#partners'>
                                         {t('Nav.partners')}
                                     </a>
                                 </FooterButton>
@@ -274,6 +275,7 @@ export default function Footer() {
                                         <Link
                                             className='text-xs md:text-16 font-bold'
                                             href='https://zenithinova.com.br'
+                                            target='_blank'
                                         >
                                             {text}
                                         </Link>
