@@ -92,7 +92,7 @@
             },
             "socialMedia": "Social medias:",
             "rights": "2024 © CESUPA. All rights reserved.",
-            "developedBy": "Developed by <link>Zenith Inova</link>"
+            "developedBy": "Developed by <tucupy>Tucupy Tecnologia</tucupy><span> And </span><link>Zenith Inova</link>"
         },
         "Winners": {
             "title": "Immersion Podium",
@@ -116,6 +116,15 @@
             "button": "Got it"
         }
 
+    },
+    "Solutions": {
+        "title": "Explore innovative solutions",
+        "description": "During the journey, multidisciplinary teams from the 3rd Edition of Amazon Hacking developed projects that address real problems and offer practical solutions with a positive impact.",
+        "gallery": {
+            "title": "Discover the projects developed in 2024 and <strong>vote for the solution that will receive the Conceição Fiuza de Melo Award.</strong>",
+            "placeholder": "Search by solution name",
+            "noSolutions": "No solution found."
+        }
     },
     "401": {
         "title": "Unauthorized Access",
