@@ -2,38 +2,36 @@
 
 import {
   Overlay,
-  OverlayTrigger,
   OverlayContent,
+  OverlayTrigger,
 } from "@/components/atoms/Overlay";
-import { ProjectOverlayProps } from "./types";
-import Image from "next/image";
 import { cn } from "@/services/utils/className.utils";
+import { ProjectOverlayProps } from "./types";
 
-import InstagramIcon from "public/icons/instagram.svg";
-import WhatsappIcon from "public/icons/whatsapp.svg";
 import XIcon from "public/icons/twitter.svg";
-import LogoDefault from "public/DefaultLogoProjectCard.svg";
+import WhatsappIcon from "public/icons/whatsapp.svg";
 
-import FirstWaveTop from "public/ProjectOverlayWaves/Mobile/FirstWaveTop.svg";
 import FirstWaveBottom from "public/ProjectOverlayWaves/Mobile/FirstWaveBottom.svg";
+import FirstWaveTop from "public/ProjectOverlayWaves/Mobile/FirstWaveTop.svg";
 
 import SecondWaveMobile from "public/ProjectOverlayWaves/Mobile/SecondWave.png";
 import SecondWaveTablet from "public/ProjectOverlayWaves/Tablet/SecondWave.png";
 
 import PersonalGoals from "public/PersonalGoals.svg";
 
-import { Button, SocialMediaButton } from "@/components/atoms";
-import { signIn, useSession } from "next-auth/react";
-import { PiFacebookLogoBold } from "react-icons/pi";
-import Tucupy from "@/components/templates/Tucupy";
-import { FormEvent, FormEventHandler, useRef, useState } from "react";
-import { Turnstile } from "@marsidev/react-turnstile";
-import { env } from "@/services/libs/env.mjs";
-import Link from "next/link";
 import { voteSolution } from "@/app/[locale]/solutions/actions";
+import { Button, SocialMediaButton } from "@/components/atoms";
+import Tucupy from "@/components/templates/Tucupy";
+import { env } from "@/services/libs/env.mjs";
 import { NormalizeTextToSlug } from "@/services/utils/normalize-text-to-slug";
+import { Turnstile } from "@marsidev/react-turnstile";
+import { signIn, useSession } from "next-auth/react";
+import Image from "next/image";
+import Link from "next/link";
+import { FormEvent, useRef, useState } from "react";
 import { LuFacebook } from "react-icons/lu";
 import { toast } from "sonner";
+import theme from "tailwindcss/defaultTheme";
 
 const ProjectOverlay = ({
   children,
@@ -54,7 +52,7 @@ const ProjectOverlay = ({
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setTurnstileStatus("");
-    if(!data) return;
+    if (!data) return;
 
     const form = new FormData(formRef.current!);
     // SET TOKEN FORM
@@ -62,7 +60,7 @@ const ProjectOverlay = ({
 
     async function vote() {
       await voteSolutionWithId(form),
-      toast.info("Aguarde 15 segundos para votar novamente.")
+        toast.info("Aguarde 15 segundos para votar novamente.");
 
       setTimeout(() => {
         // @ts-ignore
@@ -70,14 +68,11 @@ const ProjectOverlay = ({
       }, 15000);
     }
 
-    toast.promise(
-      vote(),
-      {
-        loading: "Votando...",
-        success: "Voto computado com sucesso!",
-        error: "Erro ao computar voto!",
-      }
-    )
+    toast.promise(vote(), {
+      loading: "Votando...",
+      success: "Voto computado com sucesso!",
+      error: "Erro ao computar voto!",
+    });
   }
 
   const nameForSlug = NormalizeTextToSlug(children.solutionName);
@@ -290,14 +285,11 @@ const ProjectOverlay = ({
               <div>
                 <Button
                   onClick={() => {
-                    toast.promise(
-                      navigator.clipboard.writeText(shareUrl),
-                      {
-                        loading: "Copiando link...",
-                        success: "Link copiado!",
-                        error: "Erro ao copiar link!",
-                      }
-                    );
+                    toast.promise(navigator.clipboard.writeText(shareUrl), {
+                      loading: "Copiando link...",
+                      success: "Link copiado!",
+                      error: "Erro ao copiar link!",
+                    });
                   }}
                   className="my-3"
                 >
