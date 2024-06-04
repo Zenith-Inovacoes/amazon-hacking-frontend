@@ -123,7 +123,7 @@
             },
             "socialMedia": "Redes sociais:",
             "rights": "2024 © CESUPA. Todos direitos reservados.",
-            "developedBy": "Desenvolvido por <link>Zenith Inova</link>"
+            "developedBy": "Desenvolvido por <tucupy>Tucupy Tecnologia</tucupy><span> e </span><link>Zenith Inova</link>"
         },
         "Winners": {
             "title": "Pódio da imersão",
@@ -136,6 +136,26 @@
             "title": "Atenção",
             "description": "<zenith>A Zenith Inovações e Tecnologias da Amazônia LTDA.</zenith> se propôs a desenvolver a <bold>interface do website</bold> do Amazon Hacking do CESUPA <italic>voluntariamente</italic>, seguindo os mais altos padrões de qualidade e sofisticação que são fundamentais aos nossos valores. Tudo isso com muito amor e dedicação para nossa comunidade acadêmica, pois acreditamos no potencial e na determinação de todos os alunos participantes, reconhecendo o impacto positivo que isso terá em suas jornadas profissionais.\n\nDevido a um ato de má fé por parte do grupo acadêmico responsável pela estrutura do sistema de votação, gestão de dados e contabilização do voto público, a experiência idealizada para este projeto não poderá ser concluída conforme planejado. Isentamo-nos de quaisquer problemas relacionados a este sistema e lamentamos muito por esta situação.\n\nA Zenith Inova, mesmo prejudicada, reforça seu compromisso com o CESUPA - Centro Universitário do Pará e nossa comunidade, sempre buscando trazer a melhor experiência para quem mais importa: <bold>Você</bold>.\n\nAmamos vocês 💜️",
             "button": "Entendi"
+        }
+    },
+    "Solutions": {
+        "title": "Explore soluções inovadoras",
+        "description": "Durante a jornada, equipes multidisciplinares da 3ª Edição do Amazon Hacking desenvolveram projetos que abordam problemas reais e oferecem soluções práticas com impacto positivo.",
+        "gallery": {
+            "title": "Conheça os projetos desenvolvidos em 2024 e <strong>vote na solução que receberá o Prêmio Conceição Fiuza de Melo.</strong>",
+            "placeholder": "Pesquisar por nome do projeto",
+            "noSolutions": "Nenhuma projeto encontrada."
+        },
+        "overlay": {
+            "team": "Equipe",
+            "teamDescription": "Conheça a equipe de alunos que formam essa solução:",
+            "pitch": "Elevator Pitch",
+            "vote": {
+                "title": "Escolha seu favorito:",
+                "description": "Cada voto conta para destacar as ideias mais promissoras e inspiradoras de 2024. Não perca a chance de apoiar a criatividade e a inovação!",
+                "button": "Votar",
+                "obs:":  "Obs: Você pode votar quantas vezes quiser e quantos projetos quiser, porém os votos que iram ser contabilizados são os votos únicos de um projeto."
+            }
         }
     },
     "401": {

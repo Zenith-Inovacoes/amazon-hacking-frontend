@@ -1,7 +1,7 @@
 'use client'
 
 import { Checkbox, Select } from '@/components/atoms'
-import { CourseEnum } from '@/types/IProject'
+import { CourseEnum } from '@/types/project'
 import { SelectItem } from '@/components/atoms/Select'
 import WinnerCard from '../WinnerCard'
 import { publicWinners } from '@/model/Winners'

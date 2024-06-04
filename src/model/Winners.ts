@@ -1,6 +1,6 @@
-import { CourseEnum, IProject } from "@/types/IProject"
+import { CourseEnum, ProjectType } from "@/types/project"
 
-type Winners = IProject & {year: number}
+type Winners = ProjectType & {year: number}
 
 export const publicWinners: Winners[]  = [
     {

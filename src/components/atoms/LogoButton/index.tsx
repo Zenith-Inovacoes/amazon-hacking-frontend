@@ -1,8 +1,11 @@
 import LogoButtonProps from './types'
 import { forwardRef, Ref } from 'react'
+import { cn } from "@/services/utils/className.utils"
 
 const LogoButton = forwardRef(
   ({ ...props }: LogoButtonProps, ref: Ref<HTMLButtonElement>) => {
+    const secondary = props.variant === 'secondary'
+
     return (
       <button
         className='group'
@@ -70,7 +73,12 @@ const LogoButton = forwardRef(
             d='M187.86 50.2228L173.815 36.0037V50.2228H187.86ZM169.925 54.1125V26.5305L190.054 46.9096H193.617V54.1125H169.925Z'
             fill='white'
           />
-          <g className='fill-white group-hover:fill-primary-100 transition-colors'>
+          <g className={
+            cn(
+              'transition-colors',
+              secondary ? 'fill-primary-100 group-hover:fill-primary-200' : 'fill-white group-hover:fill-primary-100'
+            )
+          }>
             <path
               fillRule='evenodd'
               clipRule='evenodd'

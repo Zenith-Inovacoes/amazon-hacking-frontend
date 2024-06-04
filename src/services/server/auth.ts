@@ -19,7 +19,7 @@ import { cookies } from "next/headers";
 declare module "next-auth" {
   interface Session extends DefaultSession {
     strategy: "jwt";
-    expires: "3600s";
+    expires: number;
     accessToken: string;
     user: {
       id: string;
@@ -28,11 +28,6 @@ declare module "next-auth" {
     } & DefaultSession["user"] &
       UserType;
   }
-
-  // interface User {
-  //   // ...other properties
-  //   // role: UserRole;
-  // }
 }
 
 /**
@@ -43,21 +38,21 @@ declare module "next-auth" {
 export const authOptions: NextAuthOptions = {
   callbacks: {
     async jwt({ token, account, profile }) {
-      // Persist the OAuth access_token and or the user id to the token right after signin
+
       if (account && profile) {
         try {
           const response = await generateSession({
             email: profile.email!,
             name: profile.name!,
           });
-  
+
           const session_token = response.headers["set-cookie"]![0].split(";")[0].split("=")[1];
           token.accessToken = String(session_token)
         } catch (error) {
           console.error(error);
         }
       }
-      return token
+      return token;
     },
     async signIn({ user, account }) {
       if (!user.email || !user.name) {
@@ -75,10 +70,7 @@ export const authOptions: NextAuthOptions = {
             response.headers["set-cookie"]![0].split(";")[0].split("=")[1];
           cookies().set("session_token", String(token), {
             path: "/",
-            expires: 3600,
-            sameSite: "strict",
-            httpOnly: true,
-            secure: true,
+            expires: new Date(Date.now() + 86400000), // 1 day
           });
 
           return true;
@@ -89,12 +81,19 @@ export const authOptions: NextAuthOptions = {
       return false;
     },
     async session({ session, token, user }) {
-      // Send properties to the client, like an access_token and user id from a provider.
-      session.accessToken = token.accessToken as string
+      session.accessToken = token.accessToken as string;
       session.user.id = token.sub!;
-      
-      return session
-    }
+
+      const maxAge =  30 * 60
+      const expires = Date.now() + maxAge * 1000
+
+      return {
+        ...session,
+        maxAge,
+        expires,
+        strategy: "jwt",
+      };
+    },
   },
   providers: [
     GoogleProvider(
@@ -116,7 +115,7 @@ export const authOptions: NextAuthOptions = {
   ],
   pages: {
     signIn: "/pt/auth/not-authorized",
-    error: '/pt/auth/not-authorized',
+    error: "/pt/auth/not-authorized",
   },
 };
 
@@ -125,4 +124,5 @@ export const authOptions: NextAuthOptions = {
  *
  * @see https://next-auth.js.org/configuration/nextjs
  */
-export const getServerAuthSession = () => getServerSession(authOptions);
+export const getServerAuthSession = async () =>
+  await getServerSession(authOptions);

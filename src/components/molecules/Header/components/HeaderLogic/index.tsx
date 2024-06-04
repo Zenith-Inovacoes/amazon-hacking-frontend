@@ -6,15 +6,25 @@ import { useMenu } from '@/contexts/menu'
 import { useScroll } from 'framer-motion'
 import { ReactNode, useEffect, useState } from 'react'
 import { scrollTo } from '@/services/utils/scrollTo'
+import { usePathname, useRouter } from 'next/navigation'
 
 const HeaderLogic = ({ children }: { children: ReactNode }) => {
+    const router = useRouter()
+    const pathname = usePathname()
+    const isInSolutions = pathname.includes('solutions')
+
     const { open } = useMenu()
     const { scrollY } = useScroll()
-    const [isDown, setIsDown] = useState<boolean>(false)
+    const [isDown, setIsDown] = useState<boolean>(!!isInSolutions)
 
     const { setOpen } = useMenu()
 
     useEffect(() => {
+        if (isInSolutions) {
+            setIsDown(true)
+            return;
+        }
+
         const interval = setInterval(() => {
             const scrollYValue = window.scrollY
 
@@ -23,7 +33,7 @@ const HeaderLogic = ({ children }: { children: ReactNode }) => {
         }, 100)
 
         return () => clearInterval(interval)
-    }, [isDown, scrollY])
+    }, [isDown, isInSolutions, scrollY])
 
     return (
         <header
@@ -34,13 +44,40 @@ const HeaderLogic = ({ children }: { children: ReactNode }) => {
         >
             <div className='relative flex w-full h-fit flex-row items-center justify-between max-w-screen-2xl'>
                 <div
-                    onClick={() => scrollTo('hero')}
+                    onClick={() => {
+                        if (isInSolutions) {
+                            router.push('/')
+                            return;
+                        }
+                        scrollTo('hero')
+                    }}
+                    onMouseEnter={() => {
+                        if (isInSolutions) router.prefetch('/')
+                    }}
+                    onTouchStart={() => {
+                        if (isInSolutions) router.prefetch('/')
+                    }}
                     className={cn(
                         'pl-4 xs:pl-[42px] md:pl-[62px] duration-200 transition-opacity sm:-mx-6 scale-[0.532] sm:scale-100 origin-left',
                         open && 'opacity-0 lg:opacity-100'
                     )}
                 >
-                    <LogoButton onClick={() => scrollTo('hero')} />
+                    <LogoButton
+                        variant={isDown ? 'secondary' : 'primary'}
+                        onClick={() => {
+                            if (isInSolutions) {
+                                router.push('/')
+                                return;
+                            }
+                            scrollTo('hero')
+                        }}
+                        onMouseEnter={() => {
+                            if (isInSolutions) router.prefetch('/')
+                        }}
+                        onTouchStart={() => {
+                            if (isInSolutions) router.prefetch('/')
+                        }}
+                    />
                 </div>
                 {children}
             </div>

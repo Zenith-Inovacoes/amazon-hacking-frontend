@@ -11,6 +11,7 @@ import { Header } from "@/components/molecules";
 import Footer from "@/components/templates/Footer";
 import NoticeOverlay from "@/components/templates/NoticeOverlay";
 import { getMessages } from "next-intl/server";
+import { Toaster } from 'sonner'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://amazonhacking.com.br'),
@@ -67,9 +68,14 @@ export default async function RootLayout({
               {/* This line solves the problem of the radix ui elements hiding the scroll bar, but breaks about section */}
               {/* https://github.com/radix-ui/primitives/issues/346#issuecomment-1121440376 */}
               {/* <div className='fixed w-full top-0 bottom-0 overflow-x-hidden'> */}
-              <main className="scroll-smooth">
+              <main className="scroll-smooth antialiased">
                 {children}
                 <Footer />
+                <Toaster 
+                  position="top-right"
+                  richColors
+                  expand
+                />
               </main>
               {/* </div> */}
             </NextIntlClientProvider>

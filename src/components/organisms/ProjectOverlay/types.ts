@@ -10,6 +10,7 @@ export type ProjectOverlayChildrenProps = {
 }
 
 export type ProjectOverlayProps = {
+  id: string
   children: ProjectOverlayChildrenProps
   videoURL: string
   videoTitle?: string

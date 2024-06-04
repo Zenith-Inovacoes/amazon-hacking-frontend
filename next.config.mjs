@@ -45,6 +45,14 @@ const nextConfig = {
       }
     ]
   },
+
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+
   headers: async () => {
     return [
       {

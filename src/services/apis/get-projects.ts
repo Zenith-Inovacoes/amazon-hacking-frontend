@@ -1,5 +1,5 @@
 import { api } from "../libs/axios";
-import { IProject } from "@/types/IProject";
+import { ProjectType } from "@/types/project";
 
 type getProjectsType = {
     filter: "ecomp" | "bcc" | "all"
@@ -12,5 +12,5 @@ export async function getProjects({ filter }: getProjectsType) {
         }
     })
 
-    return data as IProject[]
+    return data as ProjectType[]
 }
