@@ -3,13 +3,21 @@
 import { Solution } from "@/components/templates/Solution";
 import { getProject } from "@/services/apis/get-project";
 import { env } from "@/services/libs/env.mjs";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: { name: string };
 };
 
 export default async function SolutionPage({ params }: Props) {
-  const solutionData = await getProject({ name: params.name });
+  const solutionData = await getProject({
+    name: params.name.replace(/-/g, " "),
+  });
+
+  if (!solutionData.name) {
+    notFound();
+    return;
+  }
 
   solutionData.links = {
     github: solutionData.links?.github || "",
