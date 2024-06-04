@@ -2,25 +2,27 @@ import { getProject } from "@/services/apis/get-project";
 import { Metadata } from "next";
 
 type Props = {
-  params: { locale: string, name: string }
-}
+  params: { locale: string; name: string };
+};
 
 export async function generateMetadata({ params }: Props) {
-  const solutionData = await getProject({ name: params.name });
+  const solutionData = await getProject({
+    name: params.name.replace(/-/g, " "),
+  });
 
-  if(!solutionData) {
+  if (!solutionData) {
     return {
-      title: 'Amazon Hacking',
-      description: 'Amazon Hacking',
+      title: "Amazon Hacking",
+      description: "Amazon Hacking",
       openGraph: {
-        title: 'Amazon Hacking',
-        description: 'Amazon Hacking',
+        title: "Amazon Hacking",
+        description: "Amazon Hacking",
         images: [
           {
-            url: '',
+            url: "",
             width: 1200,
             height: 630,
-            alt: 'Amazon Hacking',
+            alt: "Amazon Hacking",
           },
         ],
       },
@@ -28,14 +30,14 @@ export async function generateMetadata({ params }: Props) {
   }
 
   return {
-    title:`${solutionData.name} | Amazon Hacking`,
+    title: `${solutionData.name} | Amazon Hacking`,
     description: solutionData.description,
     openGraph: {
       title: solutionData.name,
       description: solutionData.description,
       images: [
         {
-          url: solutionData.links?.banner || '',
+          url: solutionData.links?.banner || "",
           width: 1200,
           height: 630,
           alt: solutionData.name,
@@ -46,9 +48,5 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }
