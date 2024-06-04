@@ -34,7 +34,6 @@ import { voteSolution } from "@/app/[locale]/solutions/actions";
 import { NormalizeTextToSlug } from "@/services/utils/normalize-text-to-slug";
 import { LuFacebook } from "react-icons/lu";
 import { toast } from "sonner";
-import { Image } from "next/image";
 
 const ProjectOverlay = ({
   children,
