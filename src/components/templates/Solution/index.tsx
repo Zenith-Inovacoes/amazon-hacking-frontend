@@ -6,6 +6,7 @@ import Image from "next/image";
 
 import XIcon from "public/icons/twitter.svg";
 import WhatsappIcon from "public/icons/whatsapp.svg";
+import LogoComputacaoAmostra from "public/icons/logo-computacao-amostra.svg";
 
 import FirstWaveBottom from "public/ProjectOverlayWaves/Mobile/FirstWaveBottom.svg";
 import FirstWaveTop from "public/ProjectOverlayWaves/Mobile/FirstWaveTop.svg";
@@ -82,21 +83,21 @@ export function Solution({ project }: SolutionProps) {
   );
 
   return (
-    <div className="flex bg-white min-h-screen w-full flex-col items-center justify-center py-4">
+    <div className="flex flex-col items-center pt-[calc(2.814rem+121px)] md:pt-[calc(6.6rem+121px)] lg:pt-[calc(5.19rem_+121px)]">
       <div className="flex flex-col w-full h-full items-center gap-[108px] px-6 pt-5 md:px-[65px] md:gap-[111px] lg:px-[102px]">
         <div className="flex flex-col items-center justify-center gap-[22px] w-full h-fit md:gap-[28px]">
           <h1 className="text-center text-black font-bold leading-[1.1] text-40 md:w-full md:text-50 lg:text-60">
             {project.name}
           </h1>
           <div className="bg-black w-full max-w-[400px] h-fit py-6 px-4 rounded-[20px] flex justify-center items-center md:order-2 md:py-36 md:max-w-[412px] md:px-11">
-            {/* <div className="w-40 h-40">
-              <img
+            <div className="relative w-40 h-40 rounded-[20px]">
+              <Image
                 src={project.links.banner || LogoComputacaoAmostra}
-                alt={`Logo da equipe ${project.name}`}
-                // fill
-                className="w-full h-fit object-cover rounded-[10px]"
+                alt={`Banner ${project.name}`}
+                fill
+                className="max-w-[204px] md:max-w-[325px]"
               />
-            </div> */}
+            </div>
           </div>
           <p className="text-base tracking-[0.192px] leading-[20px] text-black px-3 md:px-0 md:mb-8 md:text-18 md:tracking-[0.216px] lg:text-20 lg:tracking-[0.24px]">
             {project.description}
