@@ -11,7 +11,7 @@ export function Gallery() {
       <div className="relative ">
         <svg
           id="wave-manteneurs-shadow"
-          className="rotate-0 duration-300 absolute -top-2"
+          className="rotate-0 duration-300 absolute -top-2 scale-y-[1.01]"
           viewBox="0 0 1440 250"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@ export function Gallery() {
         </svg>
         <svg
           id="wave-manteneurs"
-          className="rotate-0 duration-300"
+          className="rotate-0 duration-300 scale-y-[1.01]"
           viewBox="0 0 1440 250"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ export function Gallery() {
 
         <svg
           id="wave-manteneurs"
-          className="rotate-180 duration-300"
+          className="rotate-180 duration-300 scale-y-[1.01]"
           viewBox="0 0 1440 250"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"

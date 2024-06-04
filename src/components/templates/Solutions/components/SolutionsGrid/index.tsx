@@ -39,7 +39,7 @@ export async function SolutionsGrid() {
   });
 
   return filteredSolutions.length > 0 ? (
-    <div className="grid grid-cols-1 gap-[1.18rem] md:gap-6 lg:gap-[3.31rem] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div className="grid grid-cols-1 gap-[1.18rem] md:gap-6 lg:gap-[3.31rem] sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
       {filteredSolutions.map((solution) => (
         <ProjectCard
           key={solution.id}
