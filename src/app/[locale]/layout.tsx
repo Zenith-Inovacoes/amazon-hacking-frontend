@@ -11,6 +11,7 @@ import { Header } from "@/components/molecules";
 import Footer from "@/components/templates/Footer";
 import { getMessages } from "next-intl/server";
 import { Toaster } from 'sonner'
+import { GoogleAnalytics } from "@/services/libs/GoogleAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://amazonhacking.com.br'),
@@ -75,6 +76,7 @@ export default async function RootLayout({
                   expand
                 />
               </main>
+              <GoogleAnalytics />
               {/* </div> */}
             </NextIntlClientProvider>
             <FloatingOptions />
