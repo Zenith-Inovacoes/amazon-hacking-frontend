@@ -39,29 +39,29 @@ export function Solution({ project }: SolutionProps) {
   const formRef = useRef<HTMLFormElement>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setTurnstileStatus("");
+    // event.preventDefault();
+    // setTurnstileStatus("");
 
-    const form = new FormData(formRef.current!);
-    if (!data) return;
+    // const form = new FormData(formRef.current!);
+    // if (!data) return;
     // SET TOKEN FORM
-    form.append("session_token", data.accessToken);
+    // form.append("session_token", data.accessToken);
 
-    async function vote() {
-      await voteSolutionWithId(form),
-        toast.info("Aguarde 15 segundos para votar novamente.");
+    // async function vote() {
+    //   await voteSolutionWithId(form),
+    //     toast.info("Aguarde 15 segundos para votar novamente.");
 
-      setTimeout(() => {
-        // @ts-ignore
-        turnstileRef.current?.reset();
-      }, 15000);
-    }
+    //   setTimeout(() => {
+    //     // @ts-ignore
+    //     turnstileRef.current?.reset();
+    //   }, 15000);
+    // }
 
-    toast.promise(vote(), {
-      loading: "Votando...",
-      success: "Voto computado com sucesso!",
-      error: "Erro ao computar voto!",
-    });
+    // toast.promise(vote(), {
+    //   loading: "Votando...",
+    //   success: "Voto computado com sucesso!",
+    //   error: "Erro ao computar voto!",
+    // });
   }
 
   const pathname = usePathname();
@@ -175,8 +175,8 @@ export function Solution({ project }: SolutionProps) {
         {status === "authenticated" ? (
           <>
             <form
-              ref={formRef}
-              onSubmit={handleSubmit}
+              // ref={formRef}
+              // onSubmit={handleSubmit}
               className="flex flex-col gap-3"
             >
               <Turnstile
@@ -195,10 +195,10 @@ export function Solution({ project }: SolutionProps) {
               <Button
                 type="submit"
                 className="w-full disabled:bg-blue-300"
-                disabled={turnstileStatus !== "solved"}
+                disabled={true}
               >
                 Votar
-              </Button>
+              </Button> 
             </form>
             <p className="mt-4 text-xs leading-6 text-neutral-600">
               Ao submeter esse voto, Você concorda com nossa{" "}

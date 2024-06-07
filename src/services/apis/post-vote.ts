@@ -7,16 +7,19 @@ export type postVoteType = {
 };
 
 export async function postVote({ captcha, cookies, projectId }: postVoteType) {
-  const { data } = await api.post(
-    `/users/vote?projectId=${projectId}`,
-    {},
-    {
-      headers: {
-        captchatoken: captcha,
-        cookie: cookies,
-      },
-    }
-  );
+  return {
+    error: "error"
+  }
+  // const { data } = await api.post(
+  //   `/users/vote?projectId=${projectId}`,
+  //   {},
+  //   {
+  //     headers: {
+  //       captchatoken: captcha,
+  //       cookie: cookies,
+  //     },
+  //   }
+  // );
 
-  return data;
+  // return data;
 }
