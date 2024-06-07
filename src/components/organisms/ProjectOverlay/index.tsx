@@ -50,9 +50,9 @@ const ProjectOverlay = ({
   const formRef = useRef<HTMLFormElement>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setTurnstileStatus("");
-    if (!data) return;
+    // event.preventDefault();
+    // setTurnstileStatus("");
+    // if (!data) return;
 
     // const form = new FormData(formRef.current!);
     // // SET TOKEN FORM
@@ -179,7 +179,7 @@ const ProjectOverlay = ({
             {status === "authenticated" ? (
               <>
                 <form
-                  ref={formRef}
+                  // ref={formRef}
                   // onSubmit={handleSubmit}
                   className="flex flex-col gap-3"
                 >
@@ -196,13 +196,13 @@ const ProjectOverlay = ({
                     onSuccess={() => setTurnstileStatus("solved")}
                     ref={turnstileRef}
                   />
-                  // <Button
-                  //   type="submit"
-                  //   className="w-full disabled:bg-blue-300"
-                  //   disabled={turnstileStatus !== "solved"}
-                  // >
-                  //   Votar
-                  // </Button>
+                 <Button
+                   type="submit"
+                   className="w-full disabled:bg-blue-300"
+                   disabled={true}
+                 >
+                   Votar
+                 </Button>
                 </form>
                 <p className="mt-4 text-xs leading-6 text-neutral-600">
                   Ao submeter esse voto, Você concorda com nossa{" "}

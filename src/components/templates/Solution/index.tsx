@@ -39,11 +39,11 @@ export function Solution({ project }: SolutionProps) {
   const formRef = useRef<HTMLFormElement>(null);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setTurnstileStatus("");
+    // event.preventDefault();
+    // setTurnstileStatus("");
 
-    const form = new FormData(formRef.current!);
-    if (!data) return;
+    // const form = new FormData(formRef.current!);
+    // if (!data) return;
     // SET TOKEN FORM
     // form.append("session_token", data.accessToken);
 
@@ -175,7 +175,7 @@ export function Solution({ project }: SolutionProps) {
         {status === "authenticated" ? (
           <>
             <form
-              ref={formRef}
+              // ref={formRef}
               // onSubmit={handleSubmit}
               className="flex flex-col gap-3"
             >
@@ -192,13 +192,13 @@ export function Solution({ project }: SolutionProps) {
                 onSuccess={() => setTurnstileStatus("solved")}
                 ref={turnstileRef}
               />
-              {/* <Button
+              <Button
                 type="submit"
                 className="w-full disabled:bg-blue-300"
-                disabled={turnstileStatus !== "solved"}
+                disabled={true}
               >
                 Votar
-              </Button> */}
+              </Button> 
             </form>
             <p className="mt-4 text-xs leading-6 text-neutral-600">
               Ao submeter esse voto, Você concorda com nossa{" "}
