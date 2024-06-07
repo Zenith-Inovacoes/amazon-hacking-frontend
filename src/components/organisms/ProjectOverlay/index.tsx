@@ -54,25 +54,25 @@ const ProjectOverlay = ({
     setTurnstileStatus("");
     if (!data) return;
 
-    const form = new FormData(formRef.current!);
-    // SET TOKEN FORM
-    form.append("session_token", data.accessToken);
+    // const form = new FormData(formRef.current!);
+    // // SET TOKEN FORM
+    // form.append("session_token", data.accessToken);
 
-    async function vote() {
-      await voteSolutionWithId(form),
-        toast.info("Aguarde 15 segundos para votar novamente.");
+    // async function vote() {
+    //   await voteSolutionWithId(form),
+    //     toast.info("Aguarde 15 segundos para votar novamente.");
 
-      setTimeout(() => {
-        // @ts-ignore
-        turnstileRef.current?.reset();
-      }, 15000);
-    }
+    //   setTimeout(() => {
+    //     // @ts-ignore
+    //     turnstileRef.current?.reset();
+    //   }, 15000);
+    // }
 
-    toast.promise(vote(), {
-      loading: "Votando...",
-      success: "Voto computado com sucesso!",
-      error: "Erro ao computar voto!",
-    });
+    // toast.promise(vote(), {
+    //   loading: "Votando...",
+    //   success: "Voto computado com sucesso!",
+    //   error: "Erro ao computar voto!",
+    // });
   }
 
   const nameForSlug = NormalizeTextToSlug(children.solutionName);
@@ -180,7 +180,7 @@ const ProjectOverlay = ({
               <>
                 <form
                   ref={formRef}
-                  onSubmit={handleSubmit}
+                  // onSubmit={handleSubmit}
                   className="flex flex-col gap-3"
                 >
                   <Turnstile
@@ -196,13 +196,13 @@ const ProjectOverlay = ({
                     onSuccess={() => setTurnstileStatus("solved")}
                     ref={turnstileRef}
                   />
-                  <Button
-                    type="submit"
-                    className="w-full disabled:bg-blue-300"
-                    disabled={turnstileStatus !== "solved"}
-                  >
-                    Votar
-                  </Button>
+                  // <Button
+                  //   type="submit"
+                  //   className="w-full disabled:bg-blue-300"
+                  //   disabled={turnstileStatus !== "solved"}
+                  // >
+                  //   Votar
+                  // </Button>
                 </form>
                 <p className="mt-4 text-xs leading-6 text-neutral-600">
                   Ao submeter esse voto, Você concorda com nossa{" "}
