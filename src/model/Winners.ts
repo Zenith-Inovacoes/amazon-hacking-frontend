@@ -1,8 +1,74 @@
 import { CourseEnum, ProjectType } from "@/types/project"
 
-type Winners = ProjectType & {year: number}
+type Winners = ProjectType & { year: number }
 
-export const publicWinners: Winners[]  = [
+export const publicWinners: Winners[] = [
+    {
+        id: "1234",
+        name: "Ymã",
+        description: "Somos a Ymã, nosso biodigestor converte resíduos orgânicos em biogás e biofertilizante, promovendo energia sustentável e gestão de resíduos. Com capacidade para 15L de biogás e 25L de digestão de resíduos, é ideal para cozinhar, refrigerar e fertilizar, impulsionando a autossuficiência energética e a sustentabilidade comunitária.",
+        logoUrl: "https://cdn.computacao-amostra.com/projetos2024/yma.png",
+        team: [
+            "Caroline Silva",
+            "Maria Gama",
+            "Ana Nunes",
+            "Gabriel Silva",
+            "Luiz Santos",
+            "Lucas Oliveira",
+            "Matheus Mendonça",
+            "Ana Costa"
+        ],
+        year: 2024,
+        links: {
+            youtube: {
+                pt: "https://www.youtube.com/embed/3O7ctdQylSg?si=aijrTNftj4_bXFz_",
+                en: "https://www.youtube.com/embed/uvdhLAMxN_I?si=WDXpwrO0yu4pgfaX"
+            }
+        }
+    },
+    {
+        id: "1234",
+        name: "Yubi",
+        description: "Yubi é um Hub de jogos educativos destinado a escolas localizadas em comunidades menos favorecidas. Com foco em crianças de 4 a 12 anos, a plataforma oferece jogos que reforçam o ensino de forma acessível e divertida. Visando a sua acessibilidade, a plataforma funciona completamente offline.",
+        logoUrl: "https://cdn.computacao-amostra.com/projetos2024/yubi.jpg",
+        team: [
+            "Vitor Longhi",
+            "Leticia Keuffer",
+            "Lucas Maia",
+            "Karina Guimarães",
+            "Felipe Machado",
+            "Vitor Pombo",
+            "João David"
+        ],
+        year: 2024,
+        links: {
+            youtube: {
+                pt: "https://www.youtube.com/embed/vcwtc52_R0s?si=6WKVzsXvueGJSI1y",
+                en: "https://www.youtube.com/embed/_EbKhBcYnqo?si=jXxDlTGMOsoWmJh1"
+            }
+        }
+    },
+    {
+        id: "1234",
+        name: "Ludus",
+        description: "Um sistema de gestão virtual baseado na frequência e matricula de alunos, voltado a rede pública",
+        logoUrl: "https://cdn.computacao-amostra.com/projetos2024/ludus.jpeg",
+        team: [
+            "Athos Araújo",
+            "Renan Moreira",
+            "Leonardo Bernardes",
+            "Matheus Leao",
+            "Mila Borges",
+            "Marco Machado"
+        ],
+        year: 2024,
+        links: {
+            youtube: {
+                pt: "https://www.youtube.com/embed/xDlflBQYl9A?si=cIt5hPUnJcws0I74",
+                en: "https://www.youtube.com/embed/ljI4rrTWZ9U?si=zaVneEUPg81VtEAb"
+            }
+        }
+    },
     {
         id: "1234",
         name: "Minerva",
@@ -67,5 +133,5 @@ export const publicWinners: Winners[]  = [
         team: ['Rian Ernesto', "Gabriel Marcelino", "Matheus Dourado", "Marco Antonio", "Renan Andrew"],
         year: 2022
     },
-    
+
 ]
