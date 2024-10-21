@@ -28,27 +28,25 @@ const Winners = ({
     eng: string
     sci: string
 }) => {
-    const [toggle, setToggle] = useState<boolean[]>([false, false])
+    const [toggle, setToggle] = useState<boolean[]>([false, false, false])
     const [course, setCourse] = useState<'eng' | 'sci'>('eng')
 
-    const handleToggle1 = () => {
-        setToggle((currState) => [!currState[0], currState[1] && !currState[1]])
-    }
-
-    const handleToggle2 = () => {
-        setToggle((currState) => [currState[0] && !currState[0], !currState[1]])
+    const handleToggle = (index: number) => {
+        setToggle((currState) =>
+            currState.map((state, idx) => (idx === index ? !state : false))
+        )
     }
 
     const cardsContent = {
         engineering: [
-            ['Tupã', 'Zenith Inova'],
-            ['TucuExtract', 'CVGreen'],
-            ['Inventory', 'Hélix'],
+            ['Ymã', 'Tupã', 'Zenith Inova'],
+            ['Ludus', 'TucuExtract', 'CVGreen'],
+            ['Yubi', 'Inventory', 'Hélix'],
         ],
         science: [
-            ['Parajás', 'BioTank'],
-            ['Cotico', 'SICFAA'],
-            ['Curumin', 'AutoDrops'],
+            ['Ymã', 'Parajás', 'BioTank'],
+            ['Ludus', 'Cotico', 'SICFAA'],
+            ['Yubi', 'Curumin', 'AutoDrops'],
         ],
     }
 
@@ -70,33 +68,28 @@ const Winners = ({
                     </h2>
                     <div className='flex flex-col items-center justify-center w-full gap-[22px] md:justify-between md:flex-row md:w-[95%]'>
                         <div className='flex gap-[22px] items-center justify-center z-50'>
-                            <Checkbox
-                                onChange={handleToggle1}
-                                checked={toggle[0]}
-                            >
-                                2023
-                            </Checkbox>
-                            <Checkbox
-                                onChange={handleToggle2}
-                                checked={toggle[1]}
-                            >
-                                2022
-                            </Checkbox>
+                            {toggle.map((value, idx) => (
+                                <Checkbox
+                                    key={idx}
+                                    onChange={() => handleToggle(idx)}
+                                    checked={value}
+                                >
+                                    {`202${toggle.length - idx + 1}`}
+                                </Checkbox>
+                            ))}
                         </div>
                         <div
                             className={cn(
                                 'flex transition-all duration-300 z-40 ',
-                                !toggle[0] &&
-                                    !toggle[1] &&
+                                !toggle[1] &&
+                                    !toggle[2] &&
                                     'opacity-0 pointer-events-none -mt-20'
                             )}
                         >
                             <Select
                                 placeholder=''
                                 defaultValue='eng'
-                                onValueChange={(e: 'eng' | 'sci') =>
-                                    setCourse(e)
-                                }
+                                onValueChange={(e: 'eng' | 'sci') => setCourse(e)}
                             >
                                 <SelectItem value='eng'>{eng}</SelectItem>
                                 <SelectItem value='sci'>{sci}</SelectItem>
@@ -107,7 +100,7 @@ const Winners = ({
                 <div
                     className={cn(
                         'hidden absolute items-center justify-start w-full z-50',
-                        (toggle[0] || toggle[1]) && 'flex'
+                        (toggle[0] || toggle[1] || toggle[2]) && 'flex'
                     )}
                 ></div>
                 <div className='absolute bg-repeat bg-symbol w-full h-full max-h-[87px] opacity-60 inset-0 top-1/2 xs:translate-y-20 translate-y-40 md:-translate-y-[min(15.65vw,160px)] lg:top-full lg:-translate-y-52' />
@@ -116,9 +109,9 @@ const Winners = ({
                         className={cn(
                             'absolute z-20 opacity-0 transition-opacity duration-500 horizontal-snap w-full flex gap-12 px-[35vw] justify-start items-center lg:overflow-hidden lg:flex-wrap-reverse lg:px-0 lg:justify-center pb-32 lg:pt-10 lg:-mr-[8%] lg:right-0 lg:w-[120%] xl:w-[110%]',
                             course === 'eng' &&
-                                (toggle[0] || toggle[1]) &&
+                                (toggle[0] || toggle[1] || toggle[2]) &&
                                 'opacity-100 z-30',
-                            (course !== 'eng' || (!toggle[0] && !toggle[1])) &&
+                            (course !== 'eng' || (!toggle[0] && !toggle[1] && !toggle[2])) &&
                                 'pointer-events-none'
                         )}
                     >
@@ -126,7 +119,7 @@ const Winners = ({
                             <WinnerCard
                                 key={idx}
                                 idx={idx}
-                                currentYear={[toggle[0], toggle[1]]}
+                                currentYear={[toggle[0], toggle[1], toggle[2]]}
                                 course={course}
                                 className={cn(idx === 0 && 'lg:order-3')}
                             >
@@ -138,9 +131,9 @@ const Winners = ({
                         className={cn(
                             'absolute z-20 opacity-0 transition-opacity duration-500 horizontal-snap w-full flex gap-12 px-[35vw] justify-start items-center lg:overflow-hidden lg:flex-wrap-reverse lg:px-0 lg:justify-center pb-32 lg:-mr-[8%] lg:pt-10 lg:right-0 lg:w-[120%] xl:w-[110%]',
                             course === 'sci' &&
-                                (toggle[0] || toggle[1]) &&
+                                (toggle[0] || toggle[1] || toggle[2]) &&
                                 'opacity-100 z-30',
-                            (course !== 'sci' || (!toggle[0] && !toggle[1])) &&
+                            (course !== 'sci' || (!toggle[0] && !toggle[1] && !toggle[2])) &&
                                 'pointer-events-none'
                         )}
                     >
@@ -148,7 +141,7 @@ const Winners = ({
                             <WinnerCard
                                 key={idx}
                                 idx={idx}
-                                currentYear={[toggle[0], toggle[1]]}
+                                currentYear={[toggle[0], toggle[1], toggle[2]]}
                                 course={course}
                                 className={cn(idx === 0 && 'lg:order-3')}
                             >
@@ -161,7 +154,7 @@ const Winners = ({
                         alt='Winners Wave'
                         className={cn(
                             'w-full max-w-[500px] z-10 md:hidden transition-transform duration-500',
-                            (toggle[0] || toggle[1]) && 'scale-y-75'
+                            (toggle[0] || toggle[1] || toggle[2]) && 'scale-y-75'
                         )}
                     />
                     <Image
@@ -170,7 +163,7 @@ const Winners = ({
                         fill
                         className={cn(
                             'absolute px-8 max-w-[500px] z-10 md:translate-x-[min(20.33vw,208px)] md:translate-y-[min(2.73vw,28px)] md:max-w-[462px] md:max-h-[462px] md:px-0 lg:hidden transition-opacity duration-300',
-                            (toggle[0] || toggle[1]) && 'opacity-0'
+                            (toggle[0] || toggle[1] || toggle[2]) && 'opacity-0'
                         )}
                     />
 
@@ -191,13 +184,16 @@ const Winners = ({
                             alt='Wave Shadow'
                             className='absolute opacity-30 blur-[2px] -translate-y-4 translate-x-2'
                         />
-                        <Image src={WinnersWaveDesktop} alt='Wave' />
+                        <Image
+                            src={WinnersWaveDesktop}
+                            alt='Wave'
+                        />
                         <Image
                             src={WinnersWaveContent}
                             alt='Winners Wave Content'
                             className={cn(
                                 'absolute z-10 max-w-[462px] max-h-[462px] w-full h-full transition-opacity duration-300',
-                                (toggle[0] || toggle[1]) && 'opacity-0'
+                                (toggle[0] || toggle[1] || toggle[2]) && 'opacity-0'
                             )}
                         />
                     </div>

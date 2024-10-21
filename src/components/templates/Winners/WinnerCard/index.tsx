@@ -32,6 +32,54 @@ const WinnerCard = ({
 }: WinnerCardProps) => {
     const childrenData: ProjectOverlayChildrenProps[] = [
         {
+            solutionName: 'Ymã',
+            solutionDescription:
+                'Somos a Ymã, nosso biodigestor converte resíduos orgânicos em biogás e biofertilizante, promovendo energia sustentável e gestão de resíduos. Com capacidade para 15L de biogás e 25L de digestão de resíduos, é ideal para cozinhar, refrigerar e fertilizar, impulsionando a autossuficiência energética e a sustentabilidade comunitária.',
+            teamLogo: 'https://cdn.computacao-amostra.com/projetos2024/yma.png',
+            teamMembers: [
+                'Caroline Silva',
+                'Maria Gama',
+                'Ana Nunes',
+                'Gabriel Silva',
+                'Luiz Santos',
+                'Lucas Oliveira',
+                'Matheus Mendonça',
+                'Ana Costa',
+            ],
+            altLogo: 'Logo do Ymã',
+        },
+        {
+            solutionName: 'Ludus',
+            solutionDescription:
+                'Um sistema de gestão virtual baseado na frequência e matricula de alunos, voltado a rede pública',
+            teamLogo: 'https://cdn.computacao-amostra.com/projetos2024/ludus.jpeg',
+            teamMembers: [
+                'Athos Araújo',
+                'Renan Moreira',
+                'Leonardo Bernardes',
+                'Matheus Leao',
+                'Mila Borges',
+                'Marco Machado',
+            ],
+            altLogo: 'Logo do Ludus',
+        },
+        {
+            solutionName: 'Yubi',
+            solutionDescription:
+                'Yubi é um Hub de jogos educativos destinado a escolas localizadas em comunidades menos favorecidas. Com foco em crianças de 4 a 12 anos, a plataforma oferece jogos que reforçam o ensino de forma acessível e divertida. Visando a sua acessibilidade, a plataforma funciona completamente offline.',
+            teamLogo: 'https://cdn.computacao-amostra.com/projetos2024/yubi.jpg',
+            teamMembers: [
+                'Vitor Longhi',
+                'Leticia Keuffer',
+                'Lucas Maia',
+                'Karina Guimarães',
+                'Felipe Machado',
+                'Vitor Pombo',
+                'João David',
+            ],
+            altLogo: 'Logo da Yubi',
+        },
+        {
             solutionName: 'Tupã',
             teamLogo: HelixLogo,
             solutionDescription:
@@ -189,18 +237,26 @@ const WinnerCard = ({
     ]
 
     const videoURL: string[] = [
-        'https://www.youtube-nocookie.com/embed/dkNim396gew',
-        'https://www.youtube-nocookie.com/embed/u9OdNekTEJY',
-        'https://www.youtube-nocookie.com/embed/6-2nxIQUSSI',
-        'https://www.youtube-nocookie.com/embed/bJhPNFamNwk',
-        'https://www.youtube-nocookie.com/embed/XWMRPfiLbHM',
-        'https://www.youtube-nocookie.com/embed/PuRcj4yvfso',
-        'https://www.youtube-nocookie.com/embed/mnj4CZ-BISM',
-        'https://www.youtube-nocookie.com/embed/kvDKIRHMshM',
-        'https://www.youtube-nocookie.com/embed/djD7vOYDc9w',
-        '',
-        'https://www.youtube-nocookie.com/embed/Rz6ecyAGyRw',
-        'https://www.youtube-nocookie.com/embed/Q-fDlpqaWDA',
+        /* 2024 */
+        'https://www.youtube.com/embed/3O7ctdQylSg?si=aijrTNftj4_bXFz_', // Ymã
+        'https://www.youtube.com/embed/xDlflBQYl9A?si=cIt5hPUnJcws0I74', // Ludus
+        'https://www.youtube.com/embed/vcwtc52_R0s?si=6WKVzsXvueGJSI1y', // Yubi
+        /* 2023 */
+        'https://www.youtube-nocookie.com/embed/dkNim396gew', // Tupã/Helix (Eng)
+        'https://www.youtube-nocookie.com/embed/u9OdNekTEJY', // TucuExtract (Eng)
+        'https://www.youtube-nocookie.com/embed/6-2nxIQUSSI', // Inventory (Eng)
+        /* 2022 */
+        'https://www.youtube-nocookie.com/embed/bJhPNFamNwk', // Zenith (Eng)
+        'https://www.youtube-nocookie.com/embed/XWMRPfiLbHM', // CVGreen (Eng)
+        'https://www.youtube-nocookie.com/embed/PuRcj4yvfso', // Helix (Eng)
+        /* 2023 */
+        'https://www.youtube-nocookie.com/embed/mnj4CZ-BISM', // Parajás (Sci)
+        'https://www.youtube-nocookie.com/embed/kvDKIRHMshM', // Cótico (Sci)
+        'https://www.youtube-nocookie.com/embed/djD7vOYDc9w', // Curumim (Sci)
+        /* 2022 */
+        '', // BioTank (Sci)
+        'https://www.youtube-nocookie.com/embed/Rz6ecyAGyRw', // SICFAA (Sci)
+        'https://www.youtube-nocookie.com/embed/Q-fDlpqaWDA', // AutoDrops (Sci)
     ]
 
     return (
@@ -209,10 +265,7 @@ const WinnerCard = ({
                 'relative flex flex-col w-[237px] h-[310px] flex-shrink-0 bg-white rounded-[35px] items-center justify-between gap-[10px] px-6 py-6 before:rounded-[35px] before:absolute before:bg-gradient-to-b before:inset-0 before:to-[60%] after:absolute after:inset-[1px] after:bg-white after:rounded-[35px] md:w-[310px] md:h-[375px] md:py-[52px] lg:w-[21.6vw] lg:max-w-[310px] winner-card-shadow transition-colors duration-300 ease-in-out',
                 idx === 0 &&
                     'before:from-[#FFFF00] w-[260.7px] h-[341px] md:w-[341px] md:h-[412.5px] lg:w-[23.76vw]',
-                idx === 0 &&
-                    currentYear[1] &&
-                    course === 'eng' &&
-                    'before:from-secondary-400',
+                idx === 0 && currentYear[2] && course === 'eng' && 'before:from-secondary-400',
                 idx === 1 && 'before:from-[#263238]',
                 idx === 2 && 'before:from-[#CD7F32]',
                 className
@@ -221,11 +274,7 @@ const WinnerCard = ({
         >
             <div className='flex flex-col gap-[10px] z-10'>
                 <Image
-                    src={
-                        course === 'eng' && currentYear[1]
-                            ? ZenithTrophy
-                            : FirstPlaceWinner
-                    }
+                    src={course === 'eng' && currentYear[2] ? ZenithTrophy : FirstPlaceWinner}
                     alt='First Place Trophy'
                     className={cn(idx !== 0 && 'hidden')}
                 />
@@ -240,47 +289,36 @@ const WinnerCard = ({
                     className={cn(idx !== 2 && 'hidden')}
                 />
                 <span className='text-black text-18 font-medium tracking-[0.216px] text-center z-10'>
-                    {idx === 0
-                        ? '1° Lugar'
-                        : idx === 1
-                          ? '2° Lugar'
-                          : '3° Lugar'}
+                    {idx === 0 ? '1° Lugar' : idx === 1 ? '2° Lugar' : '3° Lugar'}
                 </span>
             </div>
             <div className='relative flex items-center justify-center text-black'>
-                <h1
-                    className={cn(
-                        'absolute font-bold text-36 leading-[1.1] text-center z-10 transition-opacity duration-300',
-                        !currentYear[0] && 'pointer-events-none opacity-0'
-                    )}
-                >
-                    {children[0]}
-                </h1>
-                <h1
-                    className={cn(
-                        'absolute font-bold text-36 leading-[1.1] text-center z-10 transition-opacity duration-300',
-                        !currentYear[1] && 'pointer-events-none opacity-0'
-                    )}
-                >
-                    {children[1]}
-                </h1>
+                {currentYear.map((year, idx) => (
+                    <h1
+                        key={idx}
+                        className={cn(
+                            'absolute font-bold text-36 leading-[1.1] text-center z-10 transition-opacity duration-300',
+                            !year && 'pointer-events-none opacity-0'
+                        )}
+                    >
+                        {children[idx]}
+                    </h1>
+                ))}
             </div>
             <ProjectOverlay
                 variant='past'
                 videoURL={
                     videoURL[
-                        (currentYear[0] ? idx : idx + 3) +
-                            (course === 'sci' ? 6 : 0)
+                        (currentYear[2] ? idx + 6 : currentYear[0] ? idx : idx + 3) +
+                            (currentYear[0] ? 0 : course === 'sci' ? 6 : 0)
                     ]
                 }
-                overlayTrigger={
-                    <Button className='z-10'>Conheça a Solução</Button>
-                }
+                overlayTrigger={<Button className='z-10'>Conheça a Solução</Button>}
             >
                 {
                     childrenData[
-                        (currentYear[0] ? idx : idx + 3) +
-                            (course === 'sci' ? 6 : 0)
+                        (currentYear[2] ? idx + 6 : currentYear[0] ? idx : idx + 3) +
+                            (currentYear[0] ? 0 : course === 'sci' ? 6 : 0)
                     ]
                 }
             </ProjectOverlay>
